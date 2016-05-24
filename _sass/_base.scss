@@ -47,6 +47,13 @@ img {
     vertical-align: middle;
 }
 
+.gallery {
+	object-fit: cover;
+	max-width: 100%;
+	text-align: center;
+	overflow: hidden;
+	height: 200px;
+}
 
 
 /**

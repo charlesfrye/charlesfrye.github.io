@@ -1,15 +1,28 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+<img style="float: left; margin: 0px 15px 15px 0px;" src="{{site.DBL}}/me.jpg" width="33%" />
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+My name is Charles Frye and I'm a graduate student at UC Berkeley in the
+[Helen Wills Neuroscience Institute](http://neuroscience.berkeley.edu/)
+working in the
+[Redwood Center for Theoretical Neuroscience](http://redwood.berkeley.edu/).
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+My research interests include sampling approaches to Bayesian inference,
+sensory neural circuits, and statistical learning theory.
+My research is supported by the National Science Foundation's
+Graduate Research Fellowship.
+
+I grew up in Southern Illinois, in a town called
+[Kankakee](http://www.thisamericanlife.org/radio-archives/episode/554/not-it),
+and attended high school at the
+[Illinois Math and Science Academy](https://www.imsa.edu)
+in Aurora, IL, graduating in 2009.
+I completed my undergraduate degree in Biology with a minor in
+Computational Neuroscience at the University of Chicago in 2013.
+
+Check out [my research](../research)
+or some of my [side projects](../projects)!

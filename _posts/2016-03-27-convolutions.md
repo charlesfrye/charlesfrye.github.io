@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	"Convolution Tutorial IPython Notebooks"
-date:	2016-05-24
+date:	2016-03-27
 category: external
 ---
 

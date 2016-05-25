@@ -11,7 +11,7 @@ email: charlesfrye@berkeley.edu
 description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 
-title: charles_irl
+title: Tangent Space
 url: "http://charlesfrye.github.io"
 qualurl: "FoundationalNeuroscience"
 

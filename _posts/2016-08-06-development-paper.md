@@ -15,10 +15,10 @@ We imaged neuronal populations in acute coronal slices of mouse neocortex taken
 from postnatal days 3 through 15.
 We observed a consistent developmental trajectory of spontaneous activity,
 suggesting a consistent pattern for cortical microcircuit development:
-anatomical modules are wired together by coherent activations into functional circuits,
+anatomical modules are wired together by coherent activations into functional circuits.
 
 The final version of my research paper with [Jason MacLean](http://www.macleanlab.com/)
-on the developmental timecourse of spontaneous activity in mouse cortex is now
+on the developmental time course of spontaneous activity in mouse cortex is now
 [available through the Journal of Neurophysiology](http://jn.physiology.org/content/early/2016/04/29/jn.00172.2016.abstract).
 
 Check it out!

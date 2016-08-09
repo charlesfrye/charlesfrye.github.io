@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	"Paper in Print at Journal of Neurophysiology"
-date:	2016-05-24
+date:	2016-08-06
 category: external
 ---
 

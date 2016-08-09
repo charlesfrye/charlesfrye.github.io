@@ -15,7 +15,7 @@ I'm studying neural circuit implementations of sampling algorithms,
 in particular the irreversible Markov Chain Monte Carlo approach of
 [the Maass group](http://journal.frontiersin.org/article/10.3389/fnins.2016.00118/full).
 
-This research aims to uncover the efficient ways that biological systems
+This research aims to uncover the ways that biological systems
 take advantage of the inherent randomness of their components to achieve
 efficient computation, with potential applications both
 in our understanding of the brain

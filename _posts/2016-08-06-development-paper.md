@@ -21,7 +21,7 @@ The final version of my research paper with [Jason MacLean](http://www.macleanla
 on the developmental time course of spontaneous activity in mouse cortex is now
 [available through the Journal of Neurophysiology](http://jn.physiology.org/content/early/2016/04/29/jn.00172.2016.abstract).
 
-Check it out!
+Check it out! You can also read a layman's summary [here](research).
 
 <!--exc-->
 

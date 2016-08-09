@@ -5,6 +5,9 @@ date:	2016-05-24
 category: external
 ---
 
+{: style="text-align: center"}
+![macleanfigure]
+
 > To evaluate the developmental ontogeny of spontaneous circuit activity,
 we compared two different areas of sensory cortex that are also differentiated by sensory inputs
 that follow different developmental timelines.
@@ -21,3 +24,5 @@ on the developmental timecourse of spontaneous activity in mouse cortex is now
 Check it out!
 
 <!--exc-->
+
+[macleanfigure]: {{site.DBL}}/macleanfigure.png

@@ -5,10 +5,7 @@ date:	2017-02-24
 category: stats
 ---
 
-> Statistics is the study of *pushforward probability measures* 
-from a *probability space of datasets* 
-to a *measurable space of statistics* 
-under maps that we call *statistical procedures*.
+> Statistics is the study of pushforward probability measures from a probability space of datasets to a measurable space of statistics under maps that we call statistical procedures.
 
 <!--exc-->
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

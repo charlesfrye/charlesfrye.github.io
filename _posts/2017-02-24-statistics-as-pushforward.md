@@ -35,10 +35,12 @@ to a
 under maps that we call
 *statistical procedures*.
 
-When this pushforward measure
+The probability measure
+over the datasets is called a *hypothesis*.
+When the pushforward measure
 determines a distribution,
 we call that distribution the
-*sampling distribution of the statistic*
+*sampling distribution of the statistic*.
 
 Below, I define the pushforward measure
 and give an example of this definition in practice.
@@ -116,7 +118,7 @@ for confidence level $$\alpha$$ when
 the space of datasets to
 the space of intervals "suited" to $$\theta$$
 - the pushforward measure of the set of intervals that contain $$\theta$$
-is at least $$\alpha$$ for all settings of $$\theta$$"
+is at least $$\alpha$$ for all settings of $$\theta$$
 Frequently, $$\theta$$ is real, and so the space of intervals
 is the space of all real intervals.
 

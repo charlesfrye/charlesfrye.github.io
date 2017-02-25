@@ -2,7 +2,7 @@
 layout: post
 title:	Statistics in One Sentence
 date:	2017-02-24
-category: external
+category: stats
 ---
 
 > Statistics is the study of
@@ -89,7 +89,7 @@ We then apply a transformation, $$f$$, to this dataset.
 This transformation might map us to the real line,
 as when we compute the average of real numbers,
 or it might map us to the unit interval,
-as when we produce a ``p value''.
+as when we produce a "p value".
 
 The transformation $$f$$ is called a *statistical procedure*
 and the output of the transformation is called a *statistic*.
@@ -116,12 +116,11 @@ for confidence level $$\alpha$$ when
 the space of datasets to
 the space of intervals "suited" to $$\theta$$
 - the pushforward measure of the set of intervals that contain $$\theta$$
-is at least $$\alpha$$ for all settings of $$\theta$$.
-
+is at least $$\alpha$$ for all settings of $$\theta$$"
 Frequently, $$\theta$$ is real, and so the space of intervals
 is the space of all real intervals.
 
-### Closing
+### Closing Remarks
 
 In statistics,
 we are deeply concerned with the performance of
@@ -190,13 +189,14 @@ that assigns measure $$0$$ to the empty set
 and for which the following property holds
 for all countable collections of disjoint sets
 $$\{X_i\}$$:
+
 $$
     \mu\left(\bigcup X_i\right)
     	= \sum \mu\left(X_i\right)
 $$
 
 That is, if we take two sets that don't overlap,
-the ``size'', as measured by $$\mu$$,
+the "size", as measured by $$\mu$$,
 of their union is just the sum of their sizes.
 
 #### Probability Measure

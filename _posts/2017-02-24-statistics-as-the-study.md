@@ -5,7 +5,7 @@ date:	2017-02-24
 category: external
 ---
 
-Statistics is the study of
+> Statistics is the study of
 *push-forward probability measures*
 from a
 *probability space of datasets*
@@ -58,22 +58,22 @@ a deterministic function will be
 when applied to random inputs.
 
 Given a measurable map between
-a probability space $\mathcal{X}$
+a probability space $$\mathcal{X}$$
 with probability measure $\mu$
-and a measurable space $\mathcal{S}$,
+and a measurable space $$\mathcal{S}$$,
 we can define the
-pushforward probability measure $f_*\mu$
-on $\mathcal{S}$ as
+pushforward probability measure $$f_*\mu$$
+on $$\mathcal{S}$$ as
 
 $$
     f_*\mu(S) = \mu \circ f^{-1}(A) = \mu\left(f^{-1}(A)\right)
 $$
 
-for sets $S$ in the $\sigma$-algebra of $S$.
-Here $f^{-1}(A)$ means
-``the preimage of the set $A$'',
+for sets $$S$$ in the $$\sigma$$-algebra of $$S$$.
+Here $$f^{-1}(A)$$ means
+"the preimage of the set $$A$$",
 not
-``the inverse function of $f$ applied to $A$''.
+"the inverse function of $$f$$ applied to $$A$$".
 
 ### The Setup for Statistics
 

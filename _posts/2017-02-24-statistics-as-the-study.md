@@ -148,12 +148,12 @@ to support measures (to be defined shortly).
 They are closed under the operations of
 complementation and
 countable union and intersection, and
-they include the set itself and the empty set $$\O$$.
+they include the set itself and the empty set $$\varnothing$$.
 
 Two key examples of $$\sigma$$-algebras over
 a set $$X$$ are
 the collection
-$$\{\O,X\}$$
+$$\{\varnothing,X\}$$
 and the set of all subsets of $$X$$,
 also known as the *power set* of $$X$$.
 They are the smallest and largest

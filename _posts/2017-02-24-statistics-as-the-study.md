@@ -1,4 +1,9 @@
-
+---
+layout: post
+title:	“Statistics in One Sentence”
+date:	2017-02-24
+category: external
+---
 
 Statistics is the study of
 *push-forward probability measures*
@@ -11,6 +16,8 @@ under maps that we call
 
 <!--exc-->
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+## Statistics as the Study of Push-forward Measures
 
 Statistics is frequently presented as a hodge-podge of
 techniques and tools, to the consternation of mathematicians,

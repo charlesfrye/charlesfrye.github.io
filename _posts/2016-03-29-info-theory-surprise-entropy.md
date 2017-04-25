@@ -16,9 +16,9 @@ category:	"stats"
 
 Information theory provides a set of mathematical ideas and tools for
 describing uncertainty about the state of a random variable
-that are complementary to the more common notions and methods of probability.
+that are complementary to standard methods from probability theory.
 
-Information theory is more useful than orthodox probability
+Information theory is more useful than standard probability
 in the cases of telecommunications and model comparison,
 which just so happen to be major functions of the nervous system!
 
@@ -38,7 +38,7 @@ emphasizing the role of modeling and subjectivity in measures of information.
 
 ## A Problem
 
-In the world of Classical logic,
+In the world of Classical logic as laid our by Aristotle,
 the comparison of competing claims is simple.
 If two claims are well-formed,
 their truth values can be ascertained.
@@ -101,7 +101,7 @@ A halo of bent sunlight around Mercury is quite a surprising observation,
 [unless you are Einstein](https://en.wikipedia.org/wiki/Gravitational_lens).
 In contrast, God is never surprised, whereas the unthinkable occurring --
 2+2 turning out to be 5, or a particle having negative mass --
-is infinitely surprising<a href="{{page.url}}#dagger"><sup>†</sup></a>.
+is infinitely surprising<a href="{{site.baseurl}}/82#dagger"><sup>†</sup></a>.
 
 Our mortal inferences, clever or dumb as they are,
 must have a surprise somewhere between "totally expected", or *0*,
@@ -112,7 +112,7 @@ We will generally be making statements like:
 or "nine times out of ten, the team with a better defense wins".
 This motivates us to express our surprise in terms of probability.
 If you want a refresher on the foundations of probability,
-[check out this blog post on Bayes' Rule]({% post_url 2016-02-04-bayes-rule %}).
+[check out this blog post on Bayes' Rule]({{ste.baseurl}}/11).
 
 A sort of Occam's Razor principle will be in effect:
 if we have two competing models for a phenomenon,
@@ -134,7 +134,7 @@ All players will be given "surprise tokens",
 which they allocate out to different outcomes.
 Any time that outcome occurs,
 the player takes on that many points --
-this should remind you of betting<a href="{{page.url}}#asterisk">*</a>.
+this should remind you of betting<a href="{{site.baseurl}}/82#asterisk">*</a>.
 The goal, as in golf, is to attain the lowest score --
 a sort of principle of least surprise.
 
@@ -151,7 +151,9 @@ and if Curry misses, my friend feels the same way.
 In the world of Aristotle, this causes no trouble:
 any statement that is part of the world of discourse is either true or false,
 and we can't have Curry both making and missing shots from the left.
-The real world is not so simple.
+The real world is not so simple: if Curry takes more than one shot,
+he's liable to miss some percentage and make some percentage,
+leaving me and my friend both convinced we are correct.
 
 We resolve this dispute by playing the "surprise game" described above.
 We each receive a number of surprise tokens.
@@ -168,14 +170,15 @@ is declared the winner.
 This game setup raises a number of questions:
 what is the optimal strategy for winning the surprise game?
 How do we allocate our surprise tokens to match our knowledge?
-Can this be extended to cases where there's more information at stake,
+Can this be extended to cases where there's more information available,
 like the strength of the defense Curry is facing?
 
 ## Surprise and Probability
 
 Before we can go any further, we need to quantify
 the relationship between *surprise* and *probability*.
-Surprise has some sort of inverse relationship with probability:
+Our intuition tells us that
+surprise has some sort of inverse relationship with probability:
 the victory of a team down by two touchdowns is *more surprising*
 than the victory of a team down by a field goal,
 and it is also *less probable*.
@@ -208,17 +211,17 @@ How can we combine $$0$$ and some number to get that same number back?
 We add them!
 
 <center>$$
-	Surprise(x \ \& \ C) = S(x) + S(C) = S(x) + 0 = S(x)
+	\text{Surprise}(x \ \& \ C) = S(x) + S(C) = S(x) + 0 = S(x)
 $$</center>
 
 where I've introduced a symbol, $$S$$, for surprise.
 
 This combination of rules *uniquely* defines a function
-that takes probabilities in and spits out surprises.
+that takes outcomes in and spits out surprises.
 That function is
 
 <center>$$
-	S(p(x)) = \log\left(\frac{1}{p(x)}\right)
+	S_p(x) = \log\left(\frac{1}{p(x)}\right)
 $$</center>
 
 Awesome! Check for yourself that all of our criteria above are met:
@@ -231,12 +234,29 @@ or "binary digits",
 whereas the choice of base $$e$$, common in statistical physics,
 gives units called "nats", or "natural digits".
 
+You may object to the parasitic definition of surprise here --
+$$S$$ is defined in terms of $$p$$, after all.
+This is an artifact of the historical dominance
+of the probability approach over the surprise approach.
+In fact, one can define surprises before probabilities,
+and define the probability as:
+
+<center>$$
+	p_S(x) = \mathrm{e}^{-S(x)}
+$$</center>
+
+In order to keep the material accessible to as wide an audience as possible,
+we'll stick with the parasitic definition.
+If you'd like to see the major components of the derivation the other way,
+check out E.T. Jaynes'
+[Probability Theory: The Logic of Science](http://bayes.wustl.edu/etj/prob/book.pdf).
+
 ## Comparing Surprises
 
 ### Comparing with Other Models
 
-Our original motivation for introducing surprise was to
-develop a quantitative metric for comparing competing models for events.
+Let's return to our original motivation for introducing surprise:
+comparing competing predictions for events.
 Every time an event occurs, we can take the probability
 that each competing model assigns to that event and compute the surprise.
 One might be tempted to say that the model that was less surprised
@@ -261,19 +281,19 @@ we would expect, on average, from a single event,
 we just divide that total surprise by the number of repetitions:
 
 $$
-	Avg.\ S(Q) = \frac{1}{N} \sum S(q(x))
+	\text{Avg.}\ S_Q = \frac{1}{N} \sum S_q(x)
 $$
 
 where the big $$N$$ gives us the number of repetitions,
 the $$Q$$ refers to some particular model,
-and $$q(x)$$ refers to the probability that the model $$Q$$ assigns
-to the event $$x$$.
+and $$S_q$$ refers to the surprise that the model $$Q$$ assigns
+to the event $$x$$, derived from its probability distribution $$q$$.
 
 In the preceding argument, the notion of repetition played a key role.
 Unfortunately, repetition is a surprisingly diffcult concept to nail down,
 much like its partner, probability.
 If you're interested in that idea, check out the
-<a href="{{page.url}}#aside">*Aside on Repetition*</a>.
+<a href="{{site.baseurl}}/82#aside">*Aside on Repetition*</a>.
 
 ### Compared with the Truth
 
@@ -286,17 +306,24 @@ Let's call that distribution $$p(x)$$.
 This is, in a very real sense, "Nature's probability distribution".
 If that idea sounds strange or unbelievable to you,
 check out the
-<a href="{{page.url}}#aside">*Aside on Repetition*</a>.
+<a href="{{site.baseurl}}/82#aside">*Aside on Repetition*</a>.
 
 With this idea and its new symbol, we can reformulate
 the relationship above as:
 
 <center>$$
-	Avg.\ S_P(Q) = \sum_x p(x)*log\left(\frac{1}{q(x)}\right)
+	\text{Avg.}\ S_Q(P) = \sum_x p(x)*log\left(\frac{1}{q(x)}\right)
 $$</center>
 
-where the subscript $$_P$$ reminds us that the probability distribution
-we induce with our experiment can change --
+This is the average surprise of the model $$Q$$ when its
+inputs come from the distribution $$p$$ of a model $$P$$.
+It is also the limit of the first expression for the average surprise
+when $$N$$ is taken to infinity and
+so the distribution of the observed events is
+equal to the true distribution $$p$$.
+
+Note that this probability distribution
+is induced by our experiment and can change --
 if I know the exact force I apply to a coin to cause it to flip,
 the result of the toss is no longer 50/50,
 and so the distribution of results has changed.
@@ -312,7 +339,7 @@ But if we do have that form, then we can put $$P$$ in for $$Q$$
 in the expression above and get
 
 <center>$$
-	Avg.\ S_P(P) = \sum_x p(x)*\log\left(\frac{1}{p(x)}\right)
+	\text{Avg.}\ S_P(P) = \sum_x p(x)*\log\left(\frac{1}{p(x)}\right)
 $$</center>
 
 this is how surprised someone would expect to be,
@@ -334,7 +361,7 @@ resulting in a measure we might call "excess surprise":
 
 <center>$$
 \begin{align*}
-	Excess\ S_P(Q) =& \ Avg.\ S_P(Q) - Avg.\ S_P(P) \\
+	\text{Excess}\ S_Q(P) =& \ \text{Avg.}\ S_Q(P) - \text{Avg.}\ S_P(P) \\
 			=& \sum_x p(x)*\log\left(\frac{1}{q(x)}\right)
 			 - \sum_x p(x)*\log\left(\frac{1}{p(x)}\right) \\
 			=& \sum_x p(x)*\left[\log\left(\frac{1}{q(x)}\right)
@@ -367,7 +394,9 @@ $$\log(1/p)$$ into $$-\log(p)$$.
 Why this notation is standard is beyond me,
 since it emphasizes log-probabilities,
 rather than the more central notion we call "surprise"
-and the literature calls "surprisal",.
+and the literature calls "surprisal",
+when it deigns to call it anything other than
+"negative log-probability".
 
 Since information theory was discovered in the context
 of telecommunication, and specifically in the context of
@@ -388,8 +417,8 @@ approach to probability distributions, interprets the entropy as a measure
 of the flatness of a distribution: higher entropy means more flat
 (try out the computation for yourself with a coin
 that comes up heads and tails with different probabilities).
-This makes entropy a sort of "summary", of the distribution,
-just like means or variances.
+This makes entropy a sort of "summary" of the distribution,
+just like the mean or the variance.
 
 Contrary to the mathematical and theoretical bent of the above approaches,
 our choice of basic entity, the average surprise of the model $$Q$$,
@@ -408,11 +437,13 @@ $$</center>
 From the traditional, Shannon perspective, the interpretation of this quantity
 is that it is the length of encoded messages using a code optimized for a distribution $$Q$$
 on messages drawn from a distribution $$P$$ (can you see why I prefer my approach?).
+It is used as a cost function to train parametrized models that attempt
+to predict discrete outputs, also known as *classification* models.
 
 The final quantity that we derived above, the *excess surprise*,
-also appears in both the Shannon approach and in purely probabilistic thinking.
+also appears in both the Shannon approach and in purely mathematical probability.
 There, it is known as the *Kullback-Leibler divergence* or the *Kullback-Leibler distance*.
-The latter name, though more popular, tends to irritate sticklers for accuracy,
+The latter name, though at one point more popular, tends to irritate sticklers for accuracy,
 since the excess surprise does not satisfy the technical conditions
 for the mathematical notion of *distance*.
 In any case, the most common notation looks something like:
@@ -437,7 +468,8 @@ connection to our notion of "excess surprise".
 
 Entirely missing from the foregoing has been the
 discussion of what we can do when we have
-multiple, possibly related, random variables --
+multiple, possibly related, random variables
+measured at the same time or during the same experiment--
 what does the weather in San Francisco
 tell us about the weather in Berkeley?
 Vice versa?
@@ -469,7 +501,7 @@ Since there is a relationship, due to geography,
 between the weather in Berkeley and the weather in San Francisco,
 we should expect to be less surprised by the weather in one
 if we know the weather in the other
-and the correct relationship between the two loctions.
+and the correct relationship between the two events.
 
 This suggests that we should consider an excess surprise,
 much like the excess surprise between an incorrect model and a correct model,
@@ -486,13 +518,13 @@ that looks like the product of the two individual distributions.
 In math, that looks like $$p(x,y) = p(x)*p(y)$$.
 
 Let's write this relation out for two variables $$X$$ and $$Y$$,
-using $$P_{xy}$$ to refer to the joint probability distribution
-and the mathematical symbol $$\bot$$ to denote the distribution
-under the model that $$X$$ and $$Y$$ are independent.
+using $$P_{x,y}$$ to refer to the model with the true joint probability distribution
+and the mathematical symbol $$\bot$$ to denote the model
+that asummes $$X$$ and $$Y$$ are independent.
 
 <center>$$
 \begin{align*}
-	Excess\ S_{P_{xy}}(\bot) =& \ Avg.\ S_{P_{xy}}(\bot) - Avg.\ S_{P_{xy}}(P_{xy}) \\
+	\text{Excess}\ S_{\bot}(P_{x,y}) =& \ \text{Avg.}\ S_{\bot}(P_{x,y}) - \text{Avg.}\ S_{P_{xy}}(P_{xy}) \\
 			=& \sum_{x,y} p(x,y)*\log\left(\frac{1}{p(x)*p(y)}\right)
 			 - \sum_{x,y} p(x,y)*\log\left(\frac{1}{p(x,y)}\right) \\
 			=& \sum_{x,y} p(x,y)*\log\left(\frac{p(x,y)}{p(x)*p(y)}\right)
@@ -503,18 +535,34 @@ OK, so what does this look like?
 Let's imagine that the probability distributions for the
 weather in Berkeley and San Francisco look like this:
 
-![berk-and-sf]
+![marginal_berkeley] ![marginal_SF]
 {: style="text-align: center"}
 
 In general, they are temperate cities,
 but occasionally, things get a bit hot.
 And what do the joint probabilities look like?
 
+First, how do we visualize joint probabilities?
+The approach followed below is called a *contour plot*.
+The joint probability distribution assigns a value to each
+point in the $$xy$$ plane.
+Similarly, an elevation map assigns a value, the height,
+to each point in the $$xy$$ plane,
+where $$x$$ is east-west and $$y$$ is north-south.
+Based on this analogy, we steal a tool from cartography:
+the *contour plot*.
+In a contour plot, each colored line
+traces out a collection of values that have
+the same elevation, or probability in our case.
+Darker lines correspond to lower elevations/probabilities.
+
 If we assume that the weather in Berkeley
 is unrelated to the weather in San Francisco
 (that is, if we assume independence),
-then we get something that looks like the distribution on the left.
-If we were to look at it from either side,
+then, when we make a contour plot,
+we get something that looks like the distribution on the left.
+
+If we were to look at this "landscape" from either side,
 we'd see a bunch of copies of the single-variable distribution,
 each one scaled to a different height by the probability that
 the other variable takes that value.
@@ -522,9 +570,8 @@ This comes from the fact that $$p(x,y) = p(x)*p(y)$$:
 the joint distribution at any value $$y$$ is just the distribution
 $$p(x)$$ with its height changed by $$p(y)$$.
 
-![jointVSindep]
+![joint_independent] ![joint_dependent]
 {: style="text-align: center"}
-
 
 But if we know the true relationship,
 which is that hot days in Berkeley are also hot days in SF,
@@ -546,13 +593,13 @@ If you want to know more about conditional distributions,
 and how Bayes' Rule is used to manipulate them
 and model reasoning under uncertainty,
 check out
-[this blog post]({% post_url 2016-02-04-bayes-rule %}).
+[this blog post]({{site.baseurl}}/11).
 
 ### Surprise and Information
 
 The quantity described above as "the excess surprise
 from using an independent model of a dependent system",
-$$Excess\ S_{P_{xy}}(\bot)$$,
+$$Excess\ S_{\bot}(P_{xy})$$,
 is special enough to get its own name.
 
 It is called the "Mutual Information" between two variables,
@@ -617,11 +664,11 @@ come into play here:
 a given neuron might be representing a different random variable
 that happens to be dependent on the same causes as the recorded variable.
 For example, a neuron that represents
-[conjunctions of contours]({{site.blogurl}}/09)
+[conjunctions of contours]({{site.baseurl}}/09)
 will have a high degree of mutual information with the individual contours.
 More concerning still, the neuron might not be engaged in representation at all:
 even though the state of the
-[glial "helper cells"]({{site.blogurl}}/68)
+[glial "helper cells"]({{site.baseurl}}/68)
 of the nervous system contains information about the state of the outside world,
 that information appears as a consequence of the role of glia in regulating
 gross features (mean activity, etc.) of computation in neurons,
@@ -674,7 +721,7 @@ accepting only those values that are consistent with
 some fact that we know about some gross state of the world,
 like "I have a coin perched on my thumb".
 In the terms of probability, we call this
-["conditioning"]({% post_url 2016-02-04-bayes-rule %})
+["conditioning"]({{site.baseurl}}/11).
 A sketch of the result of such a conditioning appears below.
 
 {: style="text-align: center"}
@@ -783,5 +830,7 @@ for valuable discussions and for comments on a draft.
 [particles]: {{site.DBL}}/particles.png
 [post-flip]: {{site.DBL}}/post-flip.png
 [wthPartitions]: {{site.DBL}}/withPartitions.png
-[jointVSindep]: {{site.DBL}}/jointVSindep.png
-[berk-and-sf]: {{site.DBL}}/berk-and-sf.png
+[marginal_berkeley]: {{site.DBL}}/marginal_berkeley.png
+[marginal_SF]: {{site.DBL}}/marginal_SF.png
+[joint_independent]: {{site.DBL}}/joint_independent.png
+[joint_dependent]: {{site.DBL}}/joint_dependent.png

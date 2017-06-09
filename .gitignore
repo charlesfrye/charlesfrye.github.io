@@ -1,4 +1,5 @@
 _gems/
+.DS_Store
 _drafts/
 Gemfile.lock
 _site

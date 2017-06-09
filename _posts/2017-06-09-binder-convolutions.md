@@ -6,7 +6,7 @@ category: external
 ---
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-$$ g * f(t) = \sum_{\tau+\delta = t} g(\tau) \cdot f(\delta) $$
+$$ g * f(t) = \sum_{\tau+\Delta = t} g(\tau) \cdot f(\Delta) $$
 
 Previously, I posted a link to some Jupyter-based
 [tutorials on convolution](http://charlesfrye.github.io/external/2016/03/27/convolutions.html)

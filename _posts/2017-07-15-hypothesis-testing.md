@@ -1,3 +1,4 @@
+---
 layout: post
 title:	"Tutorial on Hypothesis Testing"
 date:	2017-07-15
@@ -24,6 +25,7 @@ category: stats
   </tbody>
 </table>
 {: style="text-align: center"}
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <!--exc-->
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

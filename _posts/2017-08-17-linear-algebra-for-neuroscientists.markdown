@@ -16,7 +16,7 @@ category: math
 Linear algebra
 is one of the most important workhorses
 of applied mathematics.
-Linear algebra shows up over and over again in
+Linear algebra is critical in
 statistics,
 optimization,
 geometry,
@@ -36,25 +36,31 @@ Unfortunately,
 despite its critical importance,
 linear algebra just isn't *sexy*,
 so it is often taught perfunctorily and
-by someone who'd rather be teaching something else.
+by someone who'd rather be teaching something else
+to students who'd rather be learning something else.
+The result is that a lot of folks
+dislike linear algebra
+and find it more of a confusing stumbling block
+than a useful tool.
 
-These notes are intended to present a few core concepts
+These notes are present a few core concepts
 of linear algebra
 -- vectors,
 matrices, and
 dot products --
-in a manner that neuroscientists will find intuitive.
+in a manner that neuroscientists will find intuitive,
+in an effort to clear away some of that confusion.
 
 My hope is that this will encourage
 folks to dive deeper into other resources
 for learning linear algebra,
 whether in a neuroscience context, like in
-[Kenneth Miller's short textbook](www.neurotheory.columbia.edu/Ken/math-notes/)
+[Kenneth Miller's short textbook](https://www.neurotheory.columbia.edu/Ken/math-notes/)
 or in a more general context, as in
 [Khan Academy's online course](https://www.khanacademy.org/math/linear-algebra).
 Readers interested in an intuitive presentation of the core ideas of linear algebra
 should check out
-[Grant Sanderson's YouTube Lectue Series](ihttps://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab),
+[Grant Sanderson's YouTube Lectue Series](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab),
 which pairs lucid explanations with slick animations and graphics.
 
 ### A Simple Neural Circuit
@@ -102,12 +108,13 @@ it is the sum of the outputs to the separate inputs.
 The first property is called *scaling*
 and the second property is called *superposition*.
 Real neurons don't have either of these properties --
-as an example, multiplying the input current to a neuron by seven million
+as a very rough example,
+multiplying the input current to a neuron by seven million
 won't cause the output to be seven million times greater,
 it'll just fry the neuron --
 but our cartoon neurons do.
 This will make it possible for us to write down
-how our neurons behave.
+precisely how our neurons behave.
 
 ### Experiment #1: Measuring the Behavior of a Single Neuron
 
@@ -142,12 +149,12 @@ lets us take that synaptic weight and use
 it to predict the response of Neuron 1.
 
 Indicating the firing rate of Neuron 1 as
-$fr_1$, <!---_--->
+$$fr_1$$, <!---_--->
 the firing rate of Neuron A as
-$fr_A$, <!---_--->
+$$fr_A$$, <!---_--->
 synaptic weight between
 Neuron 1 and Neuron A
-$A_1$, <!---_--->
+$$A_1$$, <!---_--->
 we can write a simple equation
 for the output of Neuron 1
 as a function of the output of Neuron A:
@@ -155,6 +162,7 @@ as a function of the output of Neuron A:
 $$
 fr_1 = A_1 \cdot fr_A
 $$ <!---_--->
+{: style="text-align: center"}
 
 Plugging in a few numbers will verify
 that this equation is correct:
@@ -162,11 +170,11 @@ when Neuron A is not firing,
 Neuron 1 won't fire,
 and when Neuron A is firing at a rate of 1,
 the firing rate of Neuron 1 is
-$A_1$. <!---_--->
+$$A_1$$. <!---_--->
 
 Notice the similarity of this equation
-to the equation for a line of slope $m$
-and intercept of $0$:
+to the equation for a line of slope $$m$$
+and intercept of 0:
 
 $$
 y = mx
@@ -185,10 +193,11 @@ in response to separate
 stimulation of each input neuron.
 
 $$
-fr_1 = A_1 \cdot fr_A
-fr_1 = B_1 \cdot fr_B
-fr_1 = C_1 \cdot fr_C
+fr_1 = A_1 \cdot fr_A \\
+fr_1 = B_1 \cdot fr_B \\
+fr_1 = C_1 \cdot fr_C \\
 $$ <!---_--->
+{: style="text-align: center"}
 
 With these three equations,
 we can now predict the output
@@ -213,7 +222,7 @@ $$
 fr_1 = \sum_i \text{i}_1 \cdot fr_i
 $$
 
-where $i$ goes from $A$ - $C$.
+where $$i$$ goes from $$A$$ to $$C$$.
 
 While these ways of writing
 the behavior of our linear neuron work,
@@ -223,12 +232,13 @@ while the second is too compressed.
 We'd like a notation
 that reminds us of which numbers are multiplied
 with which,
-but without all the extra $+$'s and $\cdot$'s.
+but without all the extra $$+$$'s and $$\cdot$$'s.
 
 If we write the seven relevant numbers
 down on our picture of the circuit
 (as seen below),
 a geometric notation suggests itself:
+
 $$
 \left[\begin{array}{c}
 A_1 & B_1 & C_1
@@ -237,6 +247,7 @@ A_1 & B_1 & C_1
 fr_A \\ fr_B \\ fr_C
 \end{array}\right] = fr_1
 $$ <!---_--->
+{: style="text-align: center"}
 
 To compute the output,
 we take a pair of elements in turn,
@@ -257,24 +268,25 @@ For obvious reasons,
 the one on the left is a *row vector*
 and the one on the right is a *column vector*.
 We might call them
-$\vec{w}_1$ ($w$ for "weight")and $\vec{fr}$<!---_--->
+$$\vec{w}_1$$ ($$w$$ for "weight")
+and $$\vec{fr}$$<!---_--->
 The process of multiplying two vectors together
 is variously known as
 
 - the *dot product*, because it can be written
-$\vec{w}_1\cdot\vec{fr}$<!---_--->
+$$\vec{w}_1\cdot\vec{fr}$$<!---_--->
 (notice the dot)
 - the *scalar product*, since the result is a single number,
 also known as a "scalar" because multiplying by a number "scales" things
 - a *weighted sum*, since we multiply each element of $\vec{fr}$
-by a weight from $\vec{w}_1$<!---_--->
+by a weight from $$\vec{w}_1$$<!---_--->
 
 These operations are ubiquitous in mathematics.
 For example,
-computing the average of a collection of $N$i numbers
+computing the average of a collection of $$N$$ numbers
 is a multiplication of vectors:
 one vector containing all of the numbers
-and the other containing $1/N$ in each position.
+and the other containing $$1/N$$ in each position.
 In the greatest generality,
 even derivatives and integrals are a form of
 vector multiplication called a

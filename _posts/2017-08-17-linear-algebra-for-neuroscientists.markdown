@@ -215,6 +215,7 @@ in our case, that means:
 $$
 fr_1 = A_1 \cdot fr_A + B_1 \cdot fr_B + C_1 \cdot fr_C
 $$ <!---_--->
+{: style="text-align: center"}
 
 We can shorten this equation substantially by writing
 
@@ -278,7 +279,7 @@ $$\vec{w}_1\cdot\vec{fr}$$<!---_--->
 (notice the dot)
 - the *scalar product*, since the result is a single number,
 also known as a "scalar" because multiplying by a number "scales" things
-- a *weighted sum*, since we multiply each element of $\vec{fr}$
+- a *weighted sum*, since we multiply each element of $$\vec{fr}$$
 by a weight from $$\vec{w}_1$$<!---_--->
 
 These operations are ubiquitous in mathematics.

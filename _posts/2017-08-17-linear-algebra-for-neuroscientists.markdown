@@ -373,7 +373,7 @@ which is valid so long as Neuron 1 is the only active input:
 $$
 \text{in}_1 \cdot
 \left[\begin{array}{ccc}
-\a_1 \\ \b_1 \\ \c_1
+a_1 \\ b_1 \\ c_1
 \end{array}\right]
 =
 \left[\begin{array}{ccc}
@@ -433,6 +433,7 @@ $$
 \text{out}_b = \vec{b} \cdot \vec{\text{in}} \\
 \text{out}_c = \vec{c} \cdot \vec{\text{in}} \\
 $$ <!---_-->
+{: style="text-align: center"}
 
 But notice the inefficiencies and inadequacies of this representation:
 the input vector, $$\vec{\text{in}}$$,
@@ -466,7 +467,7 @@ c_1 & c_2 & c_3 \\
 \end{array}\right]
 =
 \left[\begin{array}{ccc}
-\text{out}_1 \\ \text{out}_2 \\ \text{out}_3
+\text{out}_a \\ \text{out}_b \\ \text{out}_c
 \end{array}\right]
 $$ <!---_--->
 {: style="text-align: center"}
@@ -517,7 +518,7 @@ reproduced below:
 $$
 \text{in}_1 \cdot
 \left[\begin{array}{ccc}
-\a_1 \\ \b_1 \\ \c_1
+a_1 \\ b_1 \\ c_1
 \end{array}\right]
 =
 \left[\begin{array}{ccc}
@@ -586,7 +587,7 @@ c_1 & c_2 & c_3 \\
 \end{array}\right]
 =
 \left[\begin{array}{ccc}
-\text{out}_1 \\ \text{out}_2 \\ \text{out}_3
+\text{out}_a \\ \text{out}_b \\ \text{out}_c
 \end{array}\right]
 $$ <!---_--->
 {: style="text-align: center"}

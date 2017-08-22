@@ -25,4 +25,4 @@ Check it out! You can also read a layman's summary [here](research).
 
 <!--exc-->
 
-[macleanfigure]: {{site.DBL}}/macleanfigure.png
+[macleanfigure]: {{site.imgurl}}/macleanfigure.png

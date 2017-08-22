@@ -20,4 +20,4 @@ Come join us if you're interested!
 
 <!--exc-->
 
-[convolution]: {{site.DBL}}/convolution.png
+[convolution]: {{site.imgurl}}/convolution.png

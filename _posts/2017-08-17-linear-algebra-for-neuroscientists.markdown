@@ -23,7 +23,10 @@ geometry,
 and more.
 It shows up whenever
 we need to consider a collection of numbers
-as a single object, lying in some space.
+as a single object,
+and just one of many such collections,
+all of the same length.
+This turns out to be super common!
 
 This is no less true of neuroscience
 than of any other scientific field that uses math.
@@ -73,11 +76,11 @@ In order to get a clean, cartoon picture,
 we focus on a collection of
 three parallel fibers
 (below, in shades of blue,
-labeled A, B, and C)
+labeled 1, 2, and 3)
 that are all connected to each of
 three Purkinje cells
 (below, in shades of orange,
-labeled 1, 2, and 3).
+labeled a, b, and c).
 
 The dendritic inputs for the parallel fibers
 enter from the right,
@@ -97,7 +100,7 @@ What this means is that
 if the input to a neuron is doubled,
 or multiplied by any number,
 the output of the neuron doubles,
-or is multiplied by the same number.
+or is multiplied by that same number.
 Also,
 if we measure the outputs of a neuron
 for two inputs separately,
@@ -122,9 +125,9 @@ Let's perform some thought experiments on our cartoon neurons.
 First, let's place our imaginary
 [recording electrode](http://charlesfrye.github.io/FoundationalNeuroscience/80/)
 (indicated by two almost-intersecting lines, representing our pipette tip)
-on Neuron 1 and shine our imaginary laser
+on Neuron a and shine our imaginary laser
 (indicated by the green lightning bolts)
-on Neurons A, B, and C,
+on Neurons 1, 2, and 3,
 which we've modified using
 [optogenetics](https://en.wikipedia.org/wiki/Optogenetics)
 so that they respond to light by increasing and decreasing their activity.
@@ -133,44 +136,46 @@ The experiment is depicted below.
 ![experiment1]
 {: style="text-align: center"}
 
-If we stimulate Neuron A to fire some unit amount,
-we will measure some rate of firing from Neuron 1.
+If we stimulate Neuron 1 to fire some unit amount,
+we will measure some rate of firing from Neuron a.
 That is,
-when Neuron A is firing at a rate of 1,
-we measure some firing rate from Neuron 1.
+when Neuron 1 is firing at a rate of 1,
+we measure some firing rate from Neuron a.
 Loosely speaking,
 we can think of that value as a
 *synaptic weight*
-for the synapse between Neuron A and Neuron 1.
+for the synapse between Neuron 1 and Neuron a.
 Our assumption that scaling inputs
 causes outputs to scale by the same amount
 (the *scaling* assumption)
 lets us take that synaptic weight and use
-it to predict the response of Neuron 1.
+it to predict the output rate of Neuron a
+in response to any input rate in Neuron 1.
 
-Indicating the firing rate of Neuron 1 as
-$$fr_1$$, <!---_--->
+Indicating the output of Neuron a as
+$$\text{out}_a$$, <!---_--->
 the firing rate of Neuron A as
-$$fr_A$$, <!---_--->
+$$\text{in}_1$$, <!---_--->
 synaptic weight between
-Neuron 1 and Neuron A
-$$A_1$$, <!---_--->
+Neuron 1 and Neuron a
+$$a_1$$, <!---_--->
 we can write a simple equation
 for the output of Neuron 1
 as a function of the output of Neuron A:
 
 $$
-fr_1 = A_1 \cdot fr_A
+\text{out}_a = a_1 \cdot in_1
 $$ <!---_--->
 {: style="text-align: center"}
 
 Plugging in a few numbers will verify
 that this equation is correct:
-when Neuron A is not firing,
-Neuron 1 won't fire,
-and when Neuron A is firing at a rate of 1,
-the firing rate of Neuron 1 is
-$$A_1$$. <!---_--->
+when Neuron 1 is not firing,
+Neuron a won't fire,
+and when Neuron 1 is firing at a rate of 1,
+the firing rate of Neuron a is
+$$a_1$$, <!---_--->
+just as we measured it before.
 
 Notice the similarity of this equation
 to the equation for a line of slope $$m$$
@@ -185,23 +190,23 @@ if we graph their outputs as a function of their input,
 we get a line!
 
 We can repeat these measurements
-for Neurons B and C,
+for Neurons 2 and 3,
 and we will get three equations
 that will let us predict
-the output of Neuron 1
+the output of Neuron a
 in response to separate
 stimulation of each input neuron.
 
 $$
-fr_1 = A_1 \cdot fr_A \\
-fr_1 = B_1 \cdot fr_B \\
-fr_1 = C_1 \cdot fr_C \\
+\text{out}_a = a_1 \cdot \text{in}_1 \\
+\text{out}_a = a_2 \cdot \text{in}_2 \\
+\text{out}_a = a_3 \cdot \text{in}_3 \\
 $$ <!---_--->
 {: style="text-align: center"}
 
 With these three equations,
 we can now predict the output
-of Neuron 1 in response to any input!
+of Neuron a in response to any input!
 We just need to use our other assumption,
 the *superpositioning* assumption.
 That assumption told us
@@ -213,17 +218,17 @@ Written out mathematically,
 in our case, that means:
 
 $$
-fr_1 = A_1 \cdot fr_A + B_1 \cdot fr_B + C_1 \cdot fr_C
+\text{out}_a = a_1 \cdot \text{in}_1 + a_2 \cdot \text{in}_2 + a_3 \cdot \text{in}_3
 $$ <!---_--->
 {: style="text-align: center"}
 
 We can shorten this equation substantially by writing
 
 $$
-fr_1 = \sum_i \text{i}_1 \cdot fr_i
+\text{out}_a = \sum_i a_i \cdot \text{in}_i
 $$
 
-where $$i$$ goes from $$A$$ to $$C$$.
+where $$i$$ goes from $$A$$ to $$3$$.
 
 While these ways of writing
 the behavior of our linear neuron work,
@@ -242,11 +247,11 @@ a geometric notation suggests itself:
 
 $$
 \left[\begin{array}{c}
-A_1 & B_1 & C_1
+a_1 & a_2 & a_3
 \end{array}\right]
 \left[\begin{array}{ccc}
-fr_A \\ fr_B \\ fr_C
-\end{array}\right] = fr_1
+\text{in}_1 \\ \text{in}_2 \\ \text{in}_3
+\end{array}\right] = \text{out}_a
 $$ <!---_--->
 {: style="text-align: center"}
 
@@ -259,7 +264,7 @@ we add the three results up
 to get our output.
 The result of each multiplication
 is the component of the firing rate
-of Neuron 1 that is due to the activity
+of Neuron a that is due to the activity
 of a single neuron,
 and the superposition principle lets us add them all up.
 
@@ -269,25 +274,29 @@ For obvious reasons,
 the one on the left is a *row vector*
 and the one on the right is a *column vector*.
 We might call them
-$$\vec{w}_1$$ ($$w$$ for "weight")
-and $$\vec{fr}$$<!---_--->
+$$\vec{a}$$
+and $$\vec{\text{in}}$$<!---_--->
 The process of multiplying two vectors together
 is variously known as
 
 - the *dot product*, because it can be written
-$$\vec{w}_1\cdot\vec{fr}$$<!---_--->
+$$\vec{a}\cdot\vec{\text{in}}$$<!---_--->
 (notice the dot)
 - the *scalar product*, since the result is a single number,
 also known as a "scalar" because multiplying by a number "scales" things
-- a *weighted sum*, since we multiply each element of $$\vec{fr}$$
-by a weight from $$\vec{w}_1$$<!---_--->
+- a *weighted sum*, since we multiply each element of $$\vec{\text{in}}$$
+by a value, or weight, from $$\vec{a}$$.
+Note that this has nothing directly to do with "synaptic weights";
+we could also think of the output as a weighted sum of the values from
+$$\vec{a}$$ with weights given by $$\vec{\text{in}}$$.
 
 These operations are ubiquitous in mathematics.
 For example,
 computing the average of a collection of $$N$$ numbers
 is a multiplication of vectors:
 one vector containing all of the numbers
-and the other containing $$1/N$$ in each position.
+and the other containing $$1/N$$ in each position
+(this operation is also clearly a weighted sum).
 In the greatest generality,
 even derivatives and integrals are a form of
 vector multiplication called a
@@ -297,7 +306,7 @@ Rather than diving deeper into those ideas,
 we'll return to our neural circuit to see
 how recording the outputs
 of more than one neuron at a time
-lead us to matrices.
+leads us to matrices.
 
 ### Experiment #2: Measuring the Behavior of Multiple Neurons
 

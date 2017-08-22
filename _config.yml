@@ -14,6 +14,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 title: Tangent Space
 url: "http://charlesfrye.github.io"
 qualurl: "FoundationalNeuroscience"
+imgurl: "https://charlesfrye.github.io/img"
 
 github_username:  charlesfrye
 insta_username: charles_irl

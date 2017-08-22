@@ -17,7 +17,7 @@ you needed to install an appropriate computing environment.
 Now, thanks to the folks at [binder](mybinder.org)
 and the magic of the cloud,
 you can just click
-[this link](beta.mybinder.org/repo/charlesfrye/Convolution-Tutorial)
+[this link](https://beta.mybinder.org/repo/charlesfrye/Convolution-Tutorial)
 and use them with nothing more than a web browser.
 
 Neat!

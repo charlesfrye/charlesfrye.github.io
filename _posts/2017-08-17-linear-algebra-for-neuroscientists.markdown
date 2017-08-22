@@ -280,7 +280,7 @@ The process of multiplying two vectors together
 is variously known as
 
 - the *dot product*, because it can be written
-$$\vec{a}\cdot\vec{\text{in}}$$<!---_--->
+$$\vec{a}\cdot\vec{\text{in}}$$
 (notice the dot)
 - the *scalar product*, since the result is a single number,
 also known as a "scalar" because multiplying by a number "scales" things
@@ -310,8 +310,317 @@ leads us to matrices.
 
 ### Experiment #2: Measuring the Behavior of Multiple Neurons
 
-Under Construction!
+In many neuroscience contexts,
+the behavior of a single neuron is not very informative.
+Instead, it is the behavior of many neurons together
+that gives rise to the behavior of the system.
+This view gave rise to the philosophy of
+[connectionism](https://plato.stanford.edu/entries/connectionism/)
+and thereby the
+[artificial neural networks](http://neuralnetworksanddeeplearning.com/)
+that have been so successful in solving problems with computers
+that previously only humans and animals had been able to solve.
 
-[matrixmultneuralcircuit]: https://charlesfrye.github.io/img/matrixmultneuralcircuit.png
-[experiment1]: https://charlesfrye.github.io/img/experiment1.png
-[vectornotation]: https://charlesfrye.github.io/img/vectornotation.png
+So let us proceed to measuring the responses of all three of
+our output neurons,
+a, b, and c,
+simultaneously,
+and see what happens.
+
+A cartoon of this experiment appears below,
+with green lightning bolts indicating
+optopgenetic stimulation
+and black lines indicating the positions
+of recording electrodes.
+
+![experiment2]
+{: style="text-align: center"}
+
+Since our output neurons
+(in orange)
+are not connected to each other,
+we can repeat the same stimulation epxeriment
+we used on Neuron a above
+to get the synaptic weights
+from Neuron to each of our output neurons.
+
+That is,
+we stimulate Neuron 1 to fire at a unit rate
+and record the output rates of the three neurons.
+These three rates become the values of our synaptic weights
+$$a_1$$, $$b_1$$, and $$c_1$$. <!---_ -->
+A diagram of this stage of the experiment appears below.
+
+![columnvector]
+{: style="text-align: center"}
+
+As before,
+we can now predict the responses of our three output neurons
+to any input rate from Neuron 1.
+The three equations appear below.
+
+$$
+\text{out}_a = a_1 \cdot \text{in}_1 \\
+\text{out}_b = b_1 \cdot \text{in}_1 \\
+\text{out}_c = c_1 \cdot \text{in}_1 \\
+$$ <!---_--->
+{: style="text-align: center"}
+
+As before,
+we can summarize these equations with a vector equation,
+which is valid so long as Neuron 1 is the only active input:
+
+$$
+\text{in}_1 \cdot
+\left[\begin{array}{ccc}
+\a_1 \\ \b_1 \\ \c_1
+\end{array}\right]
+=
+\left[\begin{array}{ccc}
+\text{out}_a \\ \text{out}_b \\ \text{out}_c
+\end{array}\right]
+$$ <!---_--->
+{: style="text-align: center"}
+
+This equation tells us that firing in Neuron 1
+is "broadcast" into firing in Neurons a - c
+with different weights
+(but remember,
+nothing prevents one or more of the weights
+from being $$0$$).
+
+To complete our study of this neural circuit,
+we repeat this for input Neurons 2 and 3.
+The result is that
+we have recovered all of the synaptic weights
+and can predict the output of our circuit
+in reponse to arbitrary input patterns.
+
+First, a diagram of the circuit,
+with the synaptic weights added:
+
+![fullmatrix]
+{: style="text-align: center"}
+
+If we compare this to the diagram
+we had at the end of our first experiment,
+the interpretation that jumps out at us
+is that we have three equations,
+one for computing the output of each neuron.
+These equations are:
+
+$$
+\text{out}_a = \sum_i a_i \cdot \text{in}_i \\
+\text{out}_b = \sum_i b_i \cdot \text{in}_i \\
+\text{out}_c = \sum_i c_i \cdot \text{in}_i \\
+$$
+{: style="text-align: center"}
+
+Once again,
+the repeated structure of these three equations
+suggest that we can combine them into a more compact notation,
+just as we did with the equations that described
+how to calculate the output of Neuron a.
+
+For starters,
+we can use the "dot product" notation
+to emphasize that the weights and inputs are vectors --
+collections of indexed numbers.
+This gives us:
+
+$$
+\text{out}_a = \vec{a} \cdot \vec{\text{in}} \\
+\text{out}_b = \vec{b} \cdot \vec{\text{in}} \\
+\text{out}_c = \vec{c} \cdot \vec{\text{in}} \\
+$$ <!---_-->
+
+But notice the inefficiencies and inadequacies of this representation:
+the input vector, $$\vec{\text{in}}$$,
+is repeated three times,
+and the output,
+which is a vector,
+is split into three separate equations.
+
+If we look again at the diagram of the circuit,
+an alternative,
+much like the one that initially inspired us to introduce vectors,
+suggests itself:
+we take the three synaptic weight vectors of neurons a - c
+and combine them into a 2-dimensional object
+by stacking them on top of each other.
+Then, we calculate the output of each neuron
+by taking the corresponding row of this 2-d array
+and multiplying each of its elements by the corresponding
+input firing rate.
+
+We can write this as:
+
+$$
+\left[\begin{array}{ccc}
+a_1 & a_2 & a_3 \\
+b_1 & b_2 & b_3 \\
+c_1 & c_2 & c_3 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+\text{in}_1 \\ \text{in}_2 \\ \text{in}_3
+\end{array}\right]
+=
+\left[\begin{array}{ccc}
+\text{out}_1 \\ \text{out}_2 \\ \text{out}_3
+\end{array}\right]
+$$ <!---_--->
+{: style="text-align: center"}
+
+The 2-d array of numbers is called a *matrix*.
+Make sure to look between this equation
+and the circuit diagram and see what patterns jump out at you!
+Notice how much more natural and sensible
+the rules for multiplication are
+in this context,
+compared how they are normally taught.
+
+Just as we summarized our one-dimensional arrays,
+our vectors,
+with a single symbol by placing an arrow
+over the top of a letter,
+we can summarize our matrix with a single symbol.
+The standard is to use a single, Latin capital letter
+that is not italicized.
+Sometimes, boldface letters are used.
+Choosing the symbol $$\textbf{W}$$
+for our matrix of synaptic **W**eights,
+we end up with
+
+$$
+\vec{\text{out}} = \textbf{W}\vec{\text{in}}
+$$
+
+as our final equation describing the behavior of this circuit.
+In this form, the similarity to the equation for a line
+with zero intercept,
+$$y = mx$$,
+is emphasized,
+as is the fact that the entire behavior
+of the circuit depends on just the synaptic weights.
+
+The preceding discussion focused on our first vector equation,
+which summarized how to calculate the output of a single linear neuron
+with multiple inputs.
+The operative vector was a row vector,
+the vector of weights of neuron a,
+and this led us to a view of the weight matrix
+that was row-centric.
+
+We can instead return to our second vector equation,
+reproduced below:
+
+$$
+\text{in}_1 \cdot
+\left[\begin{array}{ccc}
+\a_1 \\ \b_1 \\ \c_1
+\end{array}\right]
+=
+\left[\begin{array}{ccc}
+\text{out}_a \\ \text{out}_b \\ \text{out}_c
+\end{array}\right]
+$$ <!---_--->
+{: style="text-align: center"}
+
+in this equation,
+the operative vector is a column vector
+(corresponding to a column of our matrix).
+Instead of describing what the *output of a single neuron* looks like
+in response to multiple inputs,
+this equation describes what happens to *input from a single neuron*
+as it produce multiple outputs.
+
+This gives us a second perspective on our matrix:
+while the rows correspond to the transformations that output neurons
+perform on input vectors,
+the columns correspond to the result of
+stimulating a single input neuron.
+
+This perspective interacts nicely
+with our two principles for linear systems:
+superposition and scaling.
+Any combination of firing rates in the input neurons
+can be described as a superposition and scaling
+of single input neurons firing at rate $$1$$.
+That is, we can think of an input vector
+$$\left[ 2,\ 4,\ 0 \right]$$,
+as the superposition of
+the first input neuron firing alone at rate $$1$$, scaled by $$2$$,
+and the second input neuron firing alone at rate $$1$$, scaled by $$4$$,
+and the third input neuron firing alone at rate $$1$$, scaled by $$0$$.
+
+Vectors with one element equal to $$1$$ and all the others equal to $$0$$
+are called
+*canonical basis vectors*:
+*basis vectors* because superpositions and scalings of those vectors
+can be equal to any vector of the same length
+and
+*canonical* because they are the simplest, most obvious vectors
+that are a basis.
+
+Therefore our second perspective on the weight matrix
+$$\textbf{W}$$
+is that its columns correspond to
+the output in response to the canonical basis vectors.
+Try working through the matrix-vector multiplication
+yourself for a particular canonical basis vector
+and this fact should pop out at you.
+
+### Conclusions
+
+![fullmatrix]
+{: style="text-align: center"}
+
+$$
+\left[\begin{array}{ccc}
+a_1 & a_2 & a_3 \\
+b_1 & b_2 & b_3 \\
+c_1 & c_2 & c_3 \\
+\end{array}\right]
+\left[\begin{array}{ccc}
+\text{in}_1 \\ \text{in}_2 \\ \text{in}_3
+\end{array}\right]
+=
+\left[\begin{array}{ccc}
+\text{out}_1 \\ \text{out}_2 \\ \text{out}_3
+\end{array}\right]
+$$ <!---_--->
+{: style="text-align: center"}
+
+This blog post aimed to explicate
+the somewhat unintuitive matrix equation above,
+with its seemingly arbitrary rules for who gets multiplied with whom
+and what gets added where,
+in terms of a system that neuroscientists might find intuitive:
+a simple neural circuit.
+This encouraged us to take two views of this matrix equation,
+one from the view of our output neurons,
+which emphasized the rows of our matrix,
+and one from the view of our input neurons,
+which emphasized the columns of our matrix.
+
+These ideas just begin to scratch the surface of linear algebra.
+What began, as it did here,
+as a simple notational convenience,
+has blossomed into an indispensible tool of both
+applied and pure mathematics.
+I hope that,
+armed with the intuition
+from this neural circuit example,
+neuroscientists feel more comfortable
+chasing those more abstract and complex
+features of linear algebra.
+Grant Sanderson's
+[Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab),
+video lecture series is a great way to start!
+
+[matrixmultneuralcircuit]: {{site.imgurl}}/matrixmultneuralcircuit.png
+[experiment1]: {{site.imgurl}}/experiment1.png
+[vectornotation]: {{site.imgurl}}/vectornotation.png
+[experiment2]: {{site.imgurl}}/experiment2.png
+[columnvector]: {{site.imgurl}}/columnvector.png
+[fullmatrix]: {{site.imgurl}}/fullmatrix.png

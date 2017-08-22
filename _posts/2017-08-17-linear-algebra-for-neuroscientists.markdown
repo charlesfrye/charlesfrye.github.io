@@ -303,6 +303,6 @@ lead us to matrices.
 
 Under Construction!
 
-[matrixmultneuralcircuit]: _img/matrixmultneuralcircuit.png
+[matrixmultneuralcircuit]: /../images/_img/matrixmultneuralcircuit.png
 [experiment1]: _img/experiment1.png
 [vectornotation]: _img/vectornotation.png

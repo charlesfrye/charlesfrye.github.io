@@ -26,10 +26,14 @@ we need to consider a collection of numbers
 as a single object,
 and just one of many such collections,
 all of the same length.
-This turns out to be super common!
+This turns out to be super common:
+for example,
+the x, y, and z coordinates of an object
+in three-dimensional space are such a collection,
+as are the firing rates of a population of neurons.
 
-This is no less true of neuroscience
-than of any other scientific field that uses math.
+Linear algebra is just as important for neuroscience
+as it is for any other scientific field that uses math.
 Even though neurons and neural circuits
 have complex, non-linear behavior,
 we need the tools of linear algebra
@@ -37,7 +41,8 @@ to describe that behavior.
 
 Unfortunately,
 despite its critical importance,
-linear algebra just isn't *sexy*,
+linear algebra
+[just isn't *sexy*](https://graphicallinearalgebra.net/2015/04/23/makelele-and-linear-algebra/),
 so it is often taught perfunctorily and
 by someone who'd rather be teaching something else
 to students who'd rather be learning something else.
@@ -46,7 +51,7 @@ dislike linear algebra
 and find it more of a confusing stumbling block
 than a useful tool.
 
-These notes are present a few core concepts
+These notes present a few core concepts
 of linear algebra
 -- vectors,
 matrices, and
@@ -85,7 +90,7 @@ labeled a, b, and c).
 The dendritic inputs for the parallel fibers
 enter from the right,
 while the inputs of the Purkinje cells
-enter from the left.
+enter from  left.
 The axons of the parallel fibers turn
 and pass over the dendrites of the Purkinje cells,
 synapsing with each of them in turn
@@ -125,7 +130,7 @@ Let's perform some thought experiments on our cartoon neurons.
 First, let's place our imaginary
 [recording electrode](http://charlesfrye.github.io/FoundationalNeuroscience/80/)
 (indicated by two almost-intersecting lines, representing our pipette tip)
-on Neuron a and shine our imaginary laser
+on Neuron $$a$$ and shine our imaginary laser
 (indicated by the green lightning bolts)
 on Neurons 1, 2, and 3,
 which we've modified using
@@ -137,31 +142,33 @@ The experiment is depicted below.
 {: style="text-align: center"}
 
 If we stimulate Neuron 1 to fire some unit amount,
-we will measure some rate of firing from Neuron a.
+we will measure some rate of firing from Neuron $$a$$.
 That is,
 when Neuron 1 is firing at a rate of 1,
-we measure some firing rate from Neuron a.
+we measure some firing rate from Neuron $$a$$.
 Loosely speaking,
 we can think of that value as a
 *synaptic weight*
-for the synapse between Neuron 1 and Neuron a.
+for the synapse between Neuron 1 and Neuron $$a$$.
 Our assumption that scaling inputs
 causes outputs to scale by the same amount
 (the *scaling* assumption)
 lets us take that synaptic weight and use
-it to predict the output rate of Neuron a
+it to predict the output rate of Neuron $$a$$
 in response to any input rate in Neuron 1.
 
-Indicating the output of Neuron a as
+Indicating the output of Neuron $$a$$ as
 $$\text{out}_a$$, <!---_--->
-the firing rate of Neuron A as
+the firing rate of Neuron 1 as
 $$\text{in}_1$$, <!---_--->
+and the
 synaptic weight between
-Neuron 1 and Neuron a
+Neuron 1 and Neuron $$a$$
+as
 $$a_1$$, <!---_--->
 we can write a simple equation
-for the output of Neuron 1
-as a function of the output of Neuron A:
+for the output of Neuron $$a$$
+as a function of the input from Neuron 1:
 
 $$
 \text{out}_a = a_1 \cdot in_1
@@ -171,9 +178,9 @@ $$ <!---_--->
 Plugging in a few numbers will verify
 that this equation is correct:
 when Neuron 1 is not firing,
-Neuron a won't fire,
+Neuron $$a$$ won't fire,
 and when Neuron 1 is firing at a rate of 1,
-the firing rate of Neuron a is
+the firing rate of Neuron $$a$$ is
 $$a_1$$, <!---_--->
 just as we measured it before.
 
@@ -193,7 +200,7 @@ We can repeat these measurements
 for Neurons 2 and 3,
 and we will get three equations
 that will let us predict
-the output of Neuron a
+the output of Neuron $$a$$
 in response to separate
 stimulation of each input neuron.
 
@@ -206,7 +213,7 @@ $$ <!---_--->
 
 With these three equations,
 we can now predict the output
-of Neuron a in response to any input!
+of Neuron $$a$$ in response to any input!
 We just need to use our other assumption,
 the *superpositioning* assumption.
 That assumption told us
@@ -228,13 +235,13 @@ $$
 \text{out}_a = \sum_i a_i \cdot \text{in}_i
 $$
 
-where $$i$$ goes from $$A$$ to $$3$$.
+where $$i$$ goes from $$1$$ to $$3$$.
 
 While these ways of writing
 the behavior of our linear neuron work,
 they have their flaws:
 the first is too long,
-while the second is too compressed.
+while the second is too short.
 We'd like a notation
 that reminds us of which numbers are multiplied
 with which,
@@ -243,7 +250,11 @@ but without all the extra $$+$$'s and $$\cdot$$'s.
 If we write the seven relevant numbers
 down on our picture of the circuit
 (as seen below),
-a geometric notation suggests itself:
+a neat spatial layout for the equation
+suggests itself:
+
+![vectornotation]
+{: style="text-align: center"}
 
 $$
 \left[\begin{array}{c}
@@ -264,7 +275,7 @@ we add the three results up
 to get our output.
 The result of each multiplication
 is the component of the firing rate
-of Neuron a that is due to the activity
+of Neuron $$a$$ that is due to the activity
 of a single neuron,
 and the superposition principle lets us add them all up.
 
@@ -275,7 +286,10 @@ the one on the left is a *row vector*
 and the one on the right is a *column vector*.
 We might call them
 $$\vec{a}$$
-and $$\vec{\text{in}}$$<!---_--->
+and $$\vec{\text{in}}$$,<!---_--->
+where the arrow is intended to remind us that,
+even though we're using only one symbol,
+we're referring to a collection of multiple numbers.
 The process of multiplying two vectors together
 is variously known as
 
@@ -296,11 +310,10 @@ computing the average of a collection of $$N$$ numbers
 is a multiplication of vectors:
 one vector containing all of the numbers
 and the other containing $$1/N$$ in each position
-(this operation is also clearly a weighted sum).
+(this operation is a good example of a weighted sum).
 In the greatest generality,
 even derivatives and integrals are a form of
-vector multiplication called a
-[linear operator](https://www.encyclopediaofmath.org/index.php/Linear_operator).
+[vector multiplication](https://www.encyclopediaofmath.org/index.php/Linear_operator).
 
 Rather than diving deeper into those ideas,
 we'll return to our neural circuit to see
@@ -323,7 +336,7 @@ that previously only humans and animals had been able to solve.
 
 So let us proceed to measuring the responses of all three of
 our output neurons,
-a, b, and c,
+$$a$$, $$b$$, and $$c$$,
 simultaneously,
 and see what happens.
 
@@ -339,10 +352,10 @@ of recording electrodes.
 Since our output neurons
 (in orange)
 are not connected to each other,
-we can repeat the same stimulation epxeriment
-we used on Neuron a above
+we can repeat the same stimulation experiment
+we used on Neuron $$a$$ above
 to get the synaptic weights
-from Neuron to each of our output neurons.
+from Neuron 1 to each of our output neurons.
 
 That is,
 we stimulate Neuron 1 to fire at a unit rate
@@ -383,7 +396,7 @@ $$ <!---_--->
 {: style="text-align: center"}
 
 This equation tells us that firing in Neuron 1
-is "broadcast" into firing in Neurons a - c
+is "broadcast" into firing in Neurons $$a$$ - $$c$$
 with different weights
 (but remember,
 nothing prevents one or more of the weights
@@ -420,7 +433,7 @@ Once again,
 the repeated structure of these three equations
 suggest that we can combine them into a more compact notation,
 just as we did with the equations that described
-how to calculate the output of Neuron a.
+how to calculate the output of Neuron $$a$$.
 
 For starters,
 we can use the "dot product" notation
@@ -442,11 +455,11 @@ and the output,
 which is a vector,
 is split into three separate equations.
 
-If we look again at the diagram of the circuit,
-an alternative,
+If we look again at the diagram of the circuit above,
+an  alternative, spatial notation,
 much like the one that initially inspired us to introduce vectors,
 suggests itself:
-we take the three synaptic weight vectors of neurons a - c
+we take the three synaptic weight vectors of neurons $$a$$ - $$c$$
 and combine them into a 2-dimensional object
 by stacking them on top of each other.
 Then, we calculate the output of each neuron
@@ -489,7 +502,7 @@ The standard is to use a single, Latin capital letter
 that is not italicized.
 Sometimes, boldface letters are used.
 Choosing the symbol $$\textbf{W}$$
-for our matrix of synaptic **W**eights,
+for our matrix of synaptic $$\textbf{W}$$eights,
 we end up with
 
 $$
@@ -513,6 +526,7 @@ and this led us to a view of the weight matrix
 that was row-centric.
 
 We can instead return to our second vector equation,
+the one from the perspective of Neuron 1,
 reproduced below:
 
 $$
@@ -616,7 +630,7 @@ neuroscientists feel more comfortable
 chasing those more abstract and complex
 features of linear algebra.
 Grant Sanderson's
-[Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab),
+[Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
 video lecture series is a great way to start!
 
 [matrixmultneuralcircuit]: {{site.imgurl}}/matrixmultneuralcircuit.png

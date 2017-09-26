@@ -74,9 +74,9 @@ betting on sports games, to name just a few.
 So we would benefit from a method of comparing claims in these situations --
 which atmospheric model produces better predictions?
 Is
-[Nate Silver's *FiveThirtyEight*](fivethirtyeight.com)
+[Nate Silver's *FiveThirtyEight*](https://fivethirtyeight.com)
 a better resource for predicting American presidential elections than
-[the RealClearPolitics aggregator](realclearpolitics.com),
+[the RealClearPolitics aggregator](https://realclearpolitics.com),
 or talk radio?
 Are these my lucky dice, or am I just imagining it?
 Which theoretical model better explains a collection of experimental data points?
@@ -101,7 +101,7 @@ A halo of bent sunlight around Mercury is quite a surprising observation,
 [unless you are Einstein](https://en.wikipedia.org/wiki/Gravitational_lens).
 In contrast, God is never surprised, whereas the unthinkable occurring --
 2+2 turning out to be 5, or a particle having negative mass --
-is infinitely surprising<a href="{{site.baseurl}}/82#dagger"><sup>†</sup></a>.
+is infinitely surprising<a href="{{site.url}}#dagger"><sup>†</sup></a>.
 
 Our mortal inferences, clever or dumb as they are,
 must have a surprise somewhere between "totally expected", or *0*,
@@ -112,7 +112,7 @@ We will generally be making statements like:
 or "nine times out of ten, the team with a better defense wins".
 This motivates us to express our surprise in terms of probability.
 If you want a refresher on the foundations of probability,
-[check out this blog post on Bayes' Rule]({{ste.baseurl}}/11).
+[check out this blog post on Bayes' Rule]({{site.url}}/stats/2016/02/04/bayes-rule.html).
 
 A sort of Occam's Razor principle will be in effect:
 if we have two competing models for a phenomenon,
@@ -134,7 +134,7 @@ All players will be given "surprise tokens",
 which they allocate out to different outcomes.
 Any time that outcome occurs,
 the player takes on that many points --
-this should remind you of betting<a href="{{site.baseurl}}/82#asterisk">*</a>.
+this should remind you of betting<a href="{{site.url}}#asterisk">*</a>.
 The goal, as in golf, is to attain the lowest score --
 a sort of principle of least surprise.
 
@@ -293,7 +293,7 @@ In the preceding argument, the notion of repetition played a key role.
 Unfortunately, repetition is a surprisingly diffcult concept to nail down,
 much like its partner, probability.
 If you're interested in that idea, check out the
-<a href="{{site.baseurl}}/82#aside">*Aside on Repetition*</a>.
+<a href="http://charlesfrye.github.io/stats/2016/03/29/info-theory-surprise-entropy.html#aside">*Aside on Repetition*</a>.
 
 ### Compared with the Truth
 
@@ -306,7 +306,7 @@ Let's call that distribution $$p(x)$$.
 This is, in a very real sense, "Nature's probability distribution".
 If that idea sounds strange or unbelievable to you,
 check out the
-<a href="{{site.baseurl}}/82#aside">*Aside on Repetition*</a>.
+<a href="http://charlesfrye.github.io/stats/2016/03/29/info-theory-surprise-entropy.html#aside">*Aside on Repetition*</a>.
 
 With this idea and its new symbol, we can reformulate
 the relationship above as:
@@ -593,7 +593,7 @@ If you want to know more about conditional distributions,
 and how Bayes' Rule is used to manipulate them
 and model reasoning under uncertainty,
 check out
-[this blog post]({{site.baseurl}}/11).
+[this blog post]({{site.url}}/stats/2016/02/04/bayes-rule.html).
 
 ### Surprise and Information
 
@@ -664,11 +664,11 @@ come into play here:
 a given neuron might be representing a different random variable
 that happens to be dependent on the same causes as the recorded variable.
 For example, a neuron that represents
-[conjunctions of contours]({{site.baseurl}}/09)
+[conjunctions of contours]({{site.qualurl}}/09)
 will have a high degree of mutual information with the individual contours.
 More concerning still, the neuron might not be engaged in representation at all:
 even though the state of the
-[glial "helper cells"]({{site.baseurl}}/68)
+[glial "helper cells"]({{site.qualurl}}/68)
 of the nervous system contains information about the state of the outside world,
 that information appears as a consequence of the role of glia in regulating
 gross features (mean activity, etc.) of computation in neurons,
@@ -721,7 +721,7 @@ accepting only those values that are consistent with
 some fact that we know about some gross state of the world,
 like "I have a coin perched on my thumb".
 In the terms of probability, we call this
-["conditioning"]({{site.baseurl}}/11).
+["conditioning"]({{site.url}}/stats/2016/02/04/bayes-rule.html)
 A sketch of the result of such a conditioning appears below.
 
 {: style="text-align: center"}

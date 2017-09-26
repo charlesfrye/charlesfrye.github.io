@@ -664,11 +664,11 @@ come into play here:
 a given neuron might be representing a different random variable
 that happens to be dependent on the same causes as the recorded variable.
 For example, a neuron that represents
-[conjunctions of contours]({{site.qualurl}}/09)
+[conjunctions of contours]({{site.baseurl}}/{{site.qualurl}}/09)
 will have a high degree of mutual information with the individual contours.
 More concerning still, the neuron might not be engaged in representation at all:
 even though the state of the
-[glial "helper cells"]({{site.qualurl}}/68)
+[glial "helper cells"]({{site.baseurl}}/{{site.qualurl}}/68)
 of the nervous system contains information about the state of the outside world,
 that information appears as a consequence of the role of glia in regulating
 gross features (mean activity, etc.) of computation in neurons,

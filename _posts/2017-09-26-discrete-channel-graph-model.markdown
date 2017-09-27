@@ -28,12 +28,11 @@ Furthermore,
 it allows connections to be easily made
 to other kinds of statistical inference problems.
 For example,
-it was only at the advent of the graphical model formalism
-and its explanation of belief-propagation algorithms
-as message-passing on a graph
-that ideas for practical codes for achieving
-the limit Shannon placed on communication efficiency came about,
-almost fifty years after Shannon placed it.
+there was a fifty year gap
+between Shannon's famous theorem
+establishing the limit of communication efficiency
+and the advent of codes that could achieve that limit.
+These codes were formulated using graphical models.
 
 All of the ideas above are explained,
 hopefully as clearly as possible,
@@ -71,7 +70,7 @@ When we communicate a message over a channel,
 we input values of $$X$$,
 the entity we are communicating with
 observes values of $$Y$$,
-and we want to ensure that the receiver
+and we want to ensure that this receiving entity
 is able to reconstruct the original message
 with as little error as possible.
 
@@ -89,9 +88,14 @@ acting as a channel for the input data
 From the perspective of an information theorist,
 the physical details of the channel are unimportant.
 All that matters is what kind of transformation it performs.
-We can describe a random transformation by specifying,
+to describe a deterministic transformation,
+we need to specify what the output will be for each input.
+Since the output of a random transformation is a random variable,
+this won't work for all channels.
+
+We can instead describe a random transformation by specifying,
 for each input $$x$$,
-what the probability of each possible value of $$Y$$ is.
+a distribution over possible values of $$Y$$.
 This is a *conditional probability distribution*,
 sometimes written $$p(Y\lvert X)$$,
 where the vertical bar is pronounced "given".
@@ -412,8 +416,12 @@ $$
 
 It's certainly nice to find alternative ways of presenting ideas,
 especially when that presentation is visual, rigorous, and intuitive.
-But is there any special utility of thinking of channel communication problems
-in this way, using graphical models?
+For example, the
+[graphical formulation of linear algebra](https://graphicallinearalgebra.net/)
+makes visibly manigest certain abstruse
+category-theoretic insights into linear algebra.
+But is there any special utility to thinking about channel communication problems
+using graphical models?
 
 One big reason is that,
 as mentioned above,

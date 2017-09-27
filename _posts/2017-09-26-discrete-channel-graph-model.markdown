@@ -61,16 +61,16 @@ the branch of mathematics that deals
 with problems of description and communication.
 
 A channel takes in a random variable
-(by tradition, $X$)
+(by tradition, $$X$$)
 and applies a transformation to it,
-resulting in a new random variable ($Y$).
+resulting in a new random variable ($$Y$$).
 This transformation is usually stochastic,
 that is to say, it usually has some element of additional randomness to it.
 
 When we communicate a message over a channel,
-we input values of $X$,
+we input values of $$X$$,
 the entity we are communicating with
-observes values of $Y$,
+observes values of $$Y$$,
 and we want to ensure that the receiver
 is able to reconstruct the original message
 with as little error as possible.
@@ -90,22 +90,22 @@ From the perspective of an information theorist,
 the physical details of the channel are unimportant.
 All that matters is what kind of transformation it performs.
 We can describe a random transformation by specifying,
-for each input $x$,
-what the probability of each possible value of $Y$ is.
+for each input $$x$$,
+what the probability of each possible value of $$Y$$ is.
 This is a *conditional probability distribution*,
-sometimes written $p(Y\lvert X)$,
+sometimes written $$p(Y\lvert X)$$,
 where the vertical bar is pronounced "given".
 But rather than being a single distribution,
-like the marginal distribution $p(X)$
-or the joint distribution $p(X,Y)$
+like the marginal distribution $$p(X)$$
+or the joint distribution $$p(X,Y)$$
 it's a "bag" or "collection" of distributions,
-one for each possible value of $x$.
-If $X$ and $Y$ are both discrete,
-then $p(Y\lvert X)$
+one for each possible value of $$x$$.
+If $$X$$ and $$Y$$ are both discrete,
+then $$p(Y\lvert X)$$
 is a matrix,
-with each row $i$ corresponding to
-the conditional distribution of $Y$
-when $X$ is equal to $i$.
+with each row $$i$$ corresponding to
+the conditional distribution of $$Y$$
+when $$X$$ is equal to $$i$$.
 
 The conditional distribution
 is related to the joint distribution
@@ -117,11 +117,11 @@ $$
 
 Intuitively,
 this equation says that
-the chance that $X$ takes on the value $x$
-at the same time that $Y$ takes on the value $y$
-is equal to the chance that $X$ takes on the value $x$
-times the chance that $Y$ takes on the value $y$
-given that $X$ has value $x$ (and vice versa).
+the chance that $$X$$ takes on the value $$x$$
+at the same time that $$Y$$ takes on the value $$y$$
+is equal to the chance that $$X$$ takes on the value $$x$$
+times the chance that $$Y$$ takes on the value $$y$$
+given that $$X$$ has value $$x$$ (and vice versa).
 For more on conditional and joint distributions,
 and their relation to Bayes' rule,
 check out
@@ -140,11 +140,11 @@ but they are more easily understood
 as statements about how the channel operates.
 
 A channel is *discrete*
-if we can put in an input $x$
+if we can put in an input $$x$$
 at a discrete point in time
-and then get an output $y$
+and then get an output $$y$$
 at another discrete point in time.
-Note that $x$ and $y$ don't need to be discrete-valued.
+Note that $$x$$ and $$y$$ don't need to be discrete-valued.
 
 A channel is *memoryless*
 if the input in the present
@@ -170,12 +170,14 @@ which is bad.
 For example,
 the information above is used to prove that
 the conditional distribution over
-outputs $y^n$ for inputs $x^n$ of length $n$
+outputs $$y^n$$ for inputs $$x^n$$ of length $$n$$
 can be written
 
 $$
 p(y^n\lvert x^n) = \prod_{i=1}^n p(y_i \lvert x_i)
-$$ <!-- _-->
+$$
+
+<!-- _-->
 
 The proof of this usually proceeds through multiple lines of algebra
 involving manipulations of conditional and joint probability distributions
@@ -207,7 +209,7 @@ is equal to the marginal, unconditioned probability.
 Rewriting our expression above
 for the joint probability distribution
 in terms of the conditional distribution,
-we see that when $X$ and $Y$ are independent
+we see that when $$X$$ and $$Y$$ are independent
 
 $$
 p(x, y) = p(y\lvert x) p(x) = p(y)p(x)
@@ -245,16 +247,16 @@ we can say that they don't directly depend on each other.
 
 To build a graphical model of a joint distribution,
 we first draw nodes for each of the variables,
-then we draw edges between a variable $X$
-and a variable $Y$ if there is a direct dependence
+then we draw edges between a variable $$X$$
+and a variable $$Y$$ if there is a direct dependence
 between them.
 
 Let's practice with the example above.
-Using the symbols $H$ for hair color,
-$W$ for weight,
-and $A$ for age,
+Using the symbols $$H$$ for hair color,
+$$W$$ for weight,
+and $$A$$ for age,
 we draw the graphical model of
-$p(h,w,a)$ below.
+$$p(h,w,a)$$ below.
 
 ![hiddencausegraph]
 {: style="text-align: center"}
@@ -292,9 +294,9 @@ channel communcation in graphical form.
 
 For simplicity's sake,
 let's consider a channel that takes in three inputs
-$X_1$, $X_2$, $X_3$
+$$X_1$$, $$X_2$$, $$X_3$$
 and spits out three outputs,
-$Y_1$, $Y_2$, $Y_3$.
+$$Y_1$$, $$Y_2$$, $$Y_3$$.
 For now,
 we make no assumptions about the channel
 except that it is discrete in time.
@@ -319,15 +321,15 @@ so the following is easier to understand.
 
 First,
 let's look at the purple edges
-(they point from $X$s to $Y$s).
+(they point from $$X$$s to $$Y$$s).
 In English,
 these edges are saying that
-future values of $Y$ depend *directly*
-on past values of $X$.
+future values of $$Y$$ depend *directly*
+on past values of $$X$$.
 That is,
-even if we know, say, $X_2$,
-there is still an effect of $X_1$
-on $Y_2$. <!-- _-->
+even if we know, say, $$X_2$$,
+there is still an effect of $$X_1$$
+on $$Y_2$$. <!-- _-->
 But when we say a channel has no memory,
 we mean that there is no such effect.
 
@@ -342,13 +344,13 @@ But the memoryless channel usually has no memory
 of its past outputs as well --
 the actual value of its past outputs doesn't matter
 for determining future value of the output.
-$Y$ values only depend directly on their paired $X$ value.
+$$Y$$ values only depend directly on their paired $$X$$ value.
 
 Therefore,
 for a memoryless channel,
 a channel that has no memory effects on its inputs or outputs,
 we can erase the red edges,
-which connect $Y$ values to each other.
+which connect $$Y$$ values to each other.
 
 ![withfeedback]
 {: style="text-align: center"}
@@ -357,8 +359,8 @@ Lastly,
 channels frequently operate
 without feedback,
 which is to say that the actual
-past values of $Y$
-have no bearing on the future values of $X$.
+past values of $$Y$$
+have no bearing on the future values of $$X$$.
 A television studio doesn't
 watch the output on your screen
 and then adjust the broadcast
@@ -367,7 +369,7 @@ to compensate for errors.
 In this case,
 we can remove the blue edges,
 which represent direct dependencies
-of future values of $X$ on past values of $Y$.
+of future values of $$X$$ on past values of $$Y$$.
 
 ![nofeedback]
 {: style="text-align: center"}
@@ -377,11 +379,11 @@ we can no longer remove any more arrows.
 In general,
 the message we are sending
 has direct dependencies between all symbols,
-and so the edges connecting the $X$s to each other
+and so the edges connecting the $$X$$s to each other
 have to stay.
-Similarly, disconnecting the $Y$s
-from the $X$s any further would start to make
-the $Y$ sequence independent of the $X$ sequence,
+Similarly, disconnecting the $$Y$$s
+from the $$X$$s any further would start to make
+the $$Y$$ sequence independent of the $$X$$ sequence,
 meaning the outputs are independent of the inputs,
 which is not good for communication.
 
@@ -390,19 +392,21 @@ it is quite easy to read off
 expressions for the various joint and conditional distributions.
 
 For example,
-we see that the $Y$ values are only directly dependent
-on their current $X$ values,
-which means that $Y_i$ is independent
-of all other variables, conditioned on $X_i$'s value.
-So the $Y$ sequence,
-given the $X$ sequence,
+we see that the $$Y$$ values are only directly dependent
+on their current $$X$$ values,
+which means that $$Y_i$$ is independent
+of all other variables, conditioned on $$X_i$$'s value.
+So the $$Y$$ sequence,
+given the $$X$$ sequence,
 is just a bunch of independent random variables
 with the same distribution,
 which we can write as
 
 $$
 p(y^n\lvert x^n) = \prod_{i=1}^n p(y_i\lvert x_i)
-$$ <!-- _-->
+$$
+
+<!-- _-->
 
 ### Why Graphical Models?
 
@@ -453,5 +457,5 @@ enabling the transfer of intuition between domains.
 [fullgraph]: {{site.imgurl}}/fullgraph.png
 [fullgraphwithcolor]: {{site.imgurl}}/fullgraphwithcolor.png
 [withmemory]: {{site.imgurl}}/withmemory.png
-[withfeedback]: {{site.imgurl}}/withfeedbackh.png
+[withfeedback]: {{site.imgurl}}/withfeedback.png
 [nofeedback]: {{site.imgurl}}/nofeedback.png

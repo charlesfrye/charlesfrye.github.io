@@ -5,7 +5,7 @@ date:	2017-09-29
 category: external
 ---
 ![linear-generative-model]
-{:style ="text-align: center"}
+{: style="text-align:center"}
 
 Inspired by the discussion
 on linear factor models in Chapter 13 of

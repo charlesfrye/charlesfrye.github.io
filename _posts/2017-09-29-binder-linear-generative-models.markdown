@@ -4,7 +4,6 @@ title:	"Tutorial on Linear Generative Models"
 date:	2017-09-29
 category: external
 ---
-
 ![linear-generative-model]
 {:style ="text-align: center"}
 
@@ -28,4 +27,4 @@ without needing a compatible Python computational environment on your machine.
 [![Binder](https://beta.mybinder.org/badge.svg)](https://beta.mybinder.org/v2/gh/charlesfrye/LinearGenerativeModels-Tutorial/master)
 
 <!--exc-->
-[linear-generative-model]({{site.imgurl}}/linear-generative-model.png)
+[linear-generative-model]: {{site.imgurl}}/linear-generative-model.png

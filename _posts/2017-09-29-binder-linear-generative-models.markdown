@@ -5,8 +5,11 @@ date:	2017-09-29
 category: external
 ---
 
+![linear-generative-model]
+{:style ="text-align: center"}
+
 Inspired by the discussion
-on linear facotr models in Chapter 13 of
+on linear factor models in Chapter 13 of
 [Deep Learning](deeplearningbook.org)
 by Courville, Goodfellow, and Bengio,
 I wrote a tutorial notebook on
@@ -25,3 +28,4 @@ without needing a compatible Python computational environment on your machine.
 [![Binder](https://beta.mybinder.org/badge.svg)](https://beta.mybinder.org/v2/gh/charlesfrye/LinearGenerativeModels-Tutorial/master)
 
 <!--exc-->
+[linear-generative-model]({{site.imgurl}}/linear-generative-model.png)

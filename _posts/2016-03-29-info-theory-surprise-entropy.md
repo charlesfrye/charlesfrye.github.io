@@ -38,7 +38,7 @@ emphasizing the role of modeling and subjectivity in measures of information.
 
 ## A Problem
 
-In the world of Classical logic as laid our by Aristotle,
+In the world of Classical logic as laid out by Aristotle,
 the comparison of competing claims is simple.
 If two claims are well-formed,
 their truth values can be ascertained.
@@ -101,7 +101,7 @@ A halo of bent sunlight around Mercury is quite a surprising observation,
 [unless you are Einstein](https://en.wikipedia.org/wiki/Gravitational_lens).
 In contrast, God is never surprised, whereas the unthinkable occurring --
 2+2 turning out to be 5, or a particle having negative mass --
-is infinitely surprising<a href="{{site.url}}#dagger"><sup>†</sup></a>.
+is infinitely surprising<a href="{{page.url}}#dagger"><sup>†</sup></a>.
 
 Our mortal inferences, clever or dumb as they are,
 must have a surprise somewhere between "totally expected", or *0*,

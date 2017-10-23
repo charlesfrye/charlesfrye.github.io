@@ -134,7 +134,7 @@ All players will be given "surprise tokens",
 which they allocate out to different outcomes.
 Any time that outcome occurs,
 the player takes on that many points --
-this should remind you of betting<a href="{{site.url}}#asterisk">*</a>.
+this should remind you of betting<a href="{{page.url}}#asterisk">*</a>.
 The goal, as in golf, is to attain the lowest score --
 a sort of principle of least surprise.
 

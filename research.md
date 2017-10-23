@@ -79,6 +79,6 @@ and therefore becoming blunted to negative emotions,
 but were actually better-equipped to perceive and deal with a minor
 negative social experience.
 
-[sampling]: {{site.DBL}}/sampling.png
-[maclean]: {{site.DBL}}/maclean.png
-[dewit]: {{site.DBL}}/dewit.png
+[sampling]: {{site.imgurl}}/sampling.png
+[maclean]: {{site.imgurl}}/maclean.png
+[dewit]: {{site.imgurl}}/dewit.png

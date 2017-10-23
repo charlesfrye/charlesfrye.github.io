@@ -13,7 +13,7 @@ category: stats
 ### A note:
 
 I've included a brief primer on probability, with an emphasis on visualization,
-If you can look at the aboveimage and see
+If you can look at the above image and see
 $$P(A)$$ and $$P(A \& B)$$, then the primer isn't strictly necessary,
 and you can skip to the section "Visualizing Bayes' Rule".
 

@@ -88,14 +88,17 @@ acting as a channel for the input data
 From the perspective of an information theorist,
 the physical details of the channel are unimportant.
 All that matters is what kind of transformation it performs.
-to describe a deterministic transformation,
+To describe a deterministic transformation,
 we need to specify what the output will be for each input.
-Since the output of a random transformation is a random variable,
-this won't work for all channels.
+Since the output of a random transformation
+on a given input is a random variable,
+not a fixed output,
+this won't work for stochastic channels.
 
-We can instead describe a random transformation by specifying,
+We instead describe a random transformation by specifying,
 for each input $$x$$,
-a distribution over possible values of $$Y$$.
+a distribution over possible values of $$Y$$
+that might be observed as the output.
 This is a *conditional probability distribution*,
 sometimes written $$p(Y\lvert X)$$,
 where the vertical bar is pronounced "given".

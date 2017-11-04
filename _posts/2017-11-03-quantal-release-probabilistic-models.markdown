@@ -4,8 +4,26 @@ title:	"Mixture Models and Neurotransmitter Release"
 date:	2017-11-03
 category: stats
 ---
-![model-vs-data]
-{: style="text-align: center"}
+```python
+import numpy as np
+
+def generate_number_releases(size=1):
+  return np.random.poisson(lam=2.25, size=size)
+
+def generate_measured_potentials(size=1):
+  release_counts = generate_number_releases(size=size)
+
+  measured_potentials = [generate_measured_potential(release_count)
+                         for release_count in release_counts]
+
+  return np.asarray(measured_potentials)
+
+def generate_measured_potential(release_count):
+  measured_potential = np.sum(4 +
+			0.85*np.random.standard_normal(size=release_count))
+
+  return measured_potential
+```
 <!--exc-->
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
@@ -13,12 +31,12 @@ category: stats
 One famous success story of quantitative biology
 is the experiment that demonstrated that
 the release of neurotransmitter
-is *quantual*:
+is *quantal*:
 discrete "packets" of neurotransmitter are released
 at the synapse,
 rather than a more continuous "stream".
 
-In this blog post,
+In this post,
 I will walk through the mathematical model
 behind this experiment,
 using a simple exposition in terms of a
@@ -28,9 +46,11 @@ For an introduction to graphical models in the context of
 and communication,
 check out
 [this blog post]({{site.url}}/stats/2017/09/26/discrete-channel-graph-model.html).
+This post also serves as an introduction
+to probabilistic models.
 
 I begin with an overview of the context for synaptic transmission
-and for the experiment that determined its quantal nature.
+and for the experiment that determined it was quantal.
 Folks who know that background or are uninterested
 can skip to the *Mathematical Model* section.
 
@@ -61,7 +81,7 @@ Within a single neuron,
 information is communicated as an
 [electrical signal]({{site.url}}/{{site.qualurl}}/22/),
 manipulated primarily by proteins called
-[ion channels]({{site.url}}/site.qualurl}}/18/).
+[ion channels]({{site.url}}/{{site.qualurl}}/18/).
 
 Between neurons,
 information is
@@ -107,7 +127,7 @@ I will describe the experiment that was performed,
 and then in the following section,
 I will describe the generative, probabilistic model
 of the data, based on the quantal hypothesis,
-that precisely predicted the results.
+that predicted the results.
 
 ## The Experiment
 
@@ -166,13 +186,13 @@ suggesting that they were due to the random jostling of molecular motion.
 
 Therefore, if their hypothesis was correct,
 they could measure the minis
-and to learn what the release of a single packet looked like.
+to learn what the release of a single packet looked like.
 
 ## The Mathematical Model: Poission-Weighted Mixture-of-Gaussians
 
 The mathematical model that is used
 to validate the quantal hypothesis
-is a *probabilistic model*
+is a *probabilistic model*.
 A probabilistic model is a model that
 attempts to explain the structure of data,
 taking into account various sources of randomness.
@@ -231,13 +251,13 @@ For a review of probability, see
 For a thorough introduction to graphical models, see
 [this monograph](https://people.eecs.berkeley.edu/~wainwrig/Papers/WaiJor08_FTML.pdf).
 
-![quantal_release_graph]
+![quantal-release-graph]
 {: style="text-align: center"}
 
 Here $$N$$ is the random variable corresponding to
 the $$N$$umber of release events,
 or the number of packets sent from the neuron to the muscle,
-while $$V$$ is the $$V$$oltage measured in the muscle cell.
+while $$V$$ is the $$V$$oltage measured in the muscle cell (in milliVolts).
 Importantly, the number of release events is not something we can directly observe
 (otherwise the quantal hypothesis would be obvious!),
 and so it is what we call a *hidden* or *latent* variable.
@@ -270,7 +290,7 @@ So to complete our probabilistic model,
 we need to specify $$p(N=k)$$
 and $$p(V=v\lvert N=k)$$ for each $$k$$.
 
-For $p(N)$, the right answer turns out to be a
+For $$p(N)$$, the right answer turns out to be a
 [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution).
 The short explanation of why is that
 our model for quantal release is
@@ -283,7 +303,7 @@ which expresses the chance that a certain number of events occur
 if we try more than once,
 (think number of heads if we toss a coin multiple times),
 we can derive the Poisson distribution as the limit
-when the chance is going to $0$ and the number of tries is going to $\infty$.
+when the chance is going to $$0$$ and the number of tries is going to $$\infty$$.
 See
 [this set of notes](http://www.dns.ed.ac.uk/rrrweb/NMJHDhons/HonsNMJQuantalAnalysis09edit.pdf)
 for mathematical details
@@ -293,21 +313,21 @@ The precise mathematical form is not important.
 All that matters is the basic shape,
 which you can see in the image below.
 
-![possion-distribution-quantal]
+![poisson-distribution-quantal]
 {: style="text-align: center"}
 
 Poisson distributions have one parameter:
-the rate, $\lambda$.
+the rate, $$\lambda$$.
 To complete our specification of the graphical model,
-we'd have to also choose a value for $\lambda$.
+we'd have to also choose a value for $$\lambda$$.
 For now,
 we'll hold off on that and say that
 
 $$N\sim \text{Pois}(\lambda)$$
 
 which is pronounced
-"$N$ is distributed according to the
-Poisson distribution with parameter $\lamdba$".
+"$$N$$ is distributed according to the
+Poisson distribution with parameter $$\lamdba$$".
 
 What about for
 $$p(V\lvert N)$$?
@@ -339,7 +359,7 @@ $$p(V\lvert N=1)$$.
 They are just the mean and variance of the data we observed.
 We can write this
 
-$$V\lvert N=1 \sim \mathcal{N}(\mu_1,\sigma^2_1)$$
+$$(V\lvert N=1) \sim \mathcal{N}(\mu_1,\sigma^2_1)$$
 
 which is pronounced
 "given that the number of packets released
@@ -358,7 +378,7 @@ conditional distributions for $$V$$ given $$N$$.
 If we make the assumption above,
 then
 
-$$V\given N = k \sim \mathcal{N}(\mu_k, \sigma^2_k)\\
+$$(V\lvert N=k) \sim \mathcal{N}(\mu_k, \sigma^2_k)\\
 \mu_k = k\cdot\mu_1\\
 \sigma^2_k = k\cdot\sigma^2_1$$
 
@@ -386,8 +406,9 @@ if there are $$k$$ releases.
 
 $$\begin{align}
 p(V) &= \sum_{k=1}^\infty p(V,N=k) \\
-&= \sum_{k=1}^\infty p(V\lvert N=k)p(N=k)$
+&= \sum_{k=1}^\infty p(V\lvert N=k)p(N=k)
 \end{align}$$<!--_ -->
+{: style="text-align: center"}
 
 This second way of writing the probability of our data
 emphasizes the "mixture" aspect of our model:
@@ -436,20 +457,21 @@ value chosen (by hand) to approximately maximize the likelihood.
 import numpy as np
 
 def generate_number_releases(size=1):
-    return np.random.poisson(lam=2.25,size=size)
+  return np.random.poisson(lam=2.25,size=size)
 
 def generate_measured_potentials(size=1):
-    release_counts = generate_number_releases(size=size)
+  release_counts = generate_number_releases(size=size)
 
-    measured_potentials = [generate_measured_potential(release_count)
-                           for release_count in release_counts]
+  measured_potentials = [generate_measured_potential(release_count)
+                         for release_count in release_counts]
 
-    return np.asarray(measured_potentials)
+  return np.asarray(measured_potentials)
 
 def generate_measured_potential(release_count):
-    measured_potential = np.sum(4+0.85*np.random.standard_normal(size=release_count))
+  measured_potential = np.sum(4 +
+			0.85*np.random.standard_normal(size=release_count))
 
-    return measured_potential
+  return measured_potential
 ```
 
 The results are striking.
@@ -464,6 +486,10 @@ which closely match the data on left,
 along with a kernel density estimation of the data,
 which closely matches the model on the left.
 
+![model-vs-data]
+{: style="text-align: center"}
+
 [model-vs-data]: {{site.imgurl}}/model-vs-data.png
+[quantal-release-graph]: {{site.imgurl}}/quantal-release-graph.png
 [poisson-distribution-quantal]: {{site.imgurl}}/poisson-distribution-quantal.png
 [gaussian-distribution-quantal]: {{site.imgurl}}/gaussian-distribution-quantal.png

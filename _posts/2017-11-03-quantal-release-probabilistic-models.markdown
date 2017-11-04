@@ -19,8 +19,8 @@ def generate_measured_potentials(size=1):
   return np.asarray(measured_potentials)
 
 def generate_measured_potential(release_count):
-  measured_potential = np.sum(4 +
-			0.85*np.random.standard_normal(size=release_count))
+  measured_potential = np.sum(0.4 +
+			0.065*np.random.standard_normal(size=release_count))
 
   return measured_potential
 ```
@@ -468,8 +468,8 @@ def generate_measured_potentials(size=1):
   return np.asarray(measured_potentials)
 
 def generate_measured_potential(release_count):
-  measured_potential = np.sum(4 +
-			0.85*np.random.standard_normal(size=release_count))
+  measured_potential = np.sum(0.4 +
+			0.065*np.random.standard_normal(size=release_count))
 
   return measured_potential
 ```
@@ -488,6 +488,14 @@ which closely matches the model on the left.
 
 ![model-vs-data]
 {: style="text-align: center"}
+
+
+### Acknowledgements
+
+I'd like to thank Neha Wadia,
+my collaborator and partner in crime,
+for bringing this model to my attention
+and helping me see it in a new light.
 
 [model-vs-data]: {{site.imgurl}}/model-vs-data.png
 [quantal-release-graph]: {{site.imgurl}}/quantal-release-graph.png

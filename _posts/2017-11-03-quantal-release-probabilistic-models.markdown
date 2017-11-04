@@ -327,7 +327,7 @@ $$N\sim \text{Pois}(\lambda)$$
 
 which is pronounced
 "$$N$$ is distributed according to the
-Poisson distribution with parameter $$\lamdba$$".
+Poisson distribution with parameter $$\lambda$$".
 
 What about for
 $$p(V\lvert N)$$?

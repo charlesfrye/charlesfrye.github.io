@@ -87,10 +87,10 @@ Between neurons,
 information is
 ([usually]({{site.url}}/{{site.qualurl}}/31/))
 instead communicated as a chemical signal.
-Neurons are separated by a small gap called a
-*synapse*, and they communicate with each other
-across this gap by releasing chemicals called
-neurotransmitters into it,
+Connected neurons are separated by small gaps calleD
+*synapses*, and they communicate with each other
+across these gaps by releasing chemicals called
+neurotransmitters into them,
 which are detected by
 [receptor proteins](({{site.url}}/{{site.qualurl}}/19/)).
 This process is called
@@ -143,15 +143,15 @@ making experiments easier.
 
 The neuron was stimulated to produce a single
 [action potential]({{site.url}}/{{site.qualurl}}/23/),
-the electrical signal that
-initiates synaptic transmission.
-The resulting electrical signal in the
-muscle cell was recorded
-(electrical signals are
+the electrical signal that initiates synaptic transmission.
+This results in a chemical signal in the synapse
+that produces an electrical signal in the muscle cell.
+Because electrical signals are
 [much easier to measure]({{site.url}}/{{site.qualurl}}/80/)
 than chemical signals,
-so neuroscientists frequently use the electrical output
-as a proxy for the chemical input).
+the electrical output in the muscle cell was measured
+as a proxy for the chemical input.
+These electrical signals are called "potentials".
 
 It was already known that the electrical signal in the muscle cell
 in response to an action potential in the neuron varied

@@ -188,7 +188,7 @@ Therefore, if their hypothesis was correct,
 they could measure the minis
 to learn what the release of a single packet looked like.
 
-## The Mathematical Model: Poission-Weighted Mixture-of-Gaussians
+## The Mathematical Model: Poisson-Weighted Mixture-of-Gaussians
 
 The mathematical model that is used
 to validate the quantal hypothesis

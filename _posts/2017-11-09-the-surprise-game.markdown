@@ -7,7 +7,7 @@ category: stats
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 $$\begin{align}
 \mathbb{E}\left[ S(x) \right]
-&= H(p) + D_{KL}left(p \lvert\rvert q \right)
+&= H(p) + D_{KL}\left(p \lvert\rvert q \right)
 + \log \frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}}\\
 \end{align}$$ <!--_ -->
 {: style="text-align: center"}
@@ -257,9 +257,9 @@ $$\begin{align}
 \mathbb{E}\left[ S(x) \right]
 &= \sum_{x \in \mathcal{X}} p(x)\left(\log \frac{1}{p(x)} \right) +
 \sum_{x \in \mathcal{X}} p(x)\left(\log \frac{p(x)}{2^{-S(x)}} \right) \\
-&= H(p) + \sum_{x \in \mathcal{X}} p(x)\left(\log 
-\frac{p(x)}{\frac{2^{-S(x)}}{\sum_{x \in \mathcal{X} 2^{-S(x)}}} \right)
-+ \sum_{x \in \mathcal{X}} p(x) \log\frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}} \\
+&= H(p) + \sum_{x \in \mathcal{X}} p(x)\left(\log
+\frac{p(x)}{\frac{2^{-S(x)}}{\sum_{x \in \mathcal{X} 2^{-S(x)}}}} \right)
++ \sum_{x \in \mathcal{X}} p(x) \log\frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}}}
 \end{align}$$ <!--_ -->
 {: style="text-align: center"}
 
@@ -280,9 +280,9 @@ $$\begin{align}
 \mathbb{E}\left[ S(x) \right]
 &= H(p) + \sum_{x \in \mathcal{X}} p(x)\left(\log \frac{p(x)}{q(x)} \right)
 + \sum_{x \in \mathcal{X}} p(x) \log \frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}} \\
-&= H(p) + D_{KL}left(p \lvert\rvert q \right)
+&= H(p) + D_{KL}\left(p \lvert\rvert q \right)
 + \log \frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}} sum_{x \in \mathcal{X}} p(x)  \\
-&= H(p) + D_{KL}left(p \lvert\rvert q \right)
+&= H(p) + D_{KL}\left(p \lvert\rvert q \right)
 + \log \frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}}\\
 \end{align}$$ <!--_ -->
 {: style="text-align: center"}

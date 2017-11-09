@@ -349,7 +349,7 @@ including, but not limited to
 [the 2nd Law of Thermodynamics](http://www.mdpi.com/1099-4300/18/2/46/pdf)
 and
 [optimality of Bayesian inference](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5392554)
-1. It appears in [Sanov's Theoreom](https://blogs.princeton.edu/sas/2013/10/10/lecture-3-sanovs-theorem/),
+1. It appears in [Sanov's Theorem](https://blogs.princeton.edu/sas/2013/10/10/lecture-3-sanovs-theorem/),
 which provides tight upper and lower bounds on the probabilities of [large deviations](https://en.wikipedia.org/wiki/Large_deviations_theory)
 1. Its Hessian matrix is the [Fisher Information matrix](https://web.stanford.edu/class/stats311/Lectures/lec-09.pdf)
 1. It quantifies the notion of [convergence in distribution](://en.wikipedia.org/wiki/Convergence_of_random_variables#Convergence_in_distribution)

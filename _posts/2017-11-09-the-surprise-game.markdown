@@ -9,7 +9,6 @@ category: stats
 $$\begin{align}
 \mathbb{E}\left[ S(x) \right]
 &= H(p) + D_{KL}\left(p \lvert\rvert q \right)
-+ \log \frac{1}{\sum_{x \in \mathcal{X}} 2^{-S(x)}}\\
 \end{align}$$ <!--_ -->
 {: style="text-align: center"}
 

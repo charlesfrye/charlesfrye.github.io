@@ -9,6 +9,7 @@ category: stats
 $$\begin{align}
 \mathbb{E}\left[ S(x) \right]
 &= H(p) + D_{KL}\left(p \lvert\rvert q \right)
++ \log
 \end{align}$$ <!--_ -->
 {: style="text-align: center"}
 

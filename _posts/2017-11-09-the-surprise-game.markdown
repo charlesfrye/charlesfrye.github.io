@@ -5,12 +5,14 @@ date:	2017-11-09
 category: stats
 ---
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 $$\begin{align}
 \mathbb{E}\left[ S(x) \right]
-&= H(p) + D_{KL}\left(p || q \right)
-+ \log \frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}}}\\
+&= H(p) + D_{KL}\left(p \lvert\rvert q \right)
++ \log \frac{1}{\sum_{x \in \mathcal{X}} 2^{-S(x)}}\\
 \end{align}$$ <!--_ -->
 {: style="text-align: center"}
+
 <!--exc-->
 
 ## Summary

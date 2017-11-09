@@ -8,7 +8,7 @@ category: stats
 $$\begin{align}
 \mathbb{E}\left[ S(x) \right]
 &= H(p) + D_{KL}\left(p \lvert\rvert q \right)
-+ \log \frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}}\\
++ \log \frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}}}\\
 \end{align}$$ <!--_ -->
 {: style="text-align: center"}
 <!--exc-->
@@ -258,7 +258,7 @@ $$\begin{align}
 &= \sum_{x \in \mathcal{X}} p(x)\left(\log \frac{1}{p(x)} \right) +
 \sum_{x \in \mathcal{X}} p(x)\left(\log \frac{p(x)}{2^{-S(x)}} \right) \\
 &= H(p) + \sum_{x \in \mathcal{X}} p(x)\left(\log
-\frac{p(x)}{\frac{2^{-S(x)}}{\sum_{x \in \mathcal{X} 2^{-S(x)}}}} \right)
+\frac{p(x)}\frac{2^{-S(x)}}{\sum_{x \in \mathcal{X} 2^{-S(x)}}}} \right)
 + \sum_{x \in \mathcal{X}} p(x) \log\frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}}}
 \end{align}$$ <!--_ -->
 {: style="text-align: center"}
@@ -273,7 +273,7 @@ we notice that the terms in the final sum,
 don't actually depend on $$x$$: they are all the same, and are
 equal to the logarithm of the normalizing factor.
 Therefore we can pull them out of the sum,
-which, becaues $$p$$ is a probabiltiy distribution,
+which, because $$p$$ is a probabilty distribution,
 is just equal to $$1$$.
 
 $$\begin{align}

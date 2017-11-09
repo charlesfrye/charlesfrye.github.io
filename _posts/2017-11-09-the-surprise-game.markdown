@@ -10,6 +10,7 @@ $$\begin{align}
 &= H(p) + D_{KL}left(p \lvert\rvert q \right)
 + \log \frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}}\\
 \end{align}$$ <!--_ -->
+{: style="text-align: center"}
 <!--exc-->
 
 ## Summary
@@ -55,18 +56,18 @@ the Kullback-Leibler divergence.
 
 ## Detailing the Setup
 
-Let's call the set of all possible outcomes $\mathcal{X}$.
+Let's call the set of all possible outcomes $$\mathcal{X}$$.
 Because outcomes are random,
-this set comes with a function $p$,
-called a $p$robability distribution,
+this set comes with a function $$p$$,
+called a $$p$$robability distribution,
 that we can use to answer questions about
 how likely certain outcomes are.
 Neither player necessarily knows
 the value of $$p$$.
 
 Each player in the game must also provide a function,
-which we'll call $S$,
-for $S$urprise,
+which we'll call $$S$$,
+for $$S$$urprise,
 that indicates how surprising each outcome is.
 
 A player seeking an easy way to win the game
@@ -111,7 +112,7 @@ we can define a function $$q$$ by
 
 $$
 q(x) = \frac{2^{-S(x)}}{
-\sum_{x \in \mathcal{X}} 2^{-S(x)} \leq 1 }
+\sum_{x \in \mathcal{X}} 2^{-S(x)}}
 $$ <!--_ -->
 {: style="text-align: center"}
 
@@ -178,6 +179,7 @@ $$\begin{align}
 \mathbb{E}\left[ S(x) \right] &= \sum_{x \in \mathcal{X}} p(x) S(x) \\
 &= \sum_{x \in \mathcal{X}} p(x)\left(\log \frac{1}{2^{-S(x)}} \right) \\
 \end{align}$$ <!--_ -->
+{: style="text-align: center"}
 
 We want to be comparing these negative exponentiated surprise
 values to probabilities,
@@ -193,6 +195,8 @@ $$\begin{align}
 \mathbb{E}\left[ S(x) \right] &= \sum_{x \in \mathcal{X}} p(x)\left(\log \frac{1}{2^{-S(x)}} \right) \\
 &= \sum_{x \in \mathcal{X}} p(x)\left(\log \frac{p(x)}{p(x) 2^{-S(x)}} \right) \\
 \end{align}$$ <!--_ -->
+{: style="text-align: center"}
+
 
 The nice thing about logarithms
 is that we can take things that are multiplied together
@@ -212,6 +216,7 @@ $$\begin{align}
 &= \sum_{x \in \mathcal{X}} p(x)\left(\log \frac{1}{p(x)} \right) +
 \sum_{x \in \mathcal{X}} p(x)\left(\log \frac{p(x)}{2^{-S(x)}} \right) \\
 \end{align}$$ <!--_ -->
+{: style="text-align: center"}
 
 
 The term on the left is familiar:
@@ -256,6 +261,7 @@ $$\begin{align}
 \frac{p(x)}{\frac{2^{-S(x)}}{\sum_{x \in \mathcal{X} 2^{-S(x)}}} \right)
 + \sum_{x \in \mathcal{X}} p(x) \log\frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}} \\
 \end{align}$$ <!--_ -->
+{: style="text-align: center"}
 
 We are now home free,
 and just need to make a few small adjustments.
@@ -279,6 +285,7 @@ $$\begin{align}
 &= H(p) + D_{KL}left(p \lvert\rvert q \right)
 + \log \frac{1}{\sum_{x \in \mathcal{X} 2^{-S(x)}}\\
 \end{align}$$ <!--_ -->
+{: style="text-align: center"}
 
 This is our final expression for the expected score
 of a player with surprise function $$S$$.

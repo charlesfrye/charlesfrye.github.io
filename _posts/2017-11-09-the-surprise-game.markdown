@@ -282,7 +282,7 @@ $$\begin{align}
 &= H(p) + \sum_{x \in \mathcal{X}} p(x)\left(\log \frac{p(x)}{q(x)} \right) +
 \sum_{x \in \mathcal{X}} p(x) \log \frac{1}{\sum_{x \in \mathcal{X}} 2^{-S(x)}} \\
 &= H(p) + D_{KL}\left(p \lvert\rvert q \right) +
-\log \frac{1}{\sum_{x \in \mathcal{X}} 2^{-S(x)}} sum_{x \in \mathcal{X}} p(x)  \\
+\log \frac{1}{\sum_{x \in \mathcal{X}} 2^{-S(x)}} \sum_{x \in \mathcal{X}} p(x)  \\
 &= H(p) + D_{KL}\left(p \lvert\rvert q \right) +
 \log \frac{1}{\sum_{x \in \mathcal{X}} 2^{-S(x)}}\\
 \end{align}$$ <!--_ -->

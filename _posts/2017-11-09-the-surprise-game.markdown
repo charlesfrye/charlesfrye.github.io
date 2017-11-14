@@ -345,7 +345,8 @@ including, but not limited to
 
 1. It appears, as it does here, in the objective function for
 [maximum likelihood modeling](https://wiseodd.github.io/techblog/2017/01/26/kl-mle/)
-1. It quantifies the rate at which a statistical test can distinguish hypotheses
+1. It quantifies the
+[highest rate at which a statistical test can distinguish hypotheses](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence#Discrimination_information)
 1. Theorems involving its derivatives include
 [the 2nd Law of Thermodynamics](http://www.mdpi.com/1099-4300/18/2/46/pdf)
 and
@@ -353,10 +354,17 @@ and
 1. It appears in [Sanov's Theorem](https://blogs.princeton.edu/sas/2013/10/10/lecture-3-sanovs-theorem/),
 which provides tight upper and lower bounds on the probabilities of [large deviations](https://en.wikipedia.org/wiki/Large_deviations_theory)
 1. Its Hessian matrix is the [Fisher Information matrix](https://web.stanford.edu/class/stats311/Lectures/lec-09.pdf)
-1. It quantifies the notion of [convergence in distribution](://en.wikipedia.org/wiki/Convergence_of_random_variables#Convergence_in_distribution)
-1. It provides an upper bound on a tighter notion of convergence, convergence in
-[Earth-Mover Distance](https://www.datadoghq.com/blog/engineering/robust-statistical-distances-for-machine-learning/)
-1. It is the (essentially) unique divergence that is both a
+1. It quantifies one of the strictest forms of convergence,
+making it
+[an upper bound](https://en.wikipedia.org/wiki/Pinsker%27s_inequality)
+on looser notions of convergence,
+like convergence in
+[Earth-Mover Distance](https://www.datadoghq.com/blog/engineering/robust-statistical-distances-for-machine-learning/),
+[total variation](http://www.stat.yale.edu/~pollard/Courses/607.spring05/handouts/Totalvar.pdf), and
+[distribution](https://en.wikipedia.org/wiki/Convergence_of_random_variables#Convergence_in_distribution)
+1. It is the (essentially)
+[unique divergence](http://ieeexplore.ieee.org/abstract/document/5290302/)
+that is both a
 [Bregman](http://mark.reid.name/blog/meet-the-bregman-divergences.html)
 and an [$$f$$](https://en.wikipedia.org/wiki/F-divergence) divergence
 

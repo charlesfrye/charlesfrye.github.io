@@ -164,6 +164,10 @@ $$
 $$
 {: style="text-align: center"}
 
+In a probability setting,
+$$\mathcal{P}$$ is also called the
+*characteristic function*
+of a random variable with distribution $$p$$.
 For $$\mathcal{G}$$ to be closed under the Fourier transform,
 it should be the case that
 

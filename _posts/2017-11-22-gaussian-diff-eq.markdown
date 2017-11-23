@@ -15,8 +15,8 @@ $$\begin{align}
 
 ## Summary
 
-The Gaussian family of distributions
-appears in a wide variety of distinct settings:
+Distributions from the Gaussian family
+appear in a wide variety of distinct settings:
 as
 [the sampling distributions]({{site.url}}/stats/2017/02/24/statistics-as-pushforward.html)
 of many useful statistics,
@@ -25,7 +25,7 @@ thanks to the
 as the
 [maximum entropy distributions](http://www.math.uconn.edu/~kconrad/blurbs/analysis/entropypost.pdf)
 for fixed mean and covariance,
-and as the assumed error distribution
+and as the assumed error distributions
 for optimization problems that use the
 [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error)
 in their cost function.
@@ -80,7 +80,7 @@ for an arbitrary $$p$$:
 $$
 \begin{align}
 \frac{d}{dx}S(x) &= \frac{d}{dx}\log\frac{1}{p(x)} \\
-&= -\frac{d}{dx} \log p(x)
+&= -\frac{d}{dx} \log p(x)\\
 &= \frac{-\frac{d}{dx}p(x)}{p(x)}
 \end{align}
 $$
@@ -89,7 +89,7 @@ $$
 If we rearrange our differential equation, we see that
 
 $$
-\frac{frac{d}{dx}p(x)}{p(x)} = -x
+\frac{\frac{d}{dx}p(x)}{p(x)} = -x
 $$
 {: style="text-align: center"}
 
@@ -104,7 +104,7 @@ Meaning that the surprise function must necessarily be quadratic,
 since the derivative of $$x^2/2$$ is $$x$$.
 
 Quadratic functions other than $$x^2/2$$,
-e.g. $$(x^2-\mu)/2$$ or $$(\x^2-\mu)/2\sigma^2$$
+e.g. $$(x^2-\mu)/2$$ or $$(x^2-\mu)/2\sigma^2$$
 for arbitrary $$\mu$$ and positive $$\sigma$$
 will also have linear derivatives whose sign matches their inputs.
 That is, we have confirmed that affine transformations of Gaussian random variables
@@ -112,12 +112,13 @@ are also Gaussian random variables.
 
 This has several consequences:
 
-1. If we are fitting a model our goal is to minimize the squared value of our errors,
+1. If we are fitting a model and we measure our goodness-of-fit
+by calculating the squared error,
 we must be performing some kind of maximum likelihood estimation with a Gaussian distribution on the errors.
 2. Extending this argument to vector-valued $$x$$, we see that the surprise is,
 if we allow no transformations, simply proportional to the
 squared Euclidean length of $$x$$,
-or, if we allow translations, of the squared distance from $$x$$ to some $$mu$$.
+or, if we allow translations, of the squared distance from $$x$$ to some $$\mu$$.
 Therefore these members of the Gaussian family are *isotropic*, or dependent only on distance.
 In fact,
 [the Gaussian family contains all distributions](http://www-biba.inrialpes.fr/Jaynes/cc07s.pdf)
@@ -141,6 +142,7 @@ r(x) &= p_1(x) \cdot p_2(x) \\
 \log(r(x)) &= \log\left(p_1(x)\right) + \log\left(p_2(x)\right) \\
 -\log(r(x)) &= -\log\left(p_1(x)\right) + -\log\left(p_2(x)\right) \\
 \end{align}
+$$
 {: style="text-align: center"}
 
 That is, the surprise function of $$r$$ is just the sum
@@ -158,7 +160,7 @@ The Fourier transform $$\mathcal{P}$$ of a distribution $$p$$
 is defined as
 
 $$
-\mathcal{P}(k) &= \int p(x) \mathrm{e}^{-ikx} dx
+\mathcal{P}(k) = \int p(x) \mathrm{e}^{-ikx} dx
 $$
 {: style="text-align: center"}
 
@@ -195,6 +197,7 @@ $$
 \frac{d}{dk}\mathcal{P}(k) &= \int \frac{d}{dk} p(x) \mathrm{e}^{-ikx} \\
 &= \int -ix p(x) \mathrm{e}^{-ikx} + \frac{d}{dk}p(x) \cdot \mathrm{e}^{-ikx} \\
 &= i \int -x p(x) \mathrm{e}^{-ikx}
+\end{align}
 $$
 {: style="text-align: center"}
 
@@ -206,6 +209,7 @@ $$
 \frac{d}{dk}\mathcal{P}(k)
 &= i \int -x p(x) \mathrm{e}^{-ikx} \\
 &= i \int \frac{d}{dx} p(x) \mathrm{e}^{-ikx}
+\end{align}
 $$
 {: style="text-align: center"}
 
@@ -231,6 +235,7 @@ $$
 \frac{d}{dk}\mathcal{P}(k)
 &= i \int \frac{d}{dx} p(x) \mathrm{e}^{-ikx} \\
 &= i \left( \left[p(x)\mathrm{e}^{-ikx}\right] - \int -ik p(x) \mathrm{e}^{-ikx} \right)
+\end{align}
 $$
 {: style="text-align: center"}
 
@@ -244,6 +249,7 @@ $$
 \frac{d}{dk}\mathcal{P}(k)
 &= i \left( \left[p(x)\mathrm{e}^{-ikx}\right] - \int -ik p(x) \mathrm{e}^{-ikx} \right) \\
 &= -i \int -ik p(x) \mathrm{e}^{-ikx}
+\end{align}
 $$
 {: style="text-align: center"}
 
@@ -257,6 +263,7 @@ $$
 &= -i \int -ik p(x) \mathrm{e}^{-ikx} \\
 &= -i\cdot-i\cdot k \int p(x) \mathrm{e}^{-ikx} \\
 &= -k \mathcal{P}(k)
+\end{align}
 $$
 {: style="text-align: center"}
 

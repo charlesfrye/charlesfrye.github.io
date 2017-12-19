@@ -4,6 +4,37 @@ title: My Projects
 permalink: /projects/
 ---
 
+## Applied Statistics for Neuroscience
+
+{:.gallery}
+[![stats_for_neuro]](https://github.com/charlesfrye/AppliedStatisticsForNeuroscience)
+{: style="text-align: center"}
+
+I developed a course in statistics
+aimed at graduate students in neuroscience
+who need to add quantitative skills,
+like probability and programming,
+to their toolbox.
+It is taught yearly at UC Berkeley
+and is
+[available online](https://github.com/charlesfrye/AppliedStatisticsForNeuroscience)
+as a collection of Jupyter notebooks.
+
+## Predicting Soil Properties from Infrared Spectra
+
+{:.gallery}
+[![soil_banner]](https://github.com/kkamdin/soil_property_prediction_cdips2017)
+{: style="text-align: center"}
+
+As part of the
+[CDIPS Data Science Workshop](http://cdips.physics.berkeley.edu/dsw/),
+I worked with a team to develop a collection of tutorial
+Jupyter notebooks, which we deployed to the web using
+[Binder](https://mybinder.org/).
+Follow
+[this link](https://github.com/kkamdin/soil_property_prediction_cdips2017)
+to the GitHub page to learn more.
+
 ## emojify.io
 
 {:.gallery}
@@ -66,3 +97,5 @@ I'm the clarinet.
 [emojify]: {{site.imgurl}}/emojiTest3.png
 [qualBlog]: {{site.imgurl}}/qualBlog.png
 [broLove]: {{site.imgurl}}/broLove.jpg
+[soil_banner]: {{site.imgurl}}/soil_banner.png
+[stats_for_neuro]: {{site.imgurl}}/stats_for_neuro.png

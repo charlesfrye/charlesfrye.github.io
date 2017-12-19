@@ -6,10 +6,6 @@ permalink: /projects/
 
 ## Applied Statistics for Neuroscience
 
-{:.gallery}
-[![stats_for_neuro]](https://github.com/charlesfrye/AppliedStatisticsForNeuroscience)
-{: style="text-align: center"}
-
 I developed a course in statistics
 aimed at graduate students in neuroscience
 who need to add quantitative skills,
@@ -23,7 +19,7 @@ as a collection of Jupyter notebooks.
 ## Predicting Soil Properties from Infrared Spectra
 
 {:.gallery}
-[![soil_banner]](https://github.com/kkamdin/soil_property_prediction_cdips2017)
+[![soil_banner_crop]](https://github.com/kkamdin/soil_property_prediction_cdips2017)
 {: style="text-align: center"}
 
 As part of the
@@ -97,5 +93,5 @@ I'm the clarinet.
 [emojify]: {{site.imgurl}}/emojiTest3.png
 [qualBlog]: {{site.imgurl}}/qualBlog.png
 [broLove]: {{site.imgurl}}/broLove.jpg
-[soil_banner]: {{site.imgurl}}/soil_banner.png
+[soil_banner_crop]: {{site.imgurl}}/soil_banner_crop.png
 [stats_for_neuro]: {{site.imgurl}}/stats_for_neuro.png

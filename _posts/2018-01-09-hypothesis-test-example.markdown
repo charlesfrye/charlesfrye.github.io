@@ -5,14 +5,7 @@ date:	2018-01-09
 category: stats
 ---
 
-Apart from being an interesting exercise
-in the real-life uses of probability,
-this example,
-with its massive gap between the true negative rate
-and the negative predictive value,
-highlights the importance
-of thinking critically (and Bayesian-ly)
-about statistical evidence.
+>Apart from being an interesting exercise in the real-life uses of probability, this example, with its massive gap between the true negative rate and the negative predictive value, highlights the importance of thinking critically (and Bayesian-ly) about statistical evidence.
 
 <!--exc-->
 

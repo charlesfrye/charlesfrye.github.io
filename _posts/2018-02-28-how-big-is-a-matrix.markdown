@@ -130,21 +130,25 @@ since our matrices need not be square,
 and so it need not be the case that they can be multiplied.
 See the diagram below, for a running example with 3-by-2 matrices.
 
-DIAGRAM
+![matrix_norms_1]
+{: style="text-align: center"}
+
 
 But an element of a vector space and its transpose can always be multiplied
 (the dimensions of the multiplication become $$N$$ by $$M$$
 and $$M$$ by $$N$$),
 so we instead try multiplying $$X^\intercal X$$.
 
-DIAGRAM
+![matrix_norms_2]
+{: style="text-align: center"}
 
 The result now has the sum of the products of the elements of each
 column $$i$$ in $$X$$ with each other column $$j$$ in $$X$$ in its
 position $$ij$$ (see diagram below).
 Note that this matrix is square and symmetric.
 
-DIAGRAM
+![matrix_norms_3]
+{: style="text-align: center"}
 
 But we only wanted to multiply like elements with each other --
 $$X_12$$ with $$X_12$$, and so on --
@@ -154,7 +158,8 @@ $$X^\intercal X$$ and then add them up.
 This operation is also called the *trace*,
 represented with $$\mathrm{tr}$$.
 
-DIAGRAM
+![matrix_norms_4]
+{: style="text-align: center"}
 
 Therefore we can write our squared norm as
 
@@ -367,3 +372,8 @@ These kinds of abstract, algebraic/categorical approaches
 can be a breath of fresh, clean air,
 even (or perhaps especially)
 in situations where the details seem overwhelming and salient.
+
+[matrix_norms_1]: {{site.imgurl}}/matrix_norms_1.png
+[matrix_norms_2]: {{site.imgurl}}/matrix_norms_2.png
+[matrix_norms_3]: {{site.imgurl}}/matrix_norms_3.png
+[matrix_norms_4]: {{site.imgurl}}/matrix_norms_4.png

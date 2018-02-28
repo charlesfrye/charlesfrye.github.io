@@ -7,7 +7,7 @@ category: math
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 $$\begin{align}
-\lvert\lvert X\rvert\rvert^2_2 = \left(\mathrm{tr}\left(X^\intercal X\right)
+\lvert\lvert X\rvert\rvert^2_2 = \mathrm{tr}\left(X^\intercal X\right)
 \end{align}$$ <!--_ -->
 {: style="text-align: center"}
 

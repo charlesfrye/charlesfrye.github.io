@@ -7,8 +7,8 @@ category: math
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 $$\begin{align}
-\lvert X\rvert^2_2 = \left(\mathrm{tr}\left(X^\intercal X\right) <!--_ -->
-\end{align}$$
+\lvert\lvert X\rvert\rvert^2_2 = \left(\mathrm{tr}\left(X^\intercal X\right)
+\end{align}$$ <!--_ -->
 {: style="text-align: center"}
 
 <!--exc-->
@@ -96,12 +96,12 @@ and the result has the hifalutin' name
 To prove anything, we need to start writing formulas.
 
 We denote the length, or *norm*, of a matrix or vector $$X$$
-with straight brackets $$\lvert X\rvert$$.
+with straight brackets $$\lvert\lvert X\rvert\rvert$$.
 Thus our definition of the norm is
 
 $$
 \begin{align}
-\lvert X \rvert &\colon = \lvert \mathrm{vec}\left(X\right) \rvert
+\lvert\lvert X \rvert\rvert &\colon = \lvert\lvert \mathrm{vec}\left(X\right) \rvert\rvert\\
 &= \sqrt{\sum_{ij} X_{ij}^2} = \sqrt{\sum_{ij} X_{ij}\cdot X_{ij}}
 \end{align}
 $$ <!--_ -->
@@ -110,7 +110,7 @@ $$ <!--_ -->
 Carrying around all those square roots is tedious
 and currently unimportant,
 so let's work with the *squared norm*,
-which we write $$\lvert X\rvert^2$$.
+which we write $$\lvert\lvert X\rvert\rvert^2$$.
 
 Our goal is to express this quantity
 in a manner that is independent of the basis
@@ -124,7 +124,7 @@ scalar multiplication, and matrix addition and multiplication,
 and transposition,
 so we begin with those.
 
-The first pass would be to multiply $X$ with itself.
+The first pass would be to multiply $$X$$ with itself.
 This is, unfortunately, a non-starter,
 since our matrices need not be square,
 and so it need not be the case that they can be multiplied.
@@ -160,7 +160,7 @@ Therefore we can write our squared norm as
 
 $$
 \begin{align}
-\lvert X \rvert^2 &= \mathrm{tr}\left( X^\intercal X\right)
+\lvert\lvert X \rvert\rvert^2 &= \mathrm{tr}\left( X^\intercal X\right)
 \end{align}
 $$
 {: style="text-align: center"}
@@ -205,6 +205,7 @@ To save space, I refer you to
 for the (short) proof.
 
 So we choose $$B=R$$ and get
+
 $$
 \mathrm{tr}\left(RR^\intercal X^\intercal X \right)
 = \mathrm{tr}\left(X^\intercal X \right)
@@ -231,7 +232,7 @@ is equal to the trace of its diagonal form,
 and so
 
 $$
-\mathrm{tr}\left(X^\intercal X\right)$$
+\mathrm{tr}\left(X^\intercal X\right)
 = \mathrm{tr} \left(\Lambda\right) = \sum_i\left(\lambda_i\right)
 $$
 {: style="text-align: center"}
@@ -325,7 +326,7 @@ The most interesting matrix norms arise as answers to the question
 That is, we ask about the quantity
 
 $$
-\frac{\left(Xv\right)^\intercal Xv}{v^intercal v}
+\frac{\left(Xv\right)^\intercal Xv}{v^\intercal v}
 $$
 {: style="text-align: center"}
 
@@ -337,7 +338,7 @@ known as the
 can be rewritten
 
 $$
-\frac{v\intercal X^\intercal Xv}{x^intercal v}
+\frac{v^\intercal X^\intercal Xv}{v^\intercal v}
 $$
 {: style="text-align: center"}
 

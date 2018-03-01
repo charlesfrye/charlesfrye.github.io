@@ -151,7 +151,7 @@ Note that this matrix is square and symmetric.
 {: style="text-align: center"}
 
 But we only wanted to multiply like elements with each other --
-$$X_12$$ with $$X_12$$, and so on --
+$$X_{12}$$ with $$X_{12}$$, and so on --
 so we need to extract only the diagonal elements of
 $$X^\intercal X$$ and then add them up.
 

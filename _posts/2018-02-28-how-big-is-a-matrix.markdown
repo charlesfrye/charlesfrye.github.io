@@ -20,7 +20,7 @@ an answer to two questions: how long is matrix?
 what is the distance between two matrices?
 Doing something somewhat silly,
 unraveling the matrix into a vector
-and computing the length and distance of that vector,
+and computing the length of that vector,
 turns out to be a good choice;
 furthermore, it turns out to be connected to
 the notion of *singular values*,

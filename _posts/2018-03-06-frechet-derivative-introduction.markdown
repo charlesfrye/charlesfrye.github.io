@@ -7,8 +7,8 @@ category: math
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 $$\begin{align}
-f(x+\epsilon) = f(x) + \langle \nabla_x f(x), \epsilon \rangle+ o(\|\epsilon\|_2)
-\end{align}$$
+f(x+\epsilon) = f(x) + \langle \nabla_x f(x), \epsilon \rangle+ o(\|\epsilon\|)
+\end{align}$$<!--_ -->
 {: style="text-align: center"}
 
 <!--exc-->

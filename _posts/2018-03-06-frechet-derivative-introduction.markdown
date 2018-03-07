@@ -214,7 +214,7 @@ $$f(x+\epsilon)$$ and rearranging:
 $$\begin{align}
 f(x+\epsilon) &= (x+\epsilon)^\top Q (x+\epsilon) \\
 &= x^\top Q x + \epsilon^\top Q x + x^\top Q \epsilon + \epsilon^\top Q \epsilon \\
-&= f(x) + x\top Q^\top \epsilon + x^\top Q \epsilon + o(\|\epsilon\|)
+&= f(x) + x^\top Q^\top \epsilon + x^\top Q \epsilon + o(\|\epsilon\|)
 \end{align}$$
 {: style="text-align: center"}
 
@@ -225,8 +225,8 @@ We use then pull out the factor of $$x^\top$$
 and recognize a vector inner product:
 
 $$\begin{align}
-f(x+\epsilon) &= f(x) + x\top Q^\top \epsilon + x^\top Q \epsilon + o(\|\epsilon\|) \\
-&= f(x) + x\top(Q + Q^\top)\epsilon + o(\|\epsilon\|) \\
+f(x+\epsilon) &= f(x) + x^\top Q^\top \epsilon + x^\top Q \epsilon + o(\|\epsilon\|) \\
+&= f(x) + x^\top(Q + Q^\top)\epsilon + o(\|\epsilon\|) \\
 &= f(x) + \langle (Q + Q^\top)x, \epsilon\rangle + o(\|\epsilon\|)
 \end{align}$$
 {: style="text-align: center"}

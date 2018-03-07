@@ -260,21 +260,19 @@ f(Q+\epsilon) &= x^\top (Q+\epsilon) x \\
 where in the last line we made use of the fact that
 $$0$$ is $$o(\|\epsilon\|)$$,
 and the norm $$\|\cdot\|$$ is the Frobenius norm,
-aka the square root of the sum of squares,
+aka the square root of the sum of squared entries,
 as discussed in
 [this blog post]({{site.url}}/math/2018/02/28/how-big-is-a-matrix.html).
 
-We're almost at the end
-(just two more lines)
-but I'd like to step back and appreciate
-how much simpler this computation is
-than it would be with coordinates.
-In fact, it's *simpler* than the computation
-for this function on the vector inputs,
-revealing that this function is in fact *linear*
-as a function of $$Q$$,
-a fact that is somewhat obscured by the profusion of symbols
-that accompanies the usual method.
+We're almost at the end,
+but before we complete our derivation,
+I'd like to point out that we've already learned something
+about this function:
+our little-o term is *always $$0$$*,
+meaning that our linear "approximation" is
+*exact* -- nothing approximate about it.
+This fact is usually somewhat obscured by the profusion of symbols
+that accompanies the standard method.
 
 What this method does require
 is familiarity with the *algebra* part of linear algebra:

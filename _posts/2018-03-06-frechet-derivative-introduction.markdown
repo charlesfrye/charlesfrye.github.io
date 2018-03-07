@@ -39,7 +39,7 @@ $$<!--_ -->
 
 which we interpret as the limit of the "rise over run"
 of the line connecting the point $$(x,f(x))$$
-to $$(x+\epsilon,f(x+\epsilon)$$.
+to $$(x+\epsilon,f(x+\epsilon))$$.
 
 This same expression can be re-written as
 
@@ -294,8 +294,8 @@ we discover
 $$\begin{align}
 f(Q + \epsilon) &= f(Q) + x^\top \epsilon x + o(\|\epsilon\|) \\
 &= f(Q) + \mathrm{tr}(x^\top \epsilon x) + o(\|\epsilon\|) \\
-&= f(Q) = \mathrm{tr}(x x^\top \epsilon) + o(\|\epsilon\|) \\
-&= f(Q) = \langle x x^\top, \epsilon\rangle + o(\|\epsilon\|) \\
+&= f(Q) + \mathrm{tr}(x x^\top \epsilon) + o(\|\epsilon\|) \\
+&= f(Q) + \langle x x^\top, \epsilon\rangle + o(\|\epsilon\|) \\
 \end{align}$$
 {: style="text-align: center"}
 

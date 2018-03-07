@@ -22,9 +22,11 @@ The Fréchet derivative provides an alternative
 notation that leads to simple proofs
 for polynomial functions,
 compositions and products of functions, and more.
-Here, after introducting the Fréchet derivative
-we work out the derivative of least-squares linear regression,
-for multiple inputs and outputs with respect to the parameter matrix.
+Here, we work through the definition of the Fréchet derivative
+and its application in a few fundamental examples.
+In the next blog post in this series,
+we will work out the derivative of least-squares linear regression
+for multiple inputs and outputs (with respect to the parameter matrix).
 
 ###  The Fréchet Derivative is an Alternative but Equivalent Definiton
 
@@ -210,7 +212,7 @@ The answer again proceeds by writing out
 $$f(x+\epsilon)$$ and rearranging:
 
 $$\begin{align}
-f(x+\epsilon) &= (x+\epsilon)^\top Q (x+\epsilon)
+f(x+\epsilon) &= (x+\epsilon)^\top Q (x+\epsilon) \\
 &= x^\top Q x + \epsilon^\top Q x + x^\top Q \epsilon + \epsilon^\top Q \epsilon \\
 &= f(x) + x\top Q^\top \epsilon + x^\top Q \epsilon + o(\|\epsilon\|)
 \end{align}$$

@@ -52,7 +52,7 @@ The $$o$$ is pronounced "little-o".
 For example, $$x^2$$ is $$o(x)$$.
 If you are familar with the so-called "Big-O" notation,
 you can think of Big-O as meaning "less than or equal to, up to constants"
-and little-o as meaning "less than, up to constants".
+and little-o as meaning "strictly less than, up to constants".
 See
 [these notes](http://www.stat.cmu.edu/~cshalizi/uADA/13/lectures/app-b.pdf)
 for more details.
@@ -75,8 +75,8 @@ usually denoted $$\nabla_xf(x)$$, <!--_ -->
 as:
 
 $$
-f(x+\epsilon) = f(x) + \nabla_xf(x)^\top\epsilon + o(\|\epsilon\|) <!--_ -->
-$$
+f(x+\epsilon) = f(x) + \nabla_xf(x)^\top\epsilon + o(\|\epsilon\|)
+$$ <!--_ -->
 {: style="text-align: center"}
 
 The motivation usually offered for this expression is that

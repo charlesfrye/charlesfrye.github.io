@@ -73,7 +73,8 @@ a given $$f(x)$$ and $$y$$ are to each other with $$D$$,
 for difference or distance.
 If we write $$L$$ for the function that
 takes in $$f$$, $$x$$, and $$y$$
-and uses our function $$D$$ of difference
+and uses our function $$D$$
+on $$y$$ and $$f(x)$$
 to tell us how badly we've done
 (pessimism is traditional in mathematics)
 we can write the generic regression problem as
@@ -129,7 +130,7 @@ denoted $$\gamma^*$$ <!--* -->
 for a dataset (x,y) as
 
 $$
-\gamma^* = \arg\min_\gamma L(\gamma; x, y)
+\gamma^* = \arg\min_\gamma L(\gamma; x, y) = \arg\min_\gamma \|y-\gamma x\|
 $$<!--* -->
 {: style="text-align: center"}
 
@@ -224,7 +225,7 @@ $$
 $$
 {: style="text-align: center"}
 
-Note that this is computed as $$RR^\top$$,
+Note that this the sum of squares is computed as $$RR^\top$$,
 rather than $$R^\top R$$,
 because our residuals are row vectors
 rather than column vectors.
@@ -235,7 +236,7 @@ with respect to $$\beta$$ so that we can
 minimize it.
 Enter the Fréchet derivative.
 
-The Fréchet derivative is of a scalar-valued function $$f$$
+The Fréchet derivative of a scalar-valued function $$f$$
 is a function $$\nabla f(x)$$ that satisfies
 
 $$
@@ -345,7 +346,7 @@ $$
 {: style="text-align: center"}
 
 If $$XX^\top$$ is invertible,
-we can solve the above equation for $$\beta^*}$$,<!--* -->
+we can solve the above equation for $$\beta^*$$,<!--* -->
 i.e. the best choice of $$\beta$$,
 by setting the derivative equal to $$0$$:
 
@@ -358,7 +359,8 @@ $$
 $$
 {: style="text-align: center"}
 
-These are known as the *normal equations*.
+Considered as a system of equations,
+this last line is known as the *normal equations*.
 
 ### Multiple-Output Linear Least-Squares
 
@@ -404,6 +406,7 @@ and $$j$$ is the dimensionality of $$y$$.
 
 We can expand this out into
 
+$$
 \begin{align}
 L(W; x, y) &= \|y - Wx \|^2 \\
 &= \left(y - Wx \right)^\top \left(y - Wx \right) \\
@@ -411,6 +414,7 @@ L(W; x, y) &= \|y - Wx \|^2 \\
 - 2 x^\top W^\top y
 \end{align}
 {: style="text-align: center"}
+$$
 
 We wish to compute the derivative
 of $$L$$ with respect to $$W$$.
@@ -447,7 +451,6 @@ we need to rewrite the inner terms the last line
 as matrix inner products with $$\epsilon$$.
 
 The inner product of two matrices $$M$$ and $$N$$,
-as discussed in the
 is given by
 
 $$
@@ -455,7 +458,7 @@ $$
 $$
 {: style="text-align: center"}
 
-where $$\mathrm{tr}$$ is the trace,
+where $$\mathrm{tr}$$ is the *trace*,
 or sum of eigenvalues.
 The same
 [blog post about the size of matrices]({{site.url}}/math/2018/02/28/how-big-is-a-matrix.html),
@@ -476,8 +479,8 @@ dropping the extraneous factor of $$2$$.
 $$
 \begin{align}
 x^\top W^\top \epsilon x &=
-\mathrm{tr}\left(x^\top W^\top \epsilon x\right)
-&= \mathrm{tr}\left(xx^\top W^\top \epsilon \right)
+\mathrm{tr}\left(x^\top W^\top \epsilon x\right) \\
+&= \mathrm{tr}\left(xx^\top W^\top \epsilon \right) \\
 &= \mathrm{tr}\left(\left(Wxx^\top\right)^\top\epsilon\right)
 \end{align}
 $$
@@ -523,8 +526,8 @@ $$
 0 &= 2 (W^*xx^\top - y x^\top) \\
 y x^\top &= W^*xx^\top \\
 W^*&= y x^\top \left(xx^\top\right)^{-1}
-\end{align}<!--_ -->
-$$
+\end{align}
+$$<!--_ -->
 {: style="text-align: center"}
 
 provided the inverse is unique and exists.

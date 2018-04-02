@@ -245,8 +245,8 @@ $$
 And so, from our embarrassingly obvious definition
 of the length of a matrix in terms
 of the length of its vectorized form,
-we've arrived at a more subtle, equivalent definition:
-The squared length of a matrix $$X$$ is equal
+we've arrived at a more subtle, but equivalent definition:
+the squared length of a matrix $$X$$ is equal
 to the sum of the eigenvalues of $$X^\intercal X$$.
 Because this matrix is symmetric and real,
 its eigenvalues are real.
@@ -258,8 +258,9 @@ This proves that our notion of length cannot be negative,
 which is nice.
 
 These eigenvalues appear sufficiently often
-that they have a special name:
-they are the *singular values* of the matrix $$X$$.
+that they are studied in their own right.
+Their square roots are the the *singular values* of the matrix $$X$$,
+traditionally represented by the symbol $$\sigma$$.
 They are so similar to eigenvalues that they
 [were originally called eigenvalues](https://en.wikipedia.org/wiki/Singular_value)
 (and, in fact, *eigen* is German for "singular" or "specific"),

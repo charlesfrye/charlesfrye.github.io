@@ -285,7 +285,7 @@ $$
 	&= YY^\top + \beta^\top X X^\top \beta - \beta^\top X Y^\top - YX\beta^\top \\
 	&\ \ \ \ \beta^\top X X^\top \epsilon + \epsilon^\top X X^\top \beta
 	- \epsilon^\top X Y - Y X^\top \epsilon \\
-	&\ \ \ \ \epsilon^\top X X^\top \epsilon
+	&\ \ \ \ \+ epsilon^\top X X^\top \epsilon
 \end{align}
 $$
 {: style="text-align: center"}
@@ -413,8 +413,8 @@ L(W; x, y) &= \|y - Wx \|^2 \\
 &= y^\top y + x^\top W^\top W x
 - 2 x^\top W^\top y
 \end{align}
-{: style="text-align: center"}
 $$
+{: style="text-align: center"}
 
 We wish to compute the derivative
 of $$L$$ with respect to $$W$$.

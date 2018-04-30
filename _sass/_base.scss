@@ -215,6 +215,8 @@ pre {
 /**
  * Tables
  */
+
+/*from w3schools*/
 table, th, td {
    border: 1px solid black;
 }
@@ -228,4 +230,8 @@ td {
     text-align: center;
 }
 tr:hover {background-color: #f5f5f5;}
-
+/*from granneman.com*/
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+  }

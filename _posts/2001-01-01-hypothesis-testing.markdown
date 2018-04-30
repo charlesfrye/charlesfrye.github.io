@@ -10,7 +10,7 @@ category: stats
 
 # Hypothesis Testing
 
-This tutorial covers the basis of hypothesis testing, including null hypotheses, error types, error rates, and $p$-values. These will require us to develop some fundamental ideas from probability, including joint, marginal, and conditional probabilities.
+This tutorial covers the basis of hypothesis testing, including null hypotheses, error types, error rates, and $$p$$-values. These will require us to develop some fundamental ideas from probability, including joint, marginal, and conditional probabilities.
 
 If you'd like a more thorough-going introduction to these ideas, along with an introduction to Bayes' Rule for relating them to each other, check out
 [this blogpost](http://charlesfrye.github.io/stats/2016/02/04/bayes-rule.html).
@@ -35,14 +35,14 @@ In an experimental science context, a binary hypothesis is an answer to a questi
 - Does adding distractors increase reaction time in healthy human subjects?
 - Does optogenetically stimulating neural circuit A change the activity of neural circuit B?
 
-Each of these questions has a yes or no answer: "yes, the intervention has an effect" or "no, the intervention has no effect". We call these answers *hypotheses*. The hypothesis that the intervention has no effect is called the *null hypothesis*, while the hypothesis that the intervention has an effect is called the *alternative hypothesis*. These are frequently written as $H_0$ and $H_A$, with $0$ and $A$ standing for for "null" and "alternative".
+Each of these questions has a yes or no answer: "yes, the intervention has an effect" or "no, the intervention has no effect". We call these answers *hypotheses*. The hypothesis that the intervention has no effect is called the *null hypothesis*, while the hypothesis that the intervention has an effect is called the *alternative hypothesis*. These are frequently written as $$H_0$$ and $$H_A$$, with $$0$$ and $$A$$ standing for for "null" and "alternative".
 
 When we answer a binary question, there are two possible answers: yes and no, which we call the "positive" and "negative" answer. Furthermore, either the alternative or the null hypothesis could be true. Therefore, there are four possibilities, which appear in the table below:
 
-|                    |  $H_A$ is True | $H_0$ is True  |
+|                    |  $$H_A$$ is True | $$H_0$$ is True  |
 |:------------------:|:--------------:|----------------|
-| **We claim $H_A$** |  True Positive | False Positive |
-| **We claim $H_0$** | False Negative | True Negative  |
+| **We claim $$H_A$$** |  True Positive | False Positive |
+| **We claim $$H_0$$** | False Negative | True Negative  |
 
 The nomenclature for each of these four events is intuitive: the first word is "true" or "false" depending on whether out answer was correct or incorrect (not, e.g., whether the alternative hypothesis is true or false) and the second word is "positive" or "negative" depending on what we claimed.
 
@@ -54,7 +54,7 @@ However, they are frequently used, so consider the following mnemonic, which is 
 
 Let's work through a quick example from one of the early Nobel Prizes granted to a neuroscientist, [ED Adrian](https://www.nobelprize.org/nobel_prizes/medicine/laureates/1932/adrian-lecture.html). Take our alternative hypothesis to be "pressing a weight onto a cat's hind foot causes increased firing in the nerve exiting the foot". The alternative hypothesis, then, is that no such increase in firing occurs. The figures depicting the experimental apparatus from [Adrian and Yngve's 1926 paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1514868/) testing this hypothesis appear below.
 
-The simplest test we might perform to determine the veracity of this hypothesis is to first measure the firing rate of the sensory nerve when the foot is not being stimulated, then measure it again when the foot is being stimulated. We take the difference of these two values, and we accept the alternative hypothesis if the value is less than $0$. 
+The simplest test we might perform to determine the veracity of this hypothesis is to first measure the firing rate of the sensory nerve when the foot is not being stimulated, then measure it again when the foot is being stimulated. We take the difference of these two values, and we accept the alternative hypothesis if the value is less than $$0$$. 
 
 <img src="./img/adrian_yngve_1926_apparatus.gif"/>
 
@@ -64,11 +64,11 @@ Note that if we had designed our test differently, we might expect the chances o
 
 #### Making Hypothesis Testing Rigorous
 
-At a high level, in statistical hypothesis testing, we take some data and use that to determine whether we claim $H_A$ or $H_0$. The key insight that lets us think rigorously about statistical hypothesis testing is to treat both the correct answer (columns in the above table) and the answer we give (rows in the above table) as uncertain quantities, as *random variables*.
+At a high level, in statistical hypothesis testing, we take some data and use that to determine whether we claim $$H_A$$ or $$H_0$$. The key insight that lets us think rigorously about statistical hypothesis testing is to treat both the correct answer (columns in the above table) and the answer we give (rows in the above table) as uncertain quantities, as *random variables*.
 
 It may seem strange to think of our claims about the world as being random, since random is used colloquially to mean "arbitrary" or "without structure or meaning". But recall that anything we calculate from randomly-sampled data "inherits" some randomness from that data -- its value can be different each time we collect a dataset. Because our decisions are based on our data, they can be different from experiment to experiment. Put another way, the result of calculating something based on data is a statistic, and statistics have sampling distributions, as discussed in the earlier material.
 
-The "correct answer" also isn't random in the sense that most people think of randomness. However, it's also not random in the sense described above: a statement like "this intervention has an effect" is either true or false, and it doesn't change whether it's true or false depending on the data we collect. Instead, we recognize that we aren't entirely certain whether "this intervention has an effect" is true or not, and we instead write down a number that captures the degree to which we believe that the statement is true: a logically true statement like $2+2=4$ is associated with the number $1$, while a logically false statement like "This number is greater than itself" is associated with the number $0$. All other kinds of statements, like "It will rain tomorrow" or "Extraterrestrial life exists" fall somewhere in between. We call this number the probability that the statement is true.
+The "correct answer" also isn't random in the sense that most people think of randomness. However, it's also not random in the sense described above: a statement like "this intervention has an effect" is either true or false, and it doesn't change whether it's true or false depending on the data we collect. Instead, we recognize that we aren't entirely certain whether "this intervention has an effect" is true or not, and we instead write down a number that captures the degree to which we believe that the statement is true: a logically true statement like $$2+2=4$$ is associated with the number $$1$$, while a logically false statement like "This number is greater than itself" is associated with the number $$0$$. All other kinds of statements, like "It will rain tomorrow" or "Extraterrestrial life exists" fall somewhere in between. We call this number the probability that the statement is true.
 
 The view that randomness arises from sampling is a core component of the *frequentist* view of statistics. The view of that randomness arises from uncertainty is a core component of the *Bayesian* view of statistics. We'll avoid being dogmatic in this course, switching freely between the views whenever one or the other is simpler.
 
@@ -76,30 +76,30 @@ The view that randomness arises from sampling is a core component of the *freque
 
 Now that we have two different random variables, the outcome of our testing procedure and the ground truth, we can think of the probability that any pair of events occurs, where the first element of a pair comes from the first random variable and the second element comes from the second random variable.
 
-If we shorten the events to $+$ and $-$ for the outcome and $T$ and $F$ for the correct answer (where $T$ means the alternative hypothesis is true), we write a table just like the one above to store the probabilities of pairs of events:
+If we shorten the events to $$+$$ and $$-$$ for the outcome and $$T$$ and $$F$$ for the correct answer (where $$T$$ means the alternative hypothesis is true), we write a table just like the one above to store the probabilities of pairs of events:
 
 <table>
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
-      <td>&nbsp; $p(+,T)$ &nbsp;</td>
-      <td>&nbsp; $p(+,F)$ &nbsp;</td>
+      <td >$$+$$</td>
+      <td>&nbsp; $$p(+,T)$$ &nbsp;</td>
+      <td>&nbsp; $$p(+,F)$$ &nbsp;</td>
     </tr>
      <tr>
-      <td >$-$</td>
-      <td>&nbsp; $p(-,T)$ &nbsp;</td>
-      <td>&nbsp; $p(-,F)$ &nbsp;</td>
+      <td >$$-$$</td>
+      <td>&nbsp; $$p(-,T)$$ &nbsp;</td>
+      <td>&nbsp; $$p(-,F)$$ &nbsp;</td>
     </tr>
   </tbody>
 </table>
 
 
-where $p(+,T)$ should be read as "the probability the test is positive and the alternative hypothesis is true". Since these probabilities tell us the chance that two events *both occur*, we call them *joint probabilities*. The table above is called a *joint probability table*. The information it stores is called a *joint probability distribution*. In this case, the distribution is a mass function.
+where $$p(+,T)$$ should be read as "the probability the test is positive and the alternative hypothesis is true". Since these probabilities tell us the chance that two events *both occur*, we call them *joint probabilities*. The table above is called a *joint probability table*. The information it stores is called a *joint probability distribution*. In this case, the distribution is a mass function.
 
 A joint probability distribution is a powerful thing -- if we had access to all of the numbers in the joint probability tables for our experiments, it'd make statistical test design much easier! Unfortunately, constructing these tables can be very difficult and involves a degree of subjectivity. 
 
@@ -109,18 +109,18 @@ For now, let's assume a God's eye view, where we know all of these numbers, and 
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
-      <td>$0.5$</td>
-      <td>$0.15$</td>
+      <td >$$+$$</td>
+      <td>$$0.5$$</td>
+      <td>$$0.15$$</td>
     </tr>
      <tr>
-      <td >$-$</td>
-      <td>$0.05$</td>
-      <td>$0.3$</td>
+      <td >$$-$$</td>
+      <td>$$0.05$$</td>
+      <td>$$0.3$$</td>
     </tr>
   </tbody>
 </table>
@@ -130,7 +130,7 @@ For now, let's assume a God's eye view, where we know all of these numbers, and 
 
 First, we can use the joint probability table to figure out the probabilities of the individual random variables that make up the table. For example, we can figure out the probability that the alternative hypothesis is true.
 
-We do this by simply adding up the probabilities of all events in which the alternative hypothesis is true. In this case, there are two such events: the alternative hypothesis is true and we claim it is true $(+,T)$ and the alternative hypothesis is true and we claim it is false $(-,T)$. These events correspond to the cells in the first column. Similarly, we can calculate the probability that the alternative hypothesis is false by adding up the values in the second column or calculate the probability of each outcome of our test by adding up the appropriate row.
+We do this by simply adding up the probabilities of all events in which the alternative hypothesis is true. In this case, there are two such events: the alternative hypothesis is true and we claim it is true $$(+,T)$$ and the alternative hypothesis is true and we claim it is false $$(-,T)$$. These events correspond to the cells in the first column. Similarly, we can calculate the probability that the alternative hypothesis is false by adding up the values in the second column or calculate the probability of each outcome of our test by adding up the appropriate row.
 
 Below, you'll find these values are worked for our example table. There, as traditionally, the probability of an event is written at the end of the column or row corresponding to that event. These areas are called the *margins* and so these probabilities are called *marginal probabilities*. Notice that if we add up the marginal probabilities along a row or column (the numbers with a particular background color), the result is 1. That means these are probability distributions -- the marginal probability distributions of the test outcome and the alternative hypothesis.
 
@@ -138,26 +138,26 @@ Below, you'll find these values are worked for our example table. There, as trad
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
-      <th style="background-color: rgb(255,204,204);"> &nbsp; $p(\text{test})$ &nbsp; </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
+      <th style="background-color: rgb(255,204,204);"> &nbsp; $$p(\text{test})$$ &nbsp; </th>
     </tr>
     <tr>
-      <td >$+$</td>
-      <td>$0.5$</td>
-      <td>$0.15$</td>
-      <td style="background-color: rgb(255,204,204);">$0.65$</td>
+      <td >$$+$$</td>
+      <td>$$0.5$$</td>
+      <td>$$0.15$$</td>
+      <td style="background-color: rgb(255,204,204);">$$0.65$$</td>
     </tr>
      <tr>
-      <td >$-$</td>
-      <td>$0.05$</td>
-      <td>$0.3$</td>
-      <td style="background-color: rgb(255,204,204);">$0.35$</td>
+      <td >$$-$$</td>
+      <td>$$0.05$$</td>
+      <td>$$0.3$$</td>
+      <td style="background-color: rgb(255,204,204);">$$0.35$$</td>
     </tr>
      <tr>
-      <td style="background-color: rgb(204,204,255);"> &nbsp; $p(H_A)$ &nbsp; </td>
-      <td style="background-color: rgb(204,204,255);">$0.55$</td>
-      <td style="background-color: rgb(204,204,255);">$0.45$</td>
+      <td style="background-color: rgb(204,204,255);"> &nbsp; $$p(H_A)$$ &nbsp; </td>
+      <td style="background-color: rgb(204,204,255);">$$0.55$$</td>
+      <td style="background-color: rgb(204,204,255);">$$0.45$$</td>
     </tr>
   </tbody>
 </table>
@@ -177,9 +177,9 @@ Often, however, we know the value of one of the variables. For example, once we'
 
 Luckily, the answer is no. Using the joint probability table, we can construct two new tables, which tell us the probability distribution of one of the random variables for fixed values of the other. Because the probabilities in these tables only pertain when a certain *condition* is satisfied (these probabilities are *conditional* on the other random variable having a certain value), they are called *conditional probability tables*.
 
-How do we determine the values in these tables? Consider the right column of the joint probability table above, corresponding to all cases where the alternative hypothesis is false. This column *almost* tells us the conditional probabilities. For example, we can readily see that when the alternative hypothesis is false, the probability that the test comes up negative is twice the probability that it comes up positive ($0.3\ =\ 2\cdot0.15$).
+How do we determine the values in these tables? Consider the right column of the joint probability table above, corresponding to all cases where the alternative hypothesis is false. This column *almost* tells us the conditional probabilities. For example, we can readily see that when the alternative hypothesis is false, the probability that the test comes up negative is twice the probability that it comes up positive ($$0.3\ =\ 2\cdot0.15$$).
 
-However, $0.3 + 0.15$ doesn't equal $1$ -- it's equal to $0.45$, so we can't just directly use those numbers for the conditional probabilities. However, if we divide them by their sum, they'll add up to $1$:
+However, $$0.3 + 0.15$$ doesn't equal $$1$$ -- it's equal to $$0.45$$, so we can't just directly use those numbers for the conditional probabilities. However, if we divide them by their sum, they'll add up to $$1$$:
 
 $$
 \frac{0.3}{0.3+0.15} + \frac{0.15}{0.3+0.15} = \frac{0.3+0.15}{0.3+0.15} = 1
@@ -193,20 +193,20 @@ The two conditional probability tables for our running example appear below. One
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
+      <td >$$+$$</td>
       <td style="background-color: rgb(255,204,204);">0.77</td>
       <td style="background-color: rgb(255,204,204);">0.23</td>
-      <td style="background-color: rgb(255,204,204);">$p(H_A\lvert +)$</td>
+      <td style="background-color: rgb(255,204,204);">$$p(H_A\lvert +)$$</td>
     </tr>
      <tr>
-      <td >$-$</td>
+      <td >$$-$$</td>
       <td style="background-color: rgb(204,204,255);">0.14</td>
       <td style="background-color: rgb(204,204,255);">0.86</td>
-      <td style="background-color: rgb(204,204,255);">$p(H_A\lvert -)$</td>
+      <td style="background-color: rgb(204,204,255);">$$p(H_A\lvert -)$$</td>
     </tr>
   </tbody>
 </table>
@@ -215,36 +215,36 @@ The two conditional probability tables for our running example appear below. One
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
+      <td >$$+$$</td>
       <td style="background-color: rgb(204,204,255);">0.91</td>
       <td style="background-color: rgb(255,204,204);">0.33</td>
     </tr>
      <tr>
-      <td >$-$</td>
+      <td >$$-$$</td>
       <td style="background-color: rgb(204,204,255);">0.09</td>
       <td style="background-color: rgb(255,204,204);">0.67</td>
     </tr>
     <tr>
       <td ></td>
-      <td style="background-color: rgb(204,204,255);">&nbsp;$p(\text{test}\lvert T)$&nbsp;</td>
-      <td style="background-color: rgb(255,204,204);">&nbsp;$p(\text{test}\lvert F)$&nbsp;</td>
+      <td style="background-color: rgb(204,204,255);">&nbsp;$$p(\text{test}\lvert T)$$&nbsp;</td>
+      <td style="background-color: rgb(255,204,204);">&nbsp;$$p(\text{test}\lvert F)$$&nbsp;</td>
     </tr>
   </tbody>
 </table>
 
 
 
-The vertical bar, $\vert$, is pronounced "conditioned on" or "given". One would read the expression $p(\text{test}\vert T)$ as "the conditional probability distribution of the test outcome given that the alternative hypothesis is true".
+The vertical bar, $$\vert$$, is pronounced "conditioned on" or "given". One would read the expression $$p(\text{test}\vert T)$$ as "the conditional probability distribution of the test outcome given that the alternative hypothesis is true".
 
 Note one important difference between a conditional probability table and a joint probability table: while the latter is a distribution, the former is NOT. For example, the entries of a conditional probability table don't add up to 1. Instead, each row or column of a conditional probability table adds up to 1. A conditional probability table is a collection of distributions, with one distribution for each value of the variable being conditioned on.
 
 Because of this distinction, there are several entities that end up getting called "the conditional probability". For example, the first table above is "the conditional probability of the alernative hypothesis given the test outcome". The first row in that table is "the conditional probability of the alternative hypothesis given that the test is positive". The first cell in that row is "the conditional probability that the alternative hypothesis is true given that the test is positive".
 
-In English, this distinction is clear enough, but unfortunately the usual mathematical notation for all three of the above is $p(x\vert y)$, with the meaning depending on which of $x$, $y$, or both are outcomes (e.g. "test is positive") and which are random variables (e.g. "the outcome of the test").
+In English, this distinction is clear enough, but unfortunately the usual mathematical notation for all three of the above is $$p(x\vert y)$$, with the meaning depending on which of $$x$$, $$y$$, or both are outcomes (e.g. "test is positive") and which are random variables (e.g. "the outcome of the test").
 
 ### Conditional Probabilities and Hypothesis Testing
 
@@ -256,25 +256,25 @@ We introduced joint probabilities in order to understand hypothesis testing. Now
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
-      <td style="background-color: rgb(255,204,204);">&nbsp;$p(T\lvert +)$&nbsp;</td>
-      <td style="background-color: rgb(255,204,204);">&nbsp;$p(F\lvert +)$&nbsp;</td>
+      <td >$$+$$</td>
+      <td style="background-color: rgb(255,204,204);">&nbsp;$$p(T\lvert +)$$&nbsp;</td>
+      <td style="background-color: rgb(255,204,204);">&nbsp;$$p(F\lvert +)$$&nbsp;</td>
     </tr>
      <tr>
-      <td >$-$</td>
-      <td style="background-color: rgb(204,204,255);">&nbsp;$p(T\lvert -)$&nbsp;</td>
-      <td style="background-color: rgb(204,204,255);">&nbsp;$p(F\lvert -)$&nbsp;</td>
+      <td >$$-$$</td>
+      <td style="background-color: rgb(204,204,255);">&nbsp;$$p(T\lvert -)$$&nbsp;</td>
+      <td style="background-color: rgb(204,204,255);">&nbsp;$$p(F\lvert -)$$&nbsp;</td>
     </tr>
   </tbody>
 </table>
 
 Because these probabilities are conditioned on the outcome of a test, they tell us how to interpret the results of a test that we have performed.
 
-Consider the top row of this table. This row tells us the conditional probability of the alternative hypothesis when we've gotten a positive test result. Notice that $p(T\vert +)$ isn't $1$ -- a positive test result doesn't mean that we are now 100% certain that that the alternative hypothesis is true. In the case of our running example, it's $0.77$.
+Consider the top row of this table. This row tells us the conditional probability of the alternative hypothesis when we've gotten a positive test result. Notice that $$p(T\vert +)$$ isn't $$1$$ -- a positive test result doesn't mean that we are now 100% certain that that the alternative hypothesis is true. In the case of our running example, it's $$0.77$$.
 
 Recall that we already had a number that reflected our belief that the alternative hypothesis is true: the prior probability of the alternative hypothesis. The conditional probability table above tells us how we should update that belief when we see the result of the test. Since these probabilities come after we collect data and perform a test, they are called *posterior* probabilities.
 
@@ -284,16 +284,16 @@ Posterior and conditional probabilities are very general concepts. Because of th
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
+      <td >$$+$$</td>
       <td style="background-color: rgb(255,204,204);">Positive Predictive Value</td>
       <td style="background-color: rgb(255,204,204);">False Discovery Rate</td>
     </tr>
      <tr>
-      <td >$-$</td>
+      <td >$$-$$</td>
       <td style="background-color: rgb(204,204,255);">False Omission Rate</td>
       <td style="background-color: rgb(204,204,255);">Negative Predictive Value</td>
     </tr>
@@ -314,18 +314,18 @@ Next, let's consider the column-wise conditional probability distributions.
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
-      <td style="background-color: rgb(204,204,255);">&nbsp;$p(+\lvert T)$&nbsp;</td>
-      <td style="background-color: rgb(255,204,204);">&nbsp;$p(+\lvert F)$&nbsp;</td>
+      <td >$$+$$</td>
+      <td style="background-color: rgb(204,204,255);">&nbsp;$$p(+\lvert T)$$&nbsp;</td>
+      <td style="background-color: rgb(255,204,204);">&nbsp;$$p(+\lvert F)$$&nbsp;</td>
     </tr>
      <tr>
-      <td >$-$</td>
-      <td style="background-color: rgb(204,204,255);">&nbsp;$p(-\lvert T)$&nbsp;</td>
-      <td style="background-color: rgb(255,204,204);">&nbsp;$p(-\lvert F)$&nbsp;</td>
+      <td >$$-$$</td>
+      <td style="background-color: rgb(204,204,255);">&nbsp;$$p(-\lvert T)$$&nbsp;</td>
+      <td style="background-color: rgb(255,204,204);">&nbsp;$$p(-\lvert F)$$&nbsp;</td>
     </tr>
   </tbody>
 </table>
@@ -338,17 +338,17 @@ As above, these quantities have special names to distinguish them from run-of-th
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
+      <td >$$+$$</td>
       <td style="background-color: rgb(204,204,255);"> True Positive Rate, Power, Sensitivity </td>
-      <td style="background-color: rgb(255,204,204);"> False Positive Rate, $\alpha$ </td>
+      <td style="background-color: rgb(255,204,204);"> False Positive Rate, $$\alpha$$ </td>
     </tr>
      <tr>
-      <td >$-$</td>
-      <td style="background-color: rgb(204,204,255);"> False Negative Rate, $\beta$</td>
+      <td >$$-$$</td>
+      <td style="background-color: rgb(204,204,255);"> False Negative Rate, $$\beta$$</td>
       <td style="background-color: rgb(255,204,204);"> True Negative Rate, Specificity</td>
     </tr>
   </tbody>
@@ -358,21 +358,21 @@ Take care when interpreting the terms that end in rate, like "true positive rate
 
 At first, these numbers seem to be of limited use for scientists, since we certainly wouldn't be doing experiments if we knew whether the hypothesis was true or false!
 
-The utility of this table is that it doesn't require us to specify $p(H_A)$, so we can avoid all of the difficulties described above for figuring out prior probabilities. The rightmost column of this table is particularly easy to calculate, so it has long dominated the design of hypothesis tests. To make things a bit more concrete, we now turn to how we calculate the values in this column and use them to design a test.
+The utility of this table is that it doesn't require us to specify $$p(H_A)$$, so we can avoid all of the difficulties described above for figuring out prior probabilities. The rightmost column of this table is particularly easy to calculate, so it has long dominated the design of hypothesis tests. To make things a bit more concrete, we now turn to how we calculate the values in this column and use them to design a test.
 
-### Good: Hypothesis Test Design Using $p(+\lvert F)$
+### Good: Hypothesis Test Design Using $$p(+\lvert F)$$
 
 #### Example: Adrian and Yngve
 
 Let us return to our neuroscience example: we wish to test the hypothesis that pressing on a cat's hind foot causes an increase in the firing rate of the nerve exiting the foot.
 
-Imagine that we knew the probability distribution of firing rates that we measure in the case where the foot is not being stimulated. For example, we might have collected thousands of trials, so we have a very good estimate of this probability distribution. Given a new measurement value, we might like to know how likely it was that we'd get that value. Unfortunately, the answer to that question for a continuous value like firing rate is always $0$, as discussed in the earlier section on probability density functions. Instead, we have to ask how likely it was that we'd measure a firing rate around that value, or at least as large or small as that value. In both cases, we take an area under the curve given by the probability density function.
+Imagine that we knew the probability distribution of firing rates that we measure in the case where the foot is not being stimulated. For example, we might have collected thousands of trials, so we have a very good estimate of this probability distribution. Given a new measurement value, we might like to know how likely it was that we'd get that value. Unfortunately, the answer to that question for a continuous value like firing rate is always $$0$$, as discussed in the earlier section on probability density functions. Instead, we have to ask how likely it was that we'd measure a firing rate around that value, or at least as large or small as that value. In both cases, we take an area under the curve given by the probability density function.
 
 A key insight that lets us rigorously design a statistical test here is that if the null hypothesis is true, then the distribution we measured for the firing rates in the nerve of the unstimulated foot is exactly the distribution of the firing rates in the stimulated foot, *under the null hypothesis*. This distribution is often called the *null distribution*. Armed with this distribution, we can calculate the chance that we would observe a firing rate at least that large if the null hypothesis were true. It's simply the procedure described above: take the probability distribution given by the observations of the unstimulated foot and measure the area under the curve that is at or above the measured value. 
 
-The resulting number is the chance, *under the null hypothesis*, that we would collect the data that we collected.   This is a famous number. It is called the *$p$-value*. The lower this value is, the less likely it is that we would observe the data that we observed under the null hypothesis. Put another way, if this value is low and the null hypothesis is true, then our results are very surprising -- they represent some sort of cosmic coincidence. Science, and much of rational inference, rests on the assumption that being less surprised is better and bizarre coincidences don't occur that often. All else being equal, if another hypothesis results in us being less surprised by the information we have, then we prefer that hypothesis.
+The resulting number is the chance, *under the null hypothesis*, that we would collect the data that we collected.   This is a famous number. It is called the *$$p$$-value*. The lower this value is, the less likely it is that we would observe the data that we observed under the null hypothesis. Put another way, if this value is low and the null hypothesis is true, then our results are very surprising -- they represent some sort of cosmic coincidence. Science, and much of rational inference, rests on the assumption that being less surprised is better and bizarre coincidences don't occur that often. All else being equal, if another hypothesis results in us being less surprised by the information we have, then we prefer that hypothesis.
 
-We can use the $p$-value to design a statistical test whose false positive rate we know exactly. If we reject the null hypothesis and claim that the alternative hypothesis is true whenever the $p$-value is less than some number $\alpha$, then our false positive rate will be $\alpha$. It's helpful to spell out exactly why. Remember that the $p$-value is the chance that we would observe the data we observed under the null hypothesis. By definition, half of time, we'll measure $p$-values that are under $0.5$ -- in this case, we can be explicit and say that half of the data we observe should be at least as large as the median. This same argument holds for each percentile.
+We can use the $$p$$-value to design a statistical test whose false positive rate we know exactly. If we reject the null hypothesis and claim that the alternative hypothesis is true whenever the $$p$$-value is less than some number $$\alpha$$, then our false positive rate will be $$\alpha$$. It's helpful to spell out exactly why. Remember that the $$p$$-value is the chance that we would observe the data we observed under the null hypothesis. By definition, half of time, we'll measure $$p$$-values that are under $$0.5$$ -- in this case, we can be explicit and say that half of the data we observe should be at least as large as the median. This same argument holds for each percentile.
 
 #### Summary
 
@@ -383,15 +383,15 @@ The general principle that we used to determine whether a test was a good choice
 1. We know their sampling distribution under the null hypothesis
 2. That distribution has a single peak, with values falling off quickly on either side
 
-The second property lets us say that the event we're interested in determining the likelihood of is *observing an extreme value of the test statistic*, where extreme usually means far away, in either direction, from the peak of the sampling distribution, but could mean far away in a particular direction. The first property lets us figure out what the likelihood of that extreme event is. This likelihood is called the $p$-value (or, more accurately, $p$-statistic). Once we've done that, we compare our $p$-value to some pre-selected value $\alpha$ (the common, but my no means compulsory or necessary, choice is $0.05$), and if the observed value is lower, we reject the null hypothesis.
+The second property lets us say that the event we're interested in determining the likelihood of is *observing an extreme value of the test statistic*, where extreme usually means far away, in either direction, from the peak of the sampling distribution, but could mean far away in a particular direction. The first property lets us figure out what the likelihood of that extreme event is. This likelihood is called the $$p$$-value (or, more accurately, $$p$$-statistic). Once we've done that, we compare our $$p$$-value to some pre-selected value $$\alpha$$ (the common, but my no means compulsory or necessary, choice is $$0.05$$), and if the observed value is lower, we reject the null hypothesis.
 
-If we're not interested in determining the $p$-value exactly, but just want to know the outcome of our test, we can use the sampling distribution of the test statistic under the null hypothesis (also known as the null distribution of the test statistic, for "short") to calculate the value of the test statistic that will be extreme enough to be just under our pre-selected value. We call this value the *critical value* of the test statistic.
+If we're not interested in determining the $$p$$-value exactly, but just want to know the outcome of our test, we can use the sampling distribution of the test statistic under the null hypothesis (also known as the null distribution of the test statistic, for "short") to calculate the value of the test statistic that will be extreme enough to be just under our pre-selected value. We call this value the *critical value* of the test statistic.
 
 The only difference between the simple test we described above and even very complex statistical tests is that our choice of statistic was very simple: the value of a single observation. For most modern experiments, this test is not good enough -- for example, the chance of a true positive might be almost 0! Let's improve our design process for statistical tests by looking at some of the other entries in our conditional probability tables.
 
-### Better: Hypothesis Test Design Using $p(-\lvert T)$
+### Better: Hypothesis Test Design Using $$p(-\lvert T)$$
 
-Because both columns of our "test-design" conditional probability table must add up to $1$, there are really only two independent entities. Above, we covered one of those, the *false positive rate* and its twin, the *true negative rate*. 
+Because both columns of our "test-design" conditional probability table must add up to $$1$$, there are really only two independent entities. Above, we covered one of those, the *false positive rate* and its twin, the *true negative rate*. 
 
 The other pair is the *false negative rate* and its twin, the *true positive rate*. The true positive rate is also known as the *power*, so this section might also be titled "Power Analysis". For reference, we reproduce the conditional probability table here:
 
@@ -399,17 +399,17 @@ The other pair is the *false negative rate* and its twin, the *true positive rat
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
+      <td >$$+$$</td>
       <td style="background-color: rgb(204,204,255);"> True Positive Rate, Power, Sensitivity </td>
-      <td style="background-color: rgb(255,204,204);"> False Positive Rate, $\alpha$ </td>
+      <td style="background-color: rgb(255,204,204);"> False Positive Rate, $$\alpha$$ </td>
     </tr>
      <tr>
-      <td >$-$</td>
-      <td style="background-color: rgb(204,204,255);"> False Negative Rate, $\beta$</td>
+      <td >$$-$$</td>
+      <td style="background-color: rgb(204,204,255);"> False Negative Rate, $$\beta$$</td>
       <td style="background-color: rgb(255,204,204);"> True Negative Rate, Specificity</td>
     </tr>
   </tbody>
@@ -417,9 +417,9 @@ The other pair is the *false negative rate* and its twin, the *true positive rat
 
 The critical difference between this column (on the left) and the column considered above (on the right in the table) is that, where previously the event being conditioned on was that the *null hypothesis* was true, now, the event being conditioned on is that the *alternative hypothesis* is true.
 
-Just as before, if we want to calculate the numbers in this column, we need to know the distribution of our test statistic under the hypothesis we're assuming is true. Unfortunately, this is much more complicated in the case of alternative hypotheses than for null hypotheses. One cause of this is that the null hypothesis is very specific: "there is no effect of this intervention on the measured variable". Another way to phrase this, using more technical language, might be "the size of the effect of this intervention is $0$". The alternative hypothesis is often less specific.
+Just as before, if we want to calculate the numbers in this column, we need to know the distribution of our test statistic under the hypothesis we're assuming is true. Unfortunately, this is much more complicated in the case of alternative hypotheses than for null hypotheses. One cause of this is that the null hypothesis is very specific: "there is no effect of this intervention on the measured variable". Another way to phrase this, using more technical language, might be "the size of the effect of this intervention is $$0$$". The alternative hypothesis is often less specific.
 
-Consider our running example: the null hypothesis was that there was no change in the firing rate between nerves coming from stimulated and unstimulated cats' feet. That is, the change in firing rate caused by stimulating the foot with a weight was $0$. The alternative hypothesis was not so specific: we hypothesized that there *was* a change, but we didn't say how big it was. That is, we didn't specify an *effect size*.
+Consider our running example: the null hypothesis was that there was no change in the firing rate between nerves coming from stimulated and unstimulated cats' feet. That is, the change in firing rate caused by stimulating the foot with a weight was $$0$$. The alternative hypothesis was not so specific: we hypothesized that there *was* a change, but we didn't say how big it was. That is, we didn't specify an *effect size*.
 
 This makes it difficult to figure out how likely we are to make a false negative error. If the effect of stimulation on firing rate is tremendously large, then the chance of a false negative is lower -- it'd take a very large coincidence of uncontrolled factors to "cancel it out" and make us erroneously conclude that the null hypothesis was true. If the firing rate change is extremely small, then a false negative is extremely likely -- we need the uncontrolled factors to coincidentally break in the same direction as the intervention in order to reject the null.
 
@@ -430,28 +430,28 @@ In order to calculate the true positive rate, we need to specify the distributio
 
 The solution to the first problem is straightforward, if rarely done outside of certain contexts like large clinical trials or very expensive, long-running experiments. We run a very small experiment, also known as a pilot, and calculate an effect size from that experiment. We don't care whether the effect was significant or not; we simply use it as an estimate of the true effect size. This gives us a specific alternative hypothesis to test and so gives us, in principle, a sampling distribution of the test statistic under the alternative hypothesis.
 
-The second problem is a bit tougher. Though pre-written methods for calculating the distribution of many test statistics under various null hypotheses are widely available, methods for calculating these distributions under alternative hypotheses are harder to come by. Firstly, there is less demand, since the scientific community has historically been less aware of the importance of calculating true positive rates. Awareness has spread, but roll-out of this kind of *power analysis* software is limited. For example, the availability of such packages for Python is quite limited. Secondly, calculating the sampling distribution for a specific value of the effect is often quite involved, often more so than for the absence of an effect. The difficulty is increased if, as is often desirable, we want to say "the effect is no bigger than $a$ and no less than $b$".
+The second problem is a bit tougher. Though pre-written methods for calculating the distribution of many test statistics under various null hypotheses are widely available, methods for calculating these distributions under alternative hypotheses are harder to come by. Firstly, there is less demand, since the scientific community has historically been less aware of the importance of calculating true positive rates. Awareness has spread, but roll-out of this kind of *power analysis* software is limited. For example, the availability of such packages for Python is quite limited. Secondly, calculating the sampling distribution for a specific value of the effect is often quite involved, often more so than for the absence of an effect. The difficulty is increased if, as is often desirable, we want to say "the effect is no bigger than $$a$$ and no less than $$b$$".
 
-### Best: Hypothesis Test Design Using $p(T\lvert +)$ and $p(F\lvert -)$
+### Best: Hypothesis Test Design Using $$p(T\lvert +)$$ and $$p(F\lvert -)$$
 
-In an ideal world, scientific experiments would be designed to maximize the probability that inferences drawn based on the results are correct: to maximize the chance that the hypothesis supported by the results is true. The two relevant quantities for this kind of test design are $p(T\lvert+)$, the posterior probability that the alternative hypothesis is true given that we observe a positive test result, and $p(F\lvert-)$, the posterior probability that the alternative hypothesis is false given that we observe a negative test result. These two quantities are found in the "test-interpretation" conditional probability table, reproduced below.
+In an ideal world, scientific experiments would be designed to maximize the probability that inferences drawn based on the results are correct: to maximize the chance that the hypothesis supported by the results is true. The two relevant quantities for this kind of test design are $$p(T\lvert+)$$, the posterior probability that the alternative hypothesis is true given that we observe a positive test result, and $$p(F\lvert-)$$, the posterior probability that the alternative hypothesis is false given that we observe a negative test result. These two quantities are found in the "test-interpretation" conditional probability table, reproduced below.
 
 <table>
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
-      <td style="background-color: rgb(255,204,204);">&nbsp;$p(T\lvert +)$&nbsp;</td>
-      <td style="background-color: rgb(255,204,204);">&nbsp;$p(F\lvert +)$&nbsp;</td>
+      <td >$$+$$</td>
+      <td style="background-color: rgb(255,204,204);">&nbsp;$$p(T\lvert +)$$&nbsp;</td>
+      <td style="background-color: rgb(255,204,204);">&nbsp;$$p(F\lvert +)$$&nbsp;</td>
     </tr>
      <tr>
-      <td >$-$</td>
-      <td style="background-color: rgb(204,204,255);">&nbsp;$p(T\lvert -)$&nbsp;</td>
-      <td style="background-color: rgb(204,204,255);">&nbsp;$p(F\lvert -)$&nbsp;</td>
+      <td >$$-$$</td>
+      <td style="background-color: rgb(204,204,255);">&nbsp;$$p(T\lvert -)$$&nbsp;</td>
+      <td style="background-color: rgb(204,204,255);">&nbsp;$$p(F\lvert -)$$&nbsp;</td>
     </tr>
   </tbody>
 </table>
@@ -460,16 +460,16 @@ In an ideal world, scientific experiments would be designed to maximize the prob
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
+      <td >$$+$$</td>
       <td style="background-color: rgb(255,204,204);">Positive Predictive Value</td>
       <td style="background-color: rgb(255,204,204);">False Discovery Rate</td>
     </tr>
      <tr>
-      <td >$-$</td>
+      <td >$$-$$</td>
       <td style="background-color: rgb(204,204,255);">False Omission Rate</td>
       <td style="background-color: rgb(204,204,255);">Negative Predictive Value</td>
     </tr>
@@ -483,7 +483,7 @@ In some cases, however, these quantities can be estimated from data: see
 for an introduction.
 These methods require, however, that we test a large number of roughly equivalent hypotheses. For example, we measure the levels of expression for thousands of genes in healthy and unhealthy cells, with the collection of equivalent hypotheses being "expression of Gene 1 is different in unhealthy cells", "expression of Gene 2 is different in unhealthy cells", and so on.
 
-### Aside: $p(F\lvert +)$ is not $p(+\lvert F)$
+### Aside: $$p(F\lvert +)$$ is not $$p(+\lvert F)$$
 
 The "test-design" conditional probability tables from above are reproduced below.
 
@@ -491,17 +491,17 @@ The "test-design" conditional probability tables from above are reproduced below
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
+      <td >$$+$$</td>
       <td style="background-color: rgb(204,204,255);"> True Positive Rate, Power, Sensitivity </td>
-      <td style="background-color: rgb(255,204,204);"> False Positive Rate, $\alpha$ </td>
+      <td style="background-color: rgb(255,204,204);"> False Positive Rate, $$\alpha$$ </td>
     </tr>
      <tr>
-      <td >$-$</td>
-      <td style="background-color: rgb(204,204,255);"> False Negative Rate, $\beta$</td>
+      <td >$$-$$</td>
+      <td style="background-color: rgb(204,204,255);"> False Negative Rate, $$\beta$$</td>
       <td style="background-color: rgb(255,204,204);"> True Negative Rate, Specificity</td>
     </tr>
   </tbody>
@@ -511,45 +511,45 @@ The "test-design" conditional probability tables from above are reproduced below
   <tbody>
     <tr>
       <th> </th>
-      <th > $T$ </th>
-      <th > $F$ </th>
+      <th > $$T$$ </th>
+      <th > $$F$$ </th>
     </tr>
     <tr>
-      <td >$+$</td>
-      <td style="background-color: rgb(204,204,255);">&nbsp;$p(+\lvert T)$&nbsp;</td>
-      <td style="background-color: rgb(255,204,204);">&nbsp;$p(+\lvert F)$&nbsp;</td>
+      <td >$$+$$</td>
+      <td style="background-color: rgb(204,204,255);">&nbsp;$$p(+\lvert T)$$&nbsp;</td>
+      <td style="background-color: rgb(255,204,204);">&nbsp;$$p(+\lvert F)$$&nbsp;</td>
     </tr>
      <tr>
-      <td >$-$</td>
-      <td style="background-color: rgb(204,204,255);">&nbsp;$p(-\lvert T)$&nbsp;</td>
-      <td style="background-color: rgb(255,204,204);">&nbsp;$p(-\lvert F)$&nbsp;</td>
+      <td >$$-$$</td>
+      <td style="background-color: rgb(204,204,255);">&nbsp;$$p(-\lvert T)$$&nbsp;</td>
+      <td style="background-color: rgb(255,204,204);">&nbsp;$$p(-\lvert F)$$&nbsp;</td>
     </tr>
   </tbody>
 </table>
 
-Notice the position of $\alpha$. $\alpha$ is not the chance that the null hypothesis is true, given the results of the test. That would be $p(F\lvert +)$, from the "test-interpretation" conditional probability table. Instead, $\alpha$ is $p(+\lvert F)$, which is the probability of getting a positive result, given that the null hypothesis is false.
+Notice the position of $$\alpha$$. $$\alpha$$ is not the chance that the null hypothesis is true, given the results of the test. That would be $$p(F\lvert +)$$, from the "test-interpretation" conditional probability table. Instead, $$\alpha$$ is $$p(+\lvert F)$$, which is the probability of getting a positive result, given that the null hypothesis is false.
 
-A silly example might be helpful for understanding and remembering the difference. Say you wanted to test the hypothesis that $2+2=5$. We know this hypothesis is false, because we've defined it to be false. Now imagine that, to test this hypothesis, you flip a coin. If it comes up heads, then you claim $2+2=5$ is true, and if it comes up tails, you claim $2+2=5$ is false. This is a pefectly acceptable, if useless, statistical test. The chance of getting a false positive is not $0$ -- it's $0.5$, since the odds are $50/50$. Therefore, $p(+\lvert F)$ is $0.5$. However, it's intuitively obvious that $p(F\lvert +)$ is still $1$ -- no amount of coin flipping can change the fact that $2+2\neq5$ -- and indeed, if you work through the calculations described above, you can confirm this. To get you started, I've provided the joint probability table below. 
+A silly example might be helpful for understanding and remembering the difference. Say you wanted to test the hypothesis that $$2+2=5$$. We know this hypothesis is false, because we've defined it to be false. Now imagine that, to test this hypothesis, you flip a coin. If it comes up heads, then you claim $$2+2=5$$ is true, and if it comes up tails, you claim $$2+2=5$$ is false. This is a pefectly acceptable, if useless, statistical test. The chance of getting a false positive is not $$0$$ -- it's $$0.5$$, since the odds are $$50/50$$. Therefore, $$p(+\lvert F)$$ is $$0.5$$. However, it's intuitively obvious that $$p(F\lvert +)$$ is still $$1$$ -- no amount of coin flipping can change the fact that $$2+2\neq5$$ -- and indeed, if you work through the calculations described above, you can confirm this. To get you started, I've provided the joint probability table below. 
 
 <table>
   <tbody>
     <tr>
       <th> </th>
-      <th > &nbsp;&nbsp; $2+2=5$ &nbsp;&nbsp;</th>
-      <th > &nbsp;&nbsp; $2+2\neq5$ &nbsp;&nbsp; </th>
+      <th > &nbsp;&nbsp; $$2+2=5$$ &nbsp;&nbsp;</th>
+      <th > &nbsp;&nbsp; $$2+2\neq5$$ &nbsp;&nbsp; </th>
     </tr>
     <tr>
       <td >Tails</td>
-      <td>$0$</td>
-      <td>$0.5$</td>
+      <td>$$0$$</td>
+      <td>$$0.5$$</td>
     </tr>
      <tr>
       <td >Heads</td>
-      <td>$0$</td>
-      <td>$0.5$</td>
+      <td>$$0$$</td>
+      <td>$$0.5$$</td>
     </tr>
   </tbody>
 </table>
 
-It's important to keep this in mind when interpreting $p$-values. They are frequently confused for the probability that the hypothesis is incorrect, more technically the posterior probability of the null hypothesis. It's important to recall that a very small $p$-value doesn't necessarily mean a very high posterior probability of the hypothesis, in particular if the prior probability of the hypothesis is small. For a polemic presentation of this view, see
+It's important to keep this in mind when interpreting $$p$$-values. They are frequently confused for the probability that the hypothesis is incorrect, more technically the posterior probability of the null hypothesis. It's important to recall that a very small $$p$$-value doesn't necessarily mean a very high posterior probability of the hypothesis, in particular if the prior probability of the hypothesis is small. For a polemic presentation of this view, see
 [Colquhoun, 2014](http://rsos.royalsocietypublishing.org/content/1/3/140216).

@@ -43,6 +43,7 @@ When we answer a binary question, there are two possible answers: yes and no, wh
 |:------------------:|:--------------:|----------------|
 | **We claim $$H_A$$** |  True Positive | False Positive |
 | **We claim $$H_0$$** | False Negative | True Negative  |
+{: style="text-align: center"}
 
 The nomenclature for each of these four events is intuitive: the first word is "true" or "false" depending on whether out answer was correct or incorrect (not, e.g., whether the alternative hypothesis is true or false) and the second word is "positive" or "negative" depending on what we claimed.
 
@@ -57,6 +58,7 @@ Let's work through a quick example from one of the early Nobel Prizes granted to
 The simplest test we might perform to determine the veracity of this hypothesis is to first measure the firing rate of the sensory nerve when the foot is not being stimulated, then measure it again when the foot is being stimulated. We take the difference of these two values, and we accept the alternative hypothesis if the value is less than $$0$$. 
 
 <img src="./img/adrian_yngve_1926_apparatus.gif"/>
+{: style="text-align: center"}
 
 Let us assume, as we often do with hypotheses that have won Nobel prizes, that this hypothesis is true. If we measure a higher rate in the foot after it is pressed and therefore claim that the alternative hypothesis is true, we have a *true positive* result. If, despite the veracity of the alternative hypothesis, we measure a lower firing rate in the stimulated foot (due to uncontrolled fluctuations in the firing rate, like those due to ion concentration changes, changes in ambient temperature, movement by the experimental subject, etc.), and therefore claim that the null hypothesis is true, then we have a *false negative result*. If the alternative hypothesis that stimulation of the foot with a weight increases firing rate were instead false, and we measured no difference in firing rate, or a difference in the opposite direction, then we would have a *true negative* result. Lastly, we could measure an increase even if the hypothesis were false, again due to uncontrolled factors, and the result would be a *false positive*.
 
@@ -97,6 +99,7 @@ If we shorten the events to $$+$$ and $$-$$ for the outcome and $$T$$ and $$F$$ 
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
 
 
 where $$p(+,T)$$ should be read as "the probability the test is positive and the alternative hypothesis is true". Since these probabilities tell us the chance that two events *both occur*, we call them *joint probabilities*. The table above is called a *joint probability table*. The information it stores is called a *joint probability distribution*. In this case, the distribution is a mass function.
@@ -124,6 +127,7 @@ For now, let's assume a God's eye view, where we know all of these numbers, and 
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
 
 
 ### Marginal Probabilities
@@ -161,6 +165,7 @@ Below, you'll find these values are worked for our example table. There, as trad
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
 
 
 There's nothing magical happening here. We could've made the rows correspond to a different random variable, like whether it's raining in Kansas or whether Mercury is in retrograde. After all, the total chance that the alternative hypothesis is true is equal to the chance that it is equal and Mercury is in retrograde plus the chance that it is equal and Mercury is not in retrograde (it might be helpful to think in terms of frequencies here). Calculating marginal probabilities from a joint probability table is just an accounting trick to make more obvious the information that's already in the table.
@@ -210,7 +215,9 @@ The two conditional probability tables for our running example appear below. One
     </tr>
   </tbody>
 </table>
-
+{: style="text-align: center"}
+<br>
+<br>
 <table>
   <tbody>
     <tr>
@@ -235,6 +242,7 @@ The two conditional probability tables for our running example appear below. One
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
 
 
 
@@ -271,6 +279,7 @@ We introduced joint probabilities in order to understand hypothesis testing. Now
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
 
 Because these probabilities are conditioned on the outcome of a test, they tell us how to interpret the results of a test that we have performed.
 
@@ -299,6 +308,7 @@ Posterior and conditional probabilities are very general concepts. Because of th
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
 
 where coloring, as above, indicates conditioning on the same value. Because of this, two named quantities with the same background color must add up to 1, and so knowing one tells you the other. Depending on the context of the problem, one will be easier or harder to think about.
 
@@ -329,6 +339,7 @@ Next, let's consider the column-wise conditional probability distributions.
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
 
 Because these probabilities are conditioned on whether the alternative hypothesis is true or false, they don't tell us how to interpret the results of a test. Instead, they tell us how the test will perform in situations where the hypothesis is true and where it is false.  Notice that the diagonal values correspond to the probability that the test gives you the right answer in each case. These probabilities are useful for folks who design statistical tests: without having to worry about whether the alternative hypothesis is likely to be true or false, they can confirm that their test is useful by ensuring that the diagonal elements of the above table are both large.
 
@@ -353,6 +364,7 @@ As above, these quantities have special names to distinguish them from run-of-th
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
 
 Take care when interpreting the terms that end in rate, like "true positive rate" and "false negative rate". The temptation is to interpret them as referring to the fraction of your tests that are true positives/false negatives. This is incorrect. Instead, these rates tell you the fractions of such tests *in situations where the alternative hypothesis is true*. That is, if we know the alternative hypothesis is true, then we can use the true positive rate to tell us how many of our tests should be true positives. The false positive rate and true negative rate tell us the false positive and true negative fractions *in situations where the null hypothesis is true*.
 
@@ -414,6 +426,7 @@ The other pair is the *false negative rate* and its twin, the *true positive rat
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
 
 The critical difference between this column (on the left) and the column considered above (on the right in the table) is that, where previously the event being conditioned on was that the *null hypothesis* was true, now, the event being conditioned on is that the *alternative hypothesis* is true.
 
@@ -455,7 +468,9 @@ In an ideal world, scientific experiments would be designed to maximize the prob
     </tr>
   </tbody>
 </table>
-
+{: style="text-align: center"}
+<br>
+<br>
 <table>
   <tbody>
     <tr>
@@ -475,6 +490,7 @@ In an ideal world, scientific experiments would be designed to maximize the prob
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
 
 Unfortunately, these require an estimate of the prior probability of the hypothesis. Adequately representing our prior beliefs quantitatively is an inexact science, so there will usually be room for subjectivity -- often enough to completely change the interpretation of results.
 
@@ -506,6 +522,9 @@ The "test-design" conditional probability tables from above are reproduced below
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
+<br>
+<br>
 
 <table>
   <tbody>
@@ -526,6 +545,7 @@ The "test-design" conditional probability tables from above are reproduced below
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
 
 Notice the position of $$\alpha$$. $$\alpha$$ is not the chance that the null hypothesis is true, given the results of the test. That would be $$p(F\lvert +)$$, from the "test-interpretation" conditional probability table. Instead, $$\alpha$$ is $$p(+\lvert F)$$, which is the probability of getting a positive result, given that the null hypothesis is false.
 
@@ -550,6 +570,7 @@ A silly example might be helpful for understanding and remembering the differenc
     </tr>
   </tbody>
 </table>
+{: style="text-align: center"}
 
 It's important to keep this in mind when interpreting $$p$$-values. They are frequently confused for the probability that the hypothesis is incorrect, more technically the posterior probability of the null hypothesis. It's important to recall that a very small $$p$$-value doesn't necessarily mean a very high posterior probability of the hypothesis, in particular if the prior probability of the hypothesis is small. For a polemic presentation of this view, see
 [Colquhoun, 2014](http://rsos.royalsocietypublishing.org/content/1/3/140216).

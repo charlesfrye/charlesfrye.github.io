@@ -80,7 +80,7 @@ Now that we have two different random variables, the outcome of our testing proc
 
 If we shorten the events to $$+$$ and $$-$$ for the outcome and $$T$$ and $$F$$ for the correct answer (where $$T$$ means the alternative hypothesis is true), we write a table just like the one above to store the probabilities of pairs of events:
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -108,7 +108,7 @@ A joint probability distribution is a powerful thing -- if we had access to all 
 
 For now, let's assume a God's eye view, where we know all of these numbers, and see what we can figure out. We'll use a running example with the joint probability table below. Notice that these numbers add up to 1 -- that's what makes the values a valid probability distribution.
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -138,7 +138,7 @@ We do this by simply adding up the probabilities of all events in which the alte
 
 Below, you'll find these values are worked for our example table. There, as traditionally, the probability of an event is written at the end of the column or row corresponding to that event. These areas are called the *margins* and so these probabilities are called *marginal probabilities*. Notice that if we add up the marginal probabilities along a row or column (the numbers with a particular background color), the result is 1. That means these are probability distributions -- the marginal probability distributions of the test outcome and the alternative hypothesis.
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -194,7 +194,7 @@ Put another way, the rows and columns of the joint probability table are like *u
 
 The two conditional probability tables for our running example appear below. One corresponds to viewing the rows of the joint table as un-normalized distributions (and so conditioning on test outcome, the random variable in the rows of the table) while the other corresponds to viewing the columns as un-normalized distributions (and so conditioning on the truth value of the alternative hypothesis, the random variable in the columns of the table).
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -218,7 +218,7 @@ The two conditional probability tables for our running example appear below. One
 {: style="text-align: center"}
 <br>
 <br>
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -260,7 +260,7 @@ We introduced joint probabilities in order to understand hypothesis testing. Now
 
 #### The "Test-Interpretation" Table
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -289,7 +289,7 @@ Recall that we already had a number that reflected our belief that the alternati
 
 Posterior and conditional probabilities are very general concepts. Because of the importance of binary hypothesis testing, the conditional probabilities in the table above have special names that capture their role in interpreting tests. Those names are:
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -320,7 +320,7 @@ Next, let's consider the column-wise conditional probability distributions.
 
 #### The "Test-Design" Table
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -345,7 +345,7 @@ Because these probabilities are conditioned on whether the alternative hypothesi
 
 As above, these quantities have special names to distinguish them from run-of-the-mill conditional probabilities. Because they are more commonly used and used by a wide array of disciplines, they have multiple names, the most common of which appear below.
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -407,7 +407,7 @@ Because both columns of our "test-design" conditional probability table must add
 
 The other pair is the *false negative rate* and its twin, the *true positive rate*. The true positive rate is also known as the *power*, so this section might also be titled "Power Analysis". For reference, we reproduce the conditional probability table here:
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -449,7 +449,7 @@ The second problem is a bit tougher. Though pre-written methods for calculating 
 
 In an ideal world, scientific experiments would be designed to maximize the probability that inferences drawn based on the results are correct: to maximize the chance that the hypothesis supported by the results is true. The two relevant quantities for this kind of test design are $$p(T\lvert+)$$, the posterior probability that the alternative hypothesis is true given that we observe a positive test result, and $$p(F\lvert-)$$, the posterior probability that the alternative hypothesis is false given that we observe a negative test result. These two quantities are found in the "test-interpretation" conditional probability table, reproduced below.
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -471,7 +471,7 @@ In an ideal world, scientific experiments would be designed to maximize the prob
 {: style="text-align: center"}
 <br>
 <br>
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -503,7 +503,7 @@ These methods require, however, that we test a large number of roughly equivalen
 
 The "test-design" conditional probability tables from above are reproduced below.
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -526,7 +526,7 @@ The "test-design" conditional probability tables from above are reproduced below
 <br>
 <br>
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>
@@ -551,7 +551,7 @@ Notice the position of $$\alpha$$. $$\alpha$$ is not the chance that the null hy
 
 A silly example might be helpful for understanding and remembering the difference. Say you wanted to test the hypothesis that $$2+2=5$$. We know this hypothesis is false, because we've defined it to be false. Now imagine that, to test this hypothesis, you flip a coin. If it comes up heads, then you claim $$2+2=5$$ is true, and if it comes up tails, you claim $$2+2=5$$ is false. This is a pefectly acceptable, if useless, statistical test. The chance of getting a false positive is not $$0$$ -- it's $$0.5$$, since the odds are $$50/50$$. Therefore, $$p(+\lvert F)$$ is $$0.5$$. However, it's intuitively obvious that $$p(F\lvert +)$$ is still $$1$$ -- no amount of coin flipping can change the fact that $$2+2\neq5$$ -- and indeed, if you work through the calculations described above, you can confirm this. To get you started, I've provided the joint probability table below. 
 
-<table>
+<table class="center">
   <tbody>
     <tr>
       <th> </th>

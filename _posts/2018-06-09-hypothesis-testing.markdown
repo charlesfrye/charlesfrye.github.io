@@ -9,7 +9,7 @@ category: stats
 <table class="center">
   <tbody>
     <tr>
-      <th></th>
+      <th style="border: none"></th>
       <th > &nbsp;&nbsp; $$2+2=5$$ &nbsp;&nbsp;</th>
       <th > &nbsp;&nbsp; $$2+2\neq5$$ &nbsp;&nbsp; </th>
     </tr>

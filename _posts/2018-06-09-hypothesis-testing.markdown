@@ -66,7 +66,7 @@ When we answer a binary question, there are two possible answers: yes and no, wh
     </tr>
     <tr>
       <td >We claim $$H_A$$</td>
-      <td>True Positivetd>
+      <td>True Positive</td>
       <td>False Positive</td>
     </tr>
      <tr>

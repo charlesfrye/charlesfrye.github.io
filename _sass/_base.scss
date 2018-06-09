@@ -220,6 +220,10 @@ pre {
 table, th, td {
    border: 1px solid black;
 }
+.border-less {
+    border-top: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+}
 table {
     border-collapse: collapse;
     empty-cells: hide;

@@ -61,8 +61,8 @@ When we answer a binary question, there are two possible answers: yes and no, wh
 <table class="center">
     <tr class="border-less">
       <th class="border-less"></th>
-      <th > &nbsp;&nbsp; $$H_A$$ is True &nbsp;&nbsp;</th>
-      <th > &nbsp;&nbsp; $$H_0$$ is True &nbsp;&nbsp; </th>
+      <td > &nbsp;&nbsp; Truth is $$H_A$$  &nbsp;&nbsp;</td>
+      <td > &nbsp;&nbsp; Truth is $$H_0$$ &nbsp;&nbsp; </td>
     </tr>
     <tr>
       <td >We claim $$H_A$$</td>

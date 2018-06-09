@@ -629,7 +629,7 @@ How often do we know our prior and likelihood? In some cases, the prior probabil
 It is more common for us to know our likelihood. For many experiments, we can construct a "forward model" that relates states of the world ("this drug is effective", "this neuron is tuned to oriented bars at 45$$^\circ$$") to outcomes ("the patient is no longer sick", "the firing rate of the neuron increases by 10 spikes/sec"). When we have a well-specified forward model and a clear and specific hypothesis, we can construct a likelihood.
 
 
-### Aside: "Accept" vs. "Fail to Reject",
+### Aside: "Accept" vs. "Fail to Reject"
 The general framework for statistical hypothesis testing was laid down in the early-to-mid 20th century, amid an acrimonious debate between R.A Fisher, who advocated for a looser, more intuitive approach that saw statistical tests as an adjunct to graphical intuition, and Jerzy Neyman and Karl Pearson, who advocated for a much stricter approach.
 
 At this time, bringing rigor to the philosophy of science was also considered of paramount importance. One of the key concepts developed in this era was "falsifiability", due to Karl Popper. Under this view, no scientific theory or model was ever to be considered "true". It was only provisionally "not falsified yet" if no evidence contradicting it was available (and a theory was only considered scientific if it was falsifiable). This admirable level of self-doubt led to a very particular terminology around hypothesis testing: neither the null hypothesis nor an alternative hypothesis is ever "accepted"; instead, we "reject" or "fail to reject" a hypothesis.

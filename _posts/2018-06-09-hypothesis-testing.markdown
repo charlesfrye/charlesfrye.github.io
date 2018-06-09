@@ -102,7 +102,7 @@ If we shorten the events to $$+$$ and $$-$$ for the outcome and $$T$$ and $$F$$ 
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -129,7 +129,7 @@ Let's leave aside the question of where the joint distribution comes from. For n
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -159,7 +159,7 @@ Below, you'll find these values are worked for our example table. There, as trad
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
       <th style="background-color: rgb(255,204,204);"> &nbsp; $$p(\text{test})$$ &nbsp; </th>
@@ -215,7 +215,7 @@ The two conditional probability tables for our running example appear below. One
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -239,7 +239,7 @@ The two conditional probability tables for our running example appear below. One
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -281,7 +281,7 @@ We introduced joint probabilities in order to understand hypothesis testing. Now
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -310,7 +310,7 @@ Posterior and conditional probabilities are very general concepts. Because of th
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -341,7 +341,7 @@ Next, let's consider the column-wise conditional probability distributions.
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -366,7 +366,7 @@ As above, these quantities have special names to distinguish them from run-of-th
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -428,7 +428,7 @@ The other pair is the *false negative rate* and its twin, the *true positive rat
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -470,7 +470,7 @@ In an ideal world, scientific experiments would be designed to maximize the prob
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -492,7 +492,7 @@ In an ideal world, scientific experiments would be designed to maximize the prob
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -524,7 +524,7 @@ The "test-design" conditional probability tables from above are reproduced below
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -547,7 +547,7 @@ The "test-design" conditional probability tables from above are reproduced below
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > $$T$$ </th>
       <th > $$F$$ </th>
     </tr>
@@ -572,7 +572,7 @@ A silly example might be helpful for understanding and remembering the differenc
 <table class="center">
   <tbody>
     <tr>
-      <th> </th>
+      <th class="border-less"></th>
       <th > &nbsp;&nbsp; $$2+2=5$$ &nbsp;&nbsp;</th>
       <th > &nbsp;&nbsp; $$2+2\neq5$$ &nbsp;&nbsp; </th>
     </tr>

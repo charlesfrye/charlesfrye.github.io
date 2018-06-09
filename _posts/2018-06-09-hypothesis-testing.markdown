@@ -78,7 +78,7 @@ Let's work through a quick example from one of the early Nobel Prizes granted to
 
 The simplest test we might perform to determine the veracity of this hypothesis is to first measure the firing rate of the sensory nerve when the foot is not being stimulated, then measure it again when the foot is being stimulated. We take the difference of these two values, and we accept the alternative hypothesis if the value is less than $$0$$.
 
-![adrian_yngve_1926_apparatus.gif]
+![adrian_yngve_1926_apparatus]
 {: style="text-align: center"}
 
 Let us assume, as we often do with hypotheses that have won Nobel prizes, that this hypothesis is true. If we measure a higher rate in the foot after it is pressed and therefore claim that the alternative hypothesis is true, we have a *true positive* result. If, despite the veracity of the alternative hypothesis, we measure a lower firing rate in the stimulated foot (due to uncontrolled fluctuations in the firing rate, like those due to ion concentration changes, changes in ambient temperature, movement by the experimental subject, etc.), and therefore claim that the null hypothesis is true, then we have a *false negative result*. If the alternative hypothesis that stimulation of the foot with a weight increases firing rate were instead false, and we measured no difference in firing rate, or a difference in the opposite direction, then we would have a *true negative* result. Lastly, we could measure an increase even if the hypothesis were false, again due to uncontrolled factors, and the result would be a *false positive*.

@@ -222,6 +222,7 @@ table, th, td {
 }
 table {
     border-collapse: collapse;
+    empty-cells: hide;
 }
 th {
     text-align: left;

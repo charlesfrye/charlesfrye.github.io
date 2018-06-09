@@ -8,8 +8,8 @@ category: stats
 
 <table class="center">
   <tbody>
-    <tr>
-      <th style="border: none"></th>
+    <tr class="border-less">
+      <th ></th>
       <th > &nbsp;&nbsp; $$2+2=5$$ &nbsp;&nbsp;</th>
       <th > &nbsp;&nbsp; $$2+2\neq5$$ &nbsp;&nbsp; </th>
     </tr>

@@ -23,6 +23,14 @@ category: stats
       <td>$$0.5$$</td>
     </tr>
 </table>
+
+To celebrate the latest stable version of
+[Applied Statistics for Neuroscience](https://github.com/charlesfrye/AppliedStatisticsForNeuroscience),
+here's a tutorial on hypothesis testing, based on the lecture notes for the course.
+Make sure to check out
+[the whole course](https://github.com/charlesfrye/AppliedStatisticsForNeuroscience)
+if you liked this snippet!
+
 {: style="text-align: center"}
 
 <!--exc-->

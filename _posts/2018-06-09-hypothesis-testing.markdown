@@ -58,10 +58,23 @@ Each of these questions has a yes or no answer: "yes, the intervention has an ef
 
 When we answer a binary question, there are two possible answers: yes and no, which we call the "positive" and "negative" answer. Furthermore, either the alternative or the null hypothesis could be true. Therefore, there are four possibilities, which appear in the table below:
 
-|                    |  $$H_A$$ is True | $$H_0$$ is True  |
-|:------------------:|:--------------:|----------------|
-| **We claim $$H_A$$** |  True Positive | False Positive |
-| **We claim $$H_0$$** | False Negative | True Negative  |
+<table class="center">
+    <tr class="border-less">
+      <th class="border-less"></th>
+      <th > &nbsp;&nbsp; $$H_A$$ is True &nbsp;&nbsp;</th>
+      <th > &nbsp;&nbsp; $$H_0$$ is True &nbsp;&nbsp; </th>
+    </tr>
+    <tr>
+      <td >We claim $$H_A$$</td>
+      <td>True Positivetd>
+      <td>False Positive</td>
+    </tr>
+     <tr>
+      <td >We claim $$H_0$$</td>
+      <td>False Negative</td>
+      <td>True Negative</td>
+    </tr>
+</table>
 {: style="text-align: center"}
 
 The nomenclature for each of these four events is intuitive: the first word is "true" or "false" depending on whether out answer was correct or incorrect (not, e.g., whether the alternative hypothesis is true or false) and the second word is "positive" or "negative" depending on what we claimed.

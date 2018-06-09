@@ -7,9 +7,8 @@ category: stats
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 <table class="center">
-  <tbody>
     <tr class="border-less">
-      <th ></th>
+      <th class="border-less"></th>
       <th > &nbsp;&nbsp; $$2+2=5$$ &nbsp;&nbsp;</th>
       <th > &nbsp;&nbsp; $$2+2\neq5$$ &nbsp;&nbsp; </th>
     </tr>
@@ -23,7 +22,6 @@ category: stats
       <td>$$0$$</td>
       <td>$$0.5$$</td>
     </tr>
-  </tbody>
 </table>
 {: style="text-align: center"}
 

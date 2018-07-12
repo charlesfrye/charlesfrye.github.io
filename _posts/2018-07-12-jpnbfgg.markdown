@@ -1,0 +1,25 @@
+---
+layout: post
+title:	"Use You Jupyter Notebook For Great Good"
+date:	2017-07-12
+category: external
+---
+
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/charlesfrye/DSW2018-tutorials/master)
+
+As part of this year's
+[Data Science Workshop](https://gdso.berkeley.edu/workshop.html)
+at Berkeley,
+I put on a tutorial on using Jupyter Notebooks:
+a quick sprint over the basics and then examples for
+inline animations and videos, embedded iframes,
+and interactive plotting!
+
+Click the badge above to launch the tutorial on binder.
+You'll want to check out the `JupyterNotebookForGreatGood` folder.
+
+Check out the repo it works off of
+[here](https://github.com/charlesfrye/DSW2018-tutorials),
+where you can find local installation instructions.
+
+<!--exc-->

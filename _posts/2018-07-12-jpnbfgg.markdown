@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	"Use You Jupyter Notebook For Great Good"
-date:	2017-07-12
+date:	2018-07-12
 category: external
 ---
 

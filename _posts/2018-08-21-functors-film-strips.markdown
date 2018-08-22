@@ -4,7 +4,6 @@ title:	"Functors and Film Strips"
 date:	2018-08-21
 category: math
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 ![stack_smileys]
 {: style="text-align: center"}
@@ -322,7 +321,7 @@ at least in principle.
 
 Another thing to notice is that that missing arrow
 is missing from both diagrams; that is,
-we also have a `cut` $circ$ `subtitle` arrow
+we also have a `cut` $$\circ$$ `subtitle` arrow
 for movies.
 Returning to our concrete implementation,
 consider the difference between

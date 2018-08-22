@@ -4,7 +4,6 @@ title:	"Convolution Tutorials Redux"
 date:	2017-06-09
 category: external
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 $$ g * f(t) = \sum_{\tau+\Delta = t} g(\tau) \cdot f(\Delta) $$
 

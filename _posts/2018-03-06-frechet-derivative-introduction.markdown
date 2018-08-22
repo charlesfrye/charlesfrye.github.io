@@ -4,7 +4,6 @@ title:	"Fréchet Derivatives 1: Introduction"
 date:	2018-03-06
 category: math
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 $$\begin{align}
 f(x+\epsilon) = f(x) + \langle \nabla_x f(x), \epsilon \rangle+ o(\|\epsilon\|)

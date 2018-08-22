@@ -4,7 +4,6 @@ title:	"Fréchet Derivatives 2: Least Squares Regression"
 date:	2018-03-06
 category: math
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 $$\begin{align}
 \nabla_{W} L(W; x,y) = 2 (Wxx^\top - y x^\top)

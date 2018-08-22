@@ -105,18 +105,14 @@ and apply `hstack`,
 as below,
 
 $$
-\left[
-\begin{array}[ccc]
+\begin{bmatrix}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
-0 & 0 & 1 \end{array}
-\right]
-\xrightarrow{\textt{hstack}}
-\left[
-\begin{array}[ccccccccc]
+0 & 0 & 1 \end{bmatrix}
+\xrightarrow{\texttt{hstack}}
+\begin{bmatrix}
 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
-\end{array}
-\right]
+\end{bmatrix}
 $$
 {: style="text-align: center"}
 
@@ -315,7 +311,7 @@ single blue arrows represent the action of `capture`;
 double blue arrows represent the action of `convert_to_movie_function`.
 
 Notice that we haven't included
-the arrow for `cut` $$circ$$ `subtitle`.
+the arrow for `cut` $$\circ$$ `subtitle`.
 By our argument above,
 that arrow can be _inferred_ from the arrows
 in the simpler diagram, so drawing it is superfluous.

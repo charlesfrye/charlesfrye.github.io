@@ -23,7 +23,8 @@ for polynomial functions,
 compositions and products of functions, and more.
 Here, we work through the definition of the Fréchet derivative
 and its application in a few fundamental examples.
-In the next blog post in this series,
+In
+[the next blog post in this series]({{site.url}}/math/2018/03/07/frechet-least-squares.html).
 we will work out the derivative of least-squares linear regression
 for multiple inputs and outputs (with respect to the parameter matrix).
 
@@ -302,7 +303,8 @@ indicating that the derivative is $$xx^\top$$.
 
 If you are not yet convinced of the utility of the method of Fréchet derivatives
 for computing gradients,
-check out part two of this series,
+check out
+[part two of this series]({{site.url}}/math/2018/03/07/frechet-least-squares.html),
 which will apply the Fréchet derivative
 to the problem of linear least squares
 and produce the expected result with a minimum of fuss.

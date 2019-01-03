@@ -1,7 +1,7 @@
 ---
 layout: post
-title:	"Fréchet Derivatives 2: Least Squares Regression"
-date:	2018-03-06
+title:	"Fréchet Derivatives 3: Deep Linear Networks"
+date:	2019-01-03
 category: math
 ---
 
@@ -58,7 +58,9 @@ input to a neuron and output of a neuron,
 control signals to a robot and the resulting positions of the actuators.
 We've captured a dataset of these quantities
 and we'd like to determine how best to predict
-one given the other (typically, the outputs given the inputs).
+one given the other (typically, something we cannot control or measure as easily,
+called the \textit{outputs},
+given something we can control or measure easily, the \textit{inputs}).
 
 Denoting our outputs as $$y$$ and our inputs as $$x$$,
 we want a function $$f$$ that,
@@ -193,8 +195,9 @@ We would like to use the same linear function on each
 column of $$X$$ to predict the paired element in $$Y$$.
 Linear functions that act on column vectors to produce scalars
 are represented by transposed column vectors,
-so we define our linear function as a $$k$$ dimensional
-column vector that we transpose and apply to $$X$$
+so we define our linear function as
+the transpose of $$k$$ dimensional
+column vector $$\beta$$ and apply it to $$X$$
 to get our prediction
 
 $$
@@ -284,7 +287,7 @@ $$
 	&= YY^\top + \beta^\top X X^\top \beta - \beta^\top X Y^\top - YX\beta^\top \\
 	&\ \ \ \ \beta^\top X X^\top \epsilon + \epsilon^\top X X^\top \beta
 	- \epsilon^\top X Y - Y X^\top \epsilon \\
-	&\ \ \ \ \+ epsilon^\top X X^\top \epsilon
+	&\ \ \ \ + \epsilon^\top X X^\top \epsilon
 \end{align}
 $$
 {: style="text-align: center"}
@@ -351,9 +354,9 @@ by setting the derivative equal to $$0$$:
 
 $$
 \begin{align}
-	0 &= 2\left(X X^\top \beta - XY^\top\right) \\
-	XY^\top &= XX^\top \beta\\
-	\left(XX^\top\right)^{-1}XY^\top &= \beta
+	0 &= 2\left(X X^\top \beta^* - XY^\top\right) \\
+	XY^\top &= XX^\top \beta^*\\
+	\left(XX^\top\right)^{-1}XY^\top &= \beta^*
 \end{align}
 $$
 {: style="text-align: center"}
@@ -460,8 +463,8 @@ $$
 where $$\mathrm{tr}$$ is the *trace*,
 or sum of eigenvalues.
 The same
-[blog post about the size of matrices]({{site.url}}/math/2018/02/28/how-big-is-a-matrix.html),
-also covers where this inner product comes from,
+[blog post about the size of matrices]({{site.url}}/math/2018/02/28/how-big-is-a-matrix.html)
+also covers where this inner product comes from
 and how it is connected to singular values.
 
 Squinting at the middle terms from the
@@ -516,20 +519,11 @@ $$
 $$<!--_ -->
 {: style="text-align: center"}
 
-and, just as before, we can explicitly calculate the optimum $$W^*$$ as<!--* -->
-the point where $$\nabla_{W} L = 0 $$<!--_ -->
 
-$$
-\begin{align}
-0 &= \nabla_{W} L(W^*; x,y) \\
-0 &= 2 (W^*xx^\top - y x^\top) \\
-y x^\top &= W^*xx^\top \\
-W^*&= y x^\top \left(xx^\top\right)^{-1}
-\end{align}
-$$<!--_ -->
-{: style="text-align: center"}
-
-provided the inverse is unique and exists.
+This datapoint-by-datapoint expression is useful
+for the case where the explicit solution is not easily computable,
+e.g. when the number of columns in $$X$$ is in the billions,
+as encountered in so-called "Big Data" problems.
 
 ### Closing
 
@@ -538,9 +532,7 @@ we calculated the derivatives, aka gradients,
 for two common flavors of linear regression:
 the former common for cases where the explicit solution exists
 and is computable
-and the latter common for cases where it is not,
-e.g. when the number of columns in $$X$$ is in the billions,
-as encountered in so-called "Big Data" problems.
+and the latter common for cases where it is not.
 
 In the next blog post in this series,
 we will apply what we learned in the course of this derivation

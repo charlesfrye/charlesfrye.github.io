@@ -1,7 +1,7 @@
 ---
 layout: post
-title:	"Fréchet Derivatives 3: Deep Linear Networks"
-date:	2019-01-03
+title:	"Fréchet Derivatives 2: Linear Least Squares"
+date:	2018-03-07
 category: math
 ---
 

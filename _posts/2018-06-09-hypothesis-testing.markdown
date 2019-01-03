@@ -4,7 +4,6 @@ title:	"Hypothesis Testing"
 date:	2018-06-09
 category: stats
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 <table class="center">
     <tr class="border-less">

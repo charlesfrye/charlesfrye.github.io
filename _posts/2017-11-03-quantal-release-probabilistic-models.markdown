@@ -25,7 +25,6 @@ def generate_measured_potential(release_count):
   return measured_potential
 ```
 <!--exc-->
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 ## Summary
 One famous success story of quantitative biology

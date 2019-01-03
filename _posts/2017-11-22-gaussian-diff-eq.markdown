@@ -4,7 +4,6 @@ title:	"A Differential Equations View of the Gaussian Family"
 date:	2017-11-22
 category: stats
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 $$\begin{align}
 \frac{d}{dx}p(x) = -xp(x)

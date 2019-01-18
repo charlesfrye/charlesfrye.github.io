@@ -130,7 +130,7 @@ $$\nabla g$$,
 of a matrix-to-scalar function $$g$$:
 
 $$
-g(M + \epsilon) = g(M) + \langle\nabla_M g(M), \epsilon\rangle + o(\epsilon)
+g(M + \epsilon) = g(M) + \langle\nabla g(M), \epsilon\rangle + o(\epsilon)
 $$
 {: style="text-align: center"}
 
@@ -139,7 +139,7 @@ see
 for details.
 Most importantly, the inner product $$\langle , \rangle$$ is in the
 [Frobenius norm]({{site.url}}/math/2018/02/28/how-big-is-a-matrix.html),
-meaning it can also be written
+meaning it applies to matrices and can also be written
 
 $$
 \langle A, B \rangle = \mathrm{tr}\left(A^\top B\right)
@@ -156,8 +156,8 @@ computing the derivative with respect to the $$k$$th weight matrix:
 $$
 \begin{align}
 &l\left(W_1, \dots W_{k-1}, W_k +\epsilon, W_{k+1}, \dots W_L\right)\\
-&= L(W + W_{:k}\epsilon W_{k+1:}) \\
-&= L(W) + \langle \nabla L(W), W_{:k}\epsilon W_{k+1:}\rangle + o(\epsilon)
+&= L(W + W_{k+1:}\epsilon W_{:k}) \\
+&= L(W) + \langle \nabla L(W), W_{k+1:}\epsilon W_{:k}\rangle + o(\epsilon)
 \end{align}
 $$
 {: style="text-align: center"}
@@ -172,9 +172,9 @@ letting us write
 
 $$
 \begin{align}
-&\langle \nabla L(W), W_{:k}\epsilon W_{k+1:}\rangle\\
-&= \mathrm{tr}\left(\nabla L(W)^\top W_{:k}\epsilon W_{k+1:}\right)\\
-&= \mathrm{tr}\left( W_{k+1:}\nabla L(W)^\top W_{:k}\epsilon\right)\\
+&\langle \nabla L(W), W_{k+1:}\epsilon W_{:k}\rangle\\
+&= \mathrm{tr}\left(\nabla L(W)^\top W_{k+1:}\epsilon W_{:k}\right)\\
+&= \mathrm{tr}\left( W_{:k}\nabla L(W)^\top W_{k+1:}\epsilon\right)\\
 &= \langle W_{k+1:}^\top\nabla L(W) W_{:k}^\top,\epsilon\rangle
 \end{align}
 $$

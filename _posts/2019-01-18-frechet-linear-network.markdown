@@ -6,7 +6,7 @@ category: math
 ---
 
 $$\begin{align}
-\nabla_{W_k} l(W_1, \dots, W_L; x) = W_{k+1:}^\top \nabla L(W) W_{:k}^\top
+\nabla_{W_k} l(W_1, \dots, W_L) = W_{k+1:}^\top \nabla L(W) W_{:k}^\top
 \end{align}$$
 {: style="text-align: center"}
 
@@ -183,7 +183,7 @@ $$
 and thus, pattern-matching to the definition of the derivative, we have that
 
 $$\begin{align}
-\nabla_{W_k} L(W_1, \dots, W_L; x) = W_{k+1:}^\top \nabla l(W) W_{:k}^\top
+\nabla_{W_k} L(W_1, \dots, W_L) = W_{k+1:}^\top \nabla l(W) W_{:k}^\top
 \end{align}$$
 {: style="text-align: center"}
 

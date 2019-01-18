@@ -173,9 +173,9 @@ letting us write
 $$
 \begin{align}
 &\langle \nabla L(W), W_{:k}\epsilon W_{k+1:}\rangle\\
-&= \mathrm{tr}\left(\nabla L(W)^\top\W_{:k}\epsilon W_{k+1:}\right)\\
-&= \mathrm{tr}\left(\W_{k+1:}\nabla L(W)^\top W_{:k}\epsilon\right)\\
-&= \langle\W_{k+1:}^\top\nabla L(W) W_{:k}^top,\epsilon\rangle
+&= \mathrm{tr}\left(\nabla L(W)^\top W_{:k}\epsilon W_{k+1:}\right)\\
+&= \mathrm{tr}\left( W_{k+1:}\nabla L(W)^\top W_{:k}\epsilon\right)\\
+&= \langle W_{k+1:}^\top\nabla L(W) W_{:k}^\top,\epsilon\rangle
 \end{align}
 $$
 {: style="text-align: center"}

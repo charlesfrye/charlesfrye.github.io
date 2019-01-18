@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	"Google Colab on Neural Networks"
-date:	2019-01-17
+date:	2018-10-31
 category: external
 ---
 

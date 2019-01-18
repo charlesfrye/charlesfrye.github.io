@@ -34,7 +34,7 @@ the _deep linear network_.
 Neural networks are currently pushing forward the state of the art
 in machine learning and artificial intelligence.
 If you're unfamiliar with them, check out
-[this blogpost]({{site.url}}/external/2019/01/17/neural-nets.html)
+[this blogpost]({{site.url}}/external/2018/10/31/neural-nets-colab.html)
 for a gentle introduction.
 
 The most common form of neural network, a feed-forward neural network,

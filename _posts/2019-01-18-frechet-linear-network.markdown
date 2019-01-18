@@ -6,7 +6,7 @@ category: math
 ---
 
 $$\begin{align}
-\nabla_{W_k} L(W_1, \dots, W_L; x) = W_{k+1:}^\top \nabla l(W) W_{:k}^\top
+\nabla_{W_k} l(W_1, \dots, W_L; x) = W_{k+1:}^\top \nabla L(W) W_{:k}^\top
 \end{align}$$
 {: style="text-align: center"}
 
@@ -76,7 +76,7 @@ If we denote by $$W$$ the matrix that results from multiplying all of the $$L$$ 
 we obtain
 
 $$
-F\left(x; W) = Wx
+F\left(x; W\right) = Wx
 $$
 {: style="text-align: center"}
 
@@ -155,9 +155,9 @@ computing the derivative with respect to the $$k$$th weight matrix:
 
 $$
 \begin{align}
-&l\left(W_1, \dots W_{k-1}, W_k +\epsilon, W_{k=1}, \dots W_L\right)\\
-&= L(W + W_{:k}\epsilon\W_{k+1:}) \\
-&= L(W) + \langle \nabla L(W), W_{:k}\epsilon\W_{k+1:}\rangle + o(\epsilon)
+&l\left(W_1, \dots W_{k-1}, W_k +\epsilon, W_{k+1}, \dots W_L\right)\\
+&= L(W + W_{:k}\epsilon W_{k+1:}) \\
+&= L(W) + \langle \nabla L(W), W_{:k}\epsilon W_{k+1:}\rangle + o(\epsilon)
 \end{align}
 $$
 {: style="text-align: center"}
@@ -172,10 +172,10 @@ letting us write
 
 $$
 \begin{align}
-\langle \nabla L(W), W_{:k}\epsilon\W_{k+1:}\rangle\\
-&= \mathrm{tr}\left(\nabla L(W)^\top\W_{:k}\epsilon\W_{k+1:}right)\\
-&= \mathrm{tr}\left(\W_{k+1:}\nabla L(W)^\top\W_{:k}\epsilon\right)\\
-&= \mathrm{tr}\langle\W_{k+1:}^\top\nabla L(W)\W_{:k}^top,\epsilon\rangle
+&\langle \nabla L(W), W_{:k}\epsilon W_{k+1:}\rangle\\
+&= \mathrm{tr}\left(\nabla L(W)^\top\W_{:k}\epsilon W_{k+1:}right)\\
+&= \mathrm{tr}\left(\W_{k+1:}\nabla L(W)^\top W_{:k}\epsilon\right)\\
+&= \langle\W_{k+1:}^\top\nabla L(W) W_{:k}^top,\epsilon\rangle
 \end{align}
 $$
 {: style="text-align: center"}

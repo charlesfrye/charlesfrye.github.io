@@ -221,7 +221,7 @@ f(x+\epsilon) &= (x+\epsilon)^\top Q (x+\epsilon) \\
 where in the last line, in addition to pattern matching
 with the definition of the derivative,
 we used the fact that all of the values are scalar and so equal to their own transpose.
-We use then pull out the factor of $$x^\top$$
+We then pull out the factor of $$x^\top$$
 and recognize a vector inner product:
 
 $$\begin{align}

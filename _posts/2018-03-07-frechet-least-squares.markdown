@@ -59,8 +59,8 @@ control signals to a robot and the resulting positions of the actuators.
 We've captured a dataset of these quantities
 and we'd like to determine how best to predict
 one given the other (typically, something we cannot control or measure as easily,
-called the \textit{outputs},
-given something we can control or measure easily, the \textit{inputs}).
+called the _outputs_,
+given something we can control or measure easily, the _inputs_).
 
 Denoting our outputs as $$y$$ and our inputs as $$x$$,
 we want a function $$f$$ that,
@@ -449,7 +449,7 @@ Where the last line follows
 by matching terms with the definition of the Fréchet derivative,
 just as in the first derivation.
 To determine the derivatives,
-we need to rewrite the inner terms the last line
+we need to rewrite the inner terms from the last line
 as matrix inner products with $$\epsilon$$.
 
 The inner product of two matrices $$M$$ and $$N$$,

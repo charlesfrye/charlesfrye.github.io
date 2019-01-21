@@ -198,7 +198,7 @@ $$f(x) = \sum_i x^i$$. <!--_ -->
 
 #### Vector Inputs
 
-So far, so done in high school.
+So far, so done in Calc I.
 Let's kick it up a notch to
 the vector version of the quadratic function above:
 

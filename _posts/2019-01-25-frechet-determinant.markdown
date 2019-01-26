@@ -6,7 +6,7 @@ category: math
 ---
 
 $$\begin{align}
-\nabla \det M = \det M \cdot M^{-1}^\top
+\nabla \det M &= \det M \cdot \left(M^{-1}\right)^\top
 \end{align}$$
 {: style="text-align: center"}
 
@@ -103,14 +103,13 @@ for an easier question:
 Let's write this matrix out, ignoring the $$M^{-1}$$ for now:
 
 $$
-I + \varepsilon = \[
+I + \varepsilon =
 \begin{bmatrix}
 1 + \varepsilon & \varepsilon & \dots & \varepsilon \\
 \varepsilon & 1 + \varepsilon & \dots & \varepsilon \\
-\vdots & \vdots & \vdots & ddots & \vdots \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
 \varepsilon & \varepsilon & \dots & 1 + \varepsilon
 \end{bmatrix}
-\]
 $$
 {: style="text-align: center"}
 
@@ -136,7 +135,7 @@ immediately noting that all of the terms after the first two
 are $$o(\varepsilon)$$:
 
 $$\begin{align}
-\det \left(I + \varepsilon\right) &= \left(1 + \varepsilon)^n + o(\varepsilon)\\
+\det \left(I + \varepsilon\right) &= (1 + \varepsilon)^n + o(\varepsilon)\\
 &= 1 + n\varepsilon + o(\varepsilon) + o(\varepsilon) \\
 &= 1 + n\varepsilon + o(\varepsilon)
 \end{align}$$
@@ -162,7 +161,7 @@ Or, succinctly, it is the trace, $$\mathrm{tr}$$, of the perturbation.
 This insight lets us write
 
 $$\begin{align}
-\det \left(I + M^{-1}\varepsilon\right) &=
+\det \left(I + M^{-1}\varepsilon\right)
 &= 1 + \mathrm{tr}\left(M^{-1}\varepsilon\right) + o(\varepsilon)
 \end{align}$$
 {: style="text-align: center"}
@@ -192,7 +191,7 @@ to simply disappear the determinant, leaving us with:
 
 $$\begin{align}
 \det(M + \varepsilon)
-&= \det(M) + \mathrm{tr}\left(\det(M) M^{-1}\varepsilon\right) + o(\varepsilon)\right)
+&= \det(M) + \mathrm{tr}\left(\det(M) M^{-1}\varepsilon\right) + o(\varepsilon)
 \end{align}$$
 {: style="text-align: center"}
 
@@ -207,6 +206,6 @@ Therefore, this second term contains the derivative.
 We just need to transpose the matrix to get the final answer:
 
 $$\begin{align}
-\nabla \det M = \det M \cdot M^{-1}^\top
+\nabla \det M &= \det M \cdot \left(M^{-1}\right)^\top
 \end{align}$$
 {: style="text-align: center"}

@@ -36,7 +36,7 @@ on the interesting relationships between derivatives of determinants and famous 
 
 That post is excellent, and I highly recommend you read it.
 I will focus on one of the claims, which appears in the pull-out for this post:
-the derivative of the determinant is the determinant times the inverse of the transpose.
+the derivative of the determinant is the determinant times the transpose of the inverse.
 
 ### The Determinant
 
@@ -52,7 +52,7 @@ It's an important function that appears all over the place in linear algebra.
 
 Most important for us, though, is that it takes in a matrix $$M$$
 and returns a scalar.
-That means we can write the derivative, $$\nabla \det$$, easily and concretely in the Fréchet style:
+That means we can write a relation for the derivative, $$\nabla \det$$, easily and concretely in the Fréchet style:
 
 $$
 \det(M + \varepsilon) =
@@ -89,7 +89,7 @@ $$\begin{align}
 \end{align}$$
 {: style="text-align: center"}
 
-First, we "pulled the $$M$$ out", incurring a $$M^{-1}$$ for our trouble.
+First, we "pulled the $$M$$ out", incurring an $$M^{-1}$$ for our trouble.
 Then, we recognized that the determinant of a product of matrices
 is the product of the matrices' determinants.
 Consider: if the matrix $$A$$ scales volumes by $$2$$, and the matrix $$B$$ scales them by $$5$$,
@@ -100,7 +100,7 @@ which was "what does the determinant function look like at a small perturbation 
 for an easier question:
 "what does the determinant function look like at a small perturbation around the identity matrix $$I$$?"
 
-Let's write this matrix out, ignoring the $$M^{-1}$$ for now:
+Let's write this perturbed identity matrix out, ignoring the $$M^{-1}$$ for now:
 
 $$
 I + \varepsilon =
@@ -181,7 +181,7 @@ $$\begin{align}
 \end{align}$$
 {: style="text-align: center"}
 
-We now slap that $$\det(M)$$ term across the remainder of the terms.
+We now distribute that $$\det(M)$$ term across the remainder of the terms.
 The first one is simple, it's a $$1$$.
 In the second, we pull the determinant inside the trace,
 making use of the fact that the trace is a linear functional (see for yourself!).
@@ -195,10 +195,17 @@ $$\begin{align}
 \end{align}$$
 {: style="text-align: center"}
 
-Now, we're ready to pattern-match onto the definition of the Fréchet derivative.
-On the left hand side, we have the function evaluated at a point perturbed away
+Now, we're ready to pattern-match onto the definition of the Fréchet derivative:
+
+$$
+\det(M + \varepsilon) =
+\det M + \mathrm{tr}\left(\nabla \det (M)^\top \varepsilon\right) + o(\varepsilon)
+$$
+{: style="text-align: center"}
+
+On the left hand sides, we have the function evaluated at a point perturbed away
 from $$M$$ by $$\varepsilon$$.
-On the right hand side, we have three terms.
+On the right hand sides, we have three terms.
 The first term is equal to the function, evaluated at the point $$M$$.
 The third term is $$o(\varepsilon)$$.
 The second term is the trace of a matrix times $$\varepsilon$$.

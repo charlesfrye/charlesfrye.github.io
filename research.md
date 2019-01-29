@@ -4,23 +4,19 @@ title: My Research
 permalink: /research/
 ---
 
-## Neural Sampling
+## Neural Network Loss Surfaces
 
 {:.gallery}
-![sampling]
+![1d-dlae]
 
 At the
 [Redwood Center for Theoretical Neuroscience](http://redwood.berkeley.edu/),
-I'm studying neural circuit implementations of sampling algorithms,
-in particular the irreversible Markov Chain Monte Carlo approach of
-[the Maass group](http://journal.frontiersin.org/article/10.3389/fnins.2016.00118/full).
+I'm studying the loss surfaces of artificial neural networks,
+which underlie many recent advances in machine learning and AI.
 
-This research aims to uncover the ways that biological systems
-take advantage of the inherent randomness of their components to achieve
-efficient computation, with potential applications both
-in our understanding of the brain
-and in the development of new computing techniques
-for emerging devices at the nanoscale.
+My goal is to understand how the geometric properties of these surfaces,
+like their curvature,
+help give rise to the unreasonable effectiveness of neural networks.
 
 ## The Development of Spontaneous Activity
 
@@ -79,6 +75,6 @@ and therefore becoming blunted to negative emotions,
 but were actually better-equipped to perceive and deal with a minor
 negative social experience.
 
-[sampling]: {{site.imgurl}}/sampling.png
+[1d-dlae]: {{site.imgurl}}/1d-dlae.png
 [maclean]: {{site.imgurl}}/maclean.png
 [dewit]: {{site.imgurl}}/dewit.png

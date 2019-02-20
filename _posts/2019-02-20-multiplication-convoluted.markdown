@@ -156,7 +156,7 @@ $$\begin{align}
 z &= x \cdot y \\
 &= \sum_j x \mathbf{y}_j \cdot 10 ^ j \\
 &= x\cdot \sum_j \mathbf{y}_j \cdot 10 ^ j \\
-&= \sum_i \mathbf{x}_i \cdot 10 ^ i \cdot \sum_j \mathbf{y}_j \cdot 10 ^ j}
+&= \sum_i \mathbf{x}_i \cdot 10 ^ i \cdot \sum_j \mathbf{y}_j \cdot 10 ^ j
 \end{align}$$
 {: style="text-align: center"}
 

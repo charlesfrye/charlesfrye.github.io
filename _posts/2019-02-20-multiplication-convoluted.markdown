@@ -153,8 +153,8 @@ i.e. as a sum over its digits:
 
 $$\begin{align}
 z &= x \cdot y \\
-&= \sum_j {x \mathbf{y}_j \cdot 10 ^ j} \\
-&= x\cdot \sum_j {\right) \cdot \mathbf{y}_j \cdot 10 ^ j} \\
+&= \sum_j x \mathbf{y}_j \cdot 10 ^ j \\
+&= x\cdot \sum_j \mathbf{y}_j \cdot 10 ^ j \\
 &= \sum_i \mathbf{x}_i \cdot 10 ^ i \cdot \sum_j \mathbf{y}_j \cdot 10 ^ j}
 \end{align}$$
 {: style="text-align: center"}
@@ -181,7 +181,7 @@ we choose the following ordering
 (and simplify it with algebra in the second step):
 
 $$\begin{align}
-z &= \sum_i \mathbf{x}_i \cdot 10 ^ i \cdot \sum_j \mathbf{y}_j \cdot 10 ^ j}\\
+z &= \sum_i \mathbf{x}_i \cdot 10 ^ i \cdot \sum_j \mathbf{y}_j \cdot 10 ^ j\\
 &= \sum_k \sum_{i+j=k} x_i \cdot 10^i \cdot y_j \cdot 10^j \\
 &= \sum_k \sum_{i+j=k} x_i y_j \cdot 10^k
 \end{align}$$
@@ -264,7 +264,7 @@ $$\begin{array}{ccccc}
 Notice that there's one tiny snag:
 if $$\sum_{i+j=k} x_i \cdot y_j$$ is greater than 10 for a given $$k$$,
 then $$z_k$$ won't be a "digit", as we normally think of them
-(we write 5535 for the answer to $$123 \times 45$$,, not 4,13,22,15).
+(we write 5535 for the answer to $$123 \times 45$$, not 4,13,22,15).
 In fact, for something like $$x=5$$, $$y=3$$,
 we end up with $$z_0=15$$,
 rather than $$z_0=5, z_1=1$$, as we'd like.

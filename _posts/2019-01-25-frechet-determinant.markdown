@@ -25,7 +25,7 @@ defined the Fréchet derivative and applied it to some very simple functions.
 [The second blog post]({{site.url}}/math/2018/03/07/frechet-least-squares.html)
 applied it to the derivation of the normal equations
 and gradient updates for linear least squares.
-[The third blog post]({{site.ur;}})
+[The third blog post]({{site.url}}/math/2019/01/18/frechet-linear-network.html)
 applied the Fréchet derivative to deep linear networks,
 a form of neural network with no nonlinearity.
 

@@ -165,12 +165,12 @@ e.g. 123 and 45 as (100 + 20 + 3)(40 + 5).
 It should be clear that instead of adding first and then multiplying,
 we can just as well multiply everything first, then add
 (FOIL style, if that acronym was used in your math education).
-And if we do so, we'll have to multiply each value $$x_i \cdot 10^i$$
-by each value $$y_j \cdot 10 ^ j$$.
+And if we do so, we'll have to multiply each value $$\mathbf{x}_i \cdot 10^i$$
+by each value $$\mathbf{y}_j \cdot 10 ^ j$$.
 
 That means we're free to write down any order of addition we want,
 just so long as, once all of those additions are done, we've managed to include
-all of the combinations $$x_i$$ and $$y_j$$.
+all of the combinations $$\mathbf{x}_i$$ and $$\mathbf{y}_j$$.
 Each order will correspond to a different choice of multiplication algorithm,
 and the one we described first, corresponding to the one we were taught in school,
 is just a particular, convenient choice for order of additions.
@@ -183,8 +183,8 @@ we choose the following ordering
 
 $$\begin{align}
 z &= \sum_i \mathbf{x}_i \cdot 10 ^ i \cdot \sum_j \mathbf{y}_j \cdot 10 ^ j\\
-&= \sum_k \sum_{i+j=k} x_i \cdot 10^i \cdot y_j \cdot 10^j \\
-&= \sum_k \sum_{i+j=k} x_i y_j \cdot 10^k
+&= \sum_k \sum_{i+j=k} \mathbf{x}_i \cdot 10^i \cdot \mathbf{y}_j \cdot 10^j \\
+&= \sum_k \sum_{i+j=k} \mathbf{x}_i \mathbf{y}_j \cdot 10^k
 \end{align}$$
 {: style="text-align: center"}
 
@@ -204,7 +204,7 @@ That's the same as our definition of the entries of $$\mathbf{z}$$!
 Indeed, we can write
 
 $$\begin{align}
-z_k &= \sum_{i+j=k} x_i y_j
+\mathbf{z}_k &= \sum_{i+j=k} \mathbf{x}_i \mathbf{y}_j
 \end{align}$$
 {: style="text-align: center"}
 
@@ -216,7 +216,7 @@ This particular notation is non-standard, but
 We can obtain something a bit more standard if we substitute $$j = k-i$$:
 
 $$\begin{align}
-z_k &= \sum_{i} x_i y_{k-i}
+\mathbf{z}_k &= \sum_{i} \mathbf{x}_i \mathbf{y}_{k-i}
 \end{align}$$
 {: style="text-align: center"}
 
@@ -263,12 +263,12 @@ $$\begin{array}{ccccc}
 {: style="text-align: center"}
 
 Notice that there's one tiny snag:
-if $$\sum_{i+j=k} x_i \cdot y_j$$ is greater than 10 for a given $$k$$,
-then $$z_k$$ won't be a "digit", as we normally think of them
+if $$\sum_{i+j=k} \mathbf{x}_i \cdot \mathbf{y}_j$$ is greater than 10 for a given $$k$$,
+then $$\mathbf{z}_k$$ won't be a "digit", as we normally think of them
 (we write 5535 for the answer to $$123 \times 45$$, not 4,13,22,15).
 In fact, for something like $$x=5$$, $$y=3$$,
-we end up with $$z_0=15$$,
-rather than $$z_0=5, z_1=1$$, as we'd like.
+we end up with $$\mathbf{z}_0=15$$,
+rather than $$\mathbf{z}_0=5, \mathbf{z}_1=1$$, as we'd like.
 In the follow-up to this blog post,
 where we implement a $$\texttt{DigitSequence}$$ type in Python
 that uses convolution to do multiplication,

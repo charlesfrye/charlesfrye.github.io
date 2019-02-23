@@ -1,10 +1,13 @@
 ﻿---
 layout: post
-title:	"Multiplication Made Convoluted, Part I: Python"
+title:	"Multiplication Made Convoluted, Part II: Python"
 date:	2019-02-22
 category: programming
 ---
 
+
+![to_int_from_int]
+{: style="text-align: center"}
 <!--exc-->
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Well, actually, this is more right than you think: <br>A multiplication *is* a convolution of one multi-digit number by another one over the digit dimension.<br>Think about it.</p>&mdash; Yann LeCun (@ylecun) <a href="https://twitter.com/ylecun/status/1053719869005447168?ref_src=twsrc%5Etfw">October 20, 2018</a></blockquote>

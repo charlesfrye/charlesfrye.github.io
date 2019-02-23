@@ -4,9 +4,19 @@ title:	"Multiplication Made Convoluted, Part II: Python"
 date:	2019-02-22
 category: programming
 ---
+```python
+import numpy as np
 
-![to_int_from_int]
-{: style="text-align: center"}
+class DecimalSequence():
+
+    def __init__(self, iterable):
+
+        arr = np.atleast_1d(np.squeeze(np.asarray(iterable, dtype=np.int)))
+        self.arr = arr
+
+    def multiply(self, other):
+        return DecimalSequence(np.convolve(self.arr, other.arr))
+```
 <!--exc-->
 
 ### Introduction

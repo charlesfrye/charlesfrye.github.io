@@ -42,12 +42,15 @@ we'll work together through the _Think about it._ phase
 by first thinking about how we normally do multiplication,
 then generalizing it, and then deriving the convolutional form.
 
-In a follow-up blog post,
+In a
+[follow-up blog post]({{site.url}}/programming/2019/02/22/multiplication-convoluted-part-two.html),
 we'll work through implementing a number type in Python
 that actually makes use of this relationship to do multiplication.
 Along the way, we'll learn how to hook into Python's built-in operators
 with our own objects using what are called, almost without hyperbole,
-_magic methods_.
+_magic methods_,
+and we'll see some benefits of thinking about our programs
+using ideas from abstract algebra.
 
 ### The Multiplication Algorithm
 
@@ -269,7 +272,10 @@ then $$\mathbf{z}_k$$ won't be a "digit", as we normally think of them
 In fact, for something like $$x=5$$, $$y=3$$,
 we end up with $$\mathbf{z}_0=15$$,
 rather than $$\mathbf{z}_0=5, \mathbf{z}_1=1$$, as we'd like.
-In the follow-up to this blog post,
-where we implement a $$\texttt{DigitSequence}$$ type in Python
+In
+[the follow-up to this blog post]({{site.url}}/programming/2019/02/22/multiplication-convoluted-part-two.html),
+where we implement a $$\texttt{DecimalSequence}$$ type in Python
 that uses convolution to do multiplication,
-we'll see a simple way to fix this problem.
+we'll see a simple way to fix this problem
+by decomposing the necessary "simplification" operation
+into a pair of maps to and from the integers.

@@ -402,13 +402,15 @@ class DecimalSequence():
                       "all negative or positive"]
         
         arr = np.asarray(iterable, dtype=np.int)
-        error_checkers = [lambda iterable: np.array_equal(arr, iterable),
-                          lambda iterable: len(arr.shape) == 1,
-                          lambda iterable: all([elem >= 0 for elem in iterable]) or
-                                           all([elem <= 0 for elem in iterable])]
+        error_checkers = [
+	    lambda iterable: np.array_equal(arr, iterable),
+            lambda iterable: len(arr.shape) == 1,
+            lambda iterable: all([elem >= 0 for elem in iterable]) or
+                             all([elem <= 0 for elem in iterable])]
         
         for error_checker, error_msg in zip(error_checkers, error_msgs):
-            assert error_checker(iterable), "DecimalSequences must be {}".format(error_msg)
+            assert error_checker(iterable),
+	    	"DecimalSequences must be {}".format(error_msg)
 
     ...
 

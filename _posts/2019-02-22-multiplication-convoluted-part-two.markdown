@@ -10,10 +10,10 @@ category: programming
 {: style="text-align: center"}
 <!--exc-->
 
+### Introduction
+
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Well, actually, this is more right than you think: <br>A multiplication *is* a convolution of one multi-digit number by another one over the digit dimension.<br>Think about it.</p>&mdash; Yann LeCun (@ylecun) <a href="https://twitter.com/ylecun/status/1053719869005447168?ref_src=twsrc%5Etfw">October 20, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-### Introduction
 
 Convolutions show up in many places:
 in signal processing,

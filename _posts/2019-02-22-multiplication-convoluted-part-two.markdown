@@ -40,7 +40,7 @@ and the humble mutliplication operation.
 I decided to work it out thoroughly and write it up.
 
 In
-[a previous blog post]({{site.url}}/2019/02/20/multiplication-convoluted-part-one.html),
+[a previous blog post]({{site.url}}/math/2019/02/20/multiplication-convoluted-part-one.html),
 we worked through the _Think about it._ phase
 by first thinking about how we normally do multiplication,
 then generalizing it, and then deriving the convolutional form.

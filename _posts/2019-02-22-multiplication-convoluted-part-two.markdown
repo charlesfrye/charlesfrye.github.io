@@ -5,7 +5,6 @@ date:	2019-02-22
 category: programming
 ---
 
-
 ![to_int_from_int]
 {: style="text-align: center"}
 <!--exc-->
@@ -82,8 +81,6 @@ z_k &= \sum_{i} x_i y_{k-i}
 
 which is the form of a convolution!
 
-### 
-
 ### First Pass Implementation
 
 In order to implement our multiplication algorithm in Python,
@@ -106,9 +103,7 @@ def multiply_digit_sequences(a, b):
     return np.convolve(a, b)
 
 multiply_digit_sequences([1, 2], [3])
-```
 
-```python
     array([3, 6])
 ```
 
@@ -204,9 +199,7 @@ if you know that the data is stored in the `.arr` attribute:
 
 ```python
 DecimalSequence([1, 2]).multiply(DecimalSequence([3])).arr
-```
 
-```python
     array([3, 6])
 ```
 
@@ -216,16 +209,11 @@ trying to look at your answer gives something unusable:
 
 ```python
 print(DecimalSequence([1, 2]).multiply(DecimalSequence([3])))
-
 DecimalSequence([1, 2]).multiply(DecimalSequence([3]))
-```
 
-```python
     <__main__.DecimalSequence object at 0x7f81c0671780>
     <__main__.DecimalSequence at 0x7f81c0671748>
 ```
-
-
 
 Because we made this class ourselves, Python has no idea how to display it.
 
@@ -236,15 +224,6 @@ If someone tries that with one of our `DecimalSequence`s, they get an error:
 
 ```python
 DecimalSequence([1, 2]) * DecimalSequence([3])
-```
-
-
-```python
-    TypeError                                 Traceback (most recent call last)
-
-    <ipython-input-5-3489c6131c70> in <module>
-    ----> 1 DecimalSequence([1, 2]) * DecimalSequence([3])
-
     TypeError: unsupported operand type(s) for *: 'DecimalSequence' and 'DecimalSequence'
 ```
 
@@ -254,14 +233,6 @@ And there are lots of built-in operations one might want to use that we've lost 
 
 ```python
 4 in DecimalSequence([1, 2])
-```
-
-```python
-    TypeError                                 Traceback (most recent call last)
-
-    <ipython-input-6-8c20b7813ea9> in <module>
-    ----> 1 4 in DecimalSequence([1, 2])
-
     TypeError: argument of type 'DecimalSequence' is not iterable
 ```
 
@@ -285,8 +256,6 @@ The code block below implements these magics by "stealing" them from the array i
 
 
 ```python
-import numpy as np
-
 class DecimalSequence():
 
     def __init__(self, iterable):
@@ -348,13 +317,9 @@ Now, the simple operations defined above work!
 
 ```python
 print(DecimalSequence([1, 2]) * DecimalSequence([3]))
-
 4 in DecimalSequence([1, 2])
-```
 
-```python
     3*10**1 + 6*10**0
-
     False
 ```
 
@@ -371,9 +336,6 @@ the multiplication proceeds without complaint:
 
 ```python
 DecimalSequence([-1, 1]) * DecimalSequence([1, 1])
-```
-
-```python
     array([-1,  0,  1])
 ```
 
@@ -404,8 +366,6 @@ They can be viewed in `IPython`/`Jupyter` with the `?` and `??` syntax.
 
 
 ```python
-import numpy as np
-
 class DecimalSequence():
     """A sequence of decimal digits representing an integer.
     
@@ -440,27 +400,7 @@ class DecimalSequence():
         for error_checker, error_msg in zip(error_checkers, error_msgs):
             assert error_checker(iterable), "DecimalSequences must be {}".format(error_msg)
 
-    def __iter__(self):
-        """magic called when we iterate over `self`, e.g. in a `for` loop"""
-        return self.arr.__iter__()
-    
-    def __len__(self):
-        """magic called by the `len(self)`"""
-        return self.arr.__len__()
-    
-    def __getitem__(self, index):
-        """magic called by the expression `self[index]` and slicing"""
-        return self.arr.__getitem__(index)
-            
-    def __repr__(self):
-        """magic called when self is sent to stdout"""
-        return self.arr.__repr__()
-    
-    def __str__(self):
-        """magic called by `print(self)`"""
-        return " + ".join(reversed(
-            ["{}*{}**{}".format(val, self.base, k)
-             for k, val in enumerate(reversed(self))]))
+    ...
 
     def __mul__(self, other):
         """magic called by the expression `self * other`"""
@@ -483,30 +423,6 @@ we can catch the problem and give them a warning:
 
 ```python
 DecimalSequence([-1, 1]) * DecimalSequence([1, 1])
-```
-```python
-    AssertionError                            Traceback (most recent call last)
-
-    <ipython-input-11-3e14da5c4427> in <module>
-    ----> 1 DecimalSequence([-1, 1]) * DecimalSequence([1, 1])
-
-
-    <ipython-input-10-0c5a71eacda0> in __init__(self, iterable)
-         13     def __init__(self, iterable):
-         14 
-    ---> 15         self.check_iterable(iterable)
-         16 
-         17         arr = np.atleast_1d(np.squeeze(np.asarray(iterable, dtype=np.int)))
-
-
-    <ipython-input-10-0c5a71eacda0> in check_iterable(iterable)
-         33 
-         34         for error_checker, error_msg in zip(error_checkers, error_msgs):
-    ---> 35             assert error_checker(iterable), "DecimalSequences must be {}".format(error_msg)
-         36 
-         37     def __iter__(self):
-
-
     AssertionError: DecimalSequences must be all negative or positive
 ```
 
@@ -521,9 +437,6 @@ the last blog post in this series:
 
 ```python
 DecimalSequence([1, 2, 3]) * DecimalSequence([4, 5])
-```
-
-```python
     array([ 4, 13, 22, 15])
 ```
 
@@ -551,7 +464,8 @@ We start by defining two methods:
 one, `from_int`, to generate a `DecimalSequence` from an integer
 and another, `to_int`, to generate an integer from a `DecimalSequence`.
 
-`from_int` can be used to construct new `DecimalSequence`s, so it doesn't make sense to have it as a typical method, attached to a specific sequence.
+`from_int` can be used to construct new `DecimalSequence`s,
+so it doesn't make sense to have it as a typical method, attached to a specific sequence.
 Luckily, there's a decorator, `@classmethod` designed for this specific purpose.
 It replaces the "hidden" `self` argument with a "hidden" `cls` (pronounced "class") argument.
 This argument refers to the class (here `DecimalSequence`), rather than a specific member.
@@ -563,8 +477,6 @@ We just need to write a Python version of the definition in our doc-string.
 
 
 ```python
-import numpy as np
-
 class DecimalSequence():
     """A sequence of decimal digits representing an integer.
     
@@ -606,43 +518,8 @@ class DecimalSequence():
             
         return list(reversed(iterable))
         
-        
-    @staticmethod
-    def check_iterable(iterable):
-        error_msgs = ["(castable to) integers",
-                      "one-dimensional",
-                      "all negative or positive"]
-        
-        arr = np.asarray(iterable, dtype=np.int)
-        error_checkers = [lambda iterable: np.array_equal(arr, iterable),
-                          lambda iterable: len(arr.shape) == 1,
-                          lambda iterable: all([elem >= 0 for elem in iterable]) or
-                                           all([elem <= 0 for elem in iterable])]
-        
-        for error_checker, error_msg in zip(error_checkers, error_msgs):
-            assert error_checker(iterable), "DecimalSequences must be {}".format(error_msg)
 
-    def __iter__(self):
-        """magic called when we iterate over `self`, e.g. in a `for` loop"""
-        return self.arr.__iter__()
-    
-    def __len__(self):
-        """magic called by the `len(self)`"""
-        return self.arr.__len__()
-    
-    def __getitem__(self, index):
-        """magic called by the expression `self[index]` and slicing"""
-        return self.arr.__getitem__(index)
-            
-    def __repr__(self):
-        """magic called when self is sent to stdout"""
-        return self.arr.__repr__()
-    
-    def __str__(self):
-        """magic called by `print(self)`"""
-        return " + ".join(reversed(
-            ["{}*{}**{}".format(val, self.base, k)
-             for k, val in enumerate(reversed(self))]))
+    ...
 
     def __mul__(self, other):
         """magic called by the expression `self * other`"""
@@ -671,17 +548,11 @@ Now, we can convert between `DecimalSequence`s and integers:
 
 ```python
 print(DecimalSequence.from_int(123))
-```
-
-```python
     1*10**2 + 2*10**1 + 3*10**0
 ```
 
 ```python
 DecimalSequence([1, 2, 3]).to_int()
-```
-
-```python
     123
 ```
 
@@ -734,10 +605,12 @@ start from all of the objects on one side
 and never land on the same object on the other,
 the function is called an _injection_.
 
-This motif, of a surjection followed by an injection,
+This motif, of a (often many-to-one) surjection
+followed by an injection,
 is extremely common in abstract algebra,
 where it appears in a variety of "decomposition theorems":
-e.g. the [Fundamental Theorem of Linear Algebra](https://en.wikipedia.org/wiki/Fundamental_theorem_of_linear_algebra)
+e.g. the
+[Fundamental Theorem of Linear Algebra](https://en.wikipedia.org/wiki/Fundamental_theorem_of_linear_algebra)
 and the canonical decompositions of functions and of group homomorphisms.
 
 The key insight of these decomposition theorems is that even very complicated objects,
@@ -762,8 +635,6 @@ and arrays that start with a bunch of leading `0`s.
 
 
 ```python
-import numpy as np
-
 class DecimalSequence():
     """A sequence of decimal digits representing an integer.
     
@@ -791,65 +662,8 @@ class DecimalSequence():
             return self.arr
         else:
             return DecimalSequence.from_int(self.to_int()).arr
-        
-    @classmethod
-    def from_int(cls, intgr, base=10):
-        iterable = cls.int_to_iterable(intgr, base=base)
-        return cls(iterable)
-    
-    def to_int(self):
-        return int(sum([elem * (self.base ** k) for k, elem
-                        in enumerate(reversed(self))]))
-    
-    @staticmethod
-    def int_to_iterable(intgr, base=10):
-        assert isinstance(intgr, int), "first argument must be integer"
-        iterable = []
-        
-        while intgr > 0:
-            val = intgr % base
-            iterable.append(val)
-            intgr = intgr // base
-            
-        return list(reversed(iterable))
-        
-        
-    @staticmethod
-    def check_iterable(iterable):
-        error_msgs = ["(castable to) integers",
-                      "one-dimensional",
-                      "all negative or positive"]
-        
-        arr = np.asarray(iterable, dtype=np.int)
-        error_checkers = [lambda iterable: np.array_equal(arr, iterable),
-                          lambda iterable: len(arr.shape) == 1,
-                          lambda iterable: all([elem >= 0 for elem in iterable]) or
-                                           all([elem <= 0 for elem in iterable])]
-        
-        for error_checker, error_msg in zip(error_checkers, error_msgs):
-            assert error_checker(iterable), "DecimalSequences must be {}".format(error_msg)
 
-    def __iter__(self):
-        """magic called when we iterate over `self`, e.g. in a `for` loop"""
-        return self.arr.__iter__()
-    
-    def __len__(self):
-        """magic called by the `len(self)`"""
-        return self.arr.__len__()
-    
-    def __getitem__(self, index):
-        """magic called by the expression `self[index]` and slicing"""
-        return self.arr.__getitem__(index)
-            
-    def __repr__(self):
-        """magic called when self is sent to stdout"""
-        return self.arr.__repr__()
-    
-    def __str__(self):
-        """magic called by `print(self)`"""
-        return " + ".join(reversed(
-            ["{}*{}**{}".format(val, self.base, k)
-             for k, val in enumerate(reversed(self))]))
+    ...
 
     def __mul__(self, other):
         """magic called by the expression `self * other`"""
@@ -866,9 +680,6 @@ the result is in the valid form!
 
 ```python
 DecimalSequence([1, 2, 3]) * DecimalSequence([4, 5])
-```
-
-```python
     array([5, 5, 3, 5])
 ```
 
@@ -882,9 +693,6 @@ One of our methods has a bug:
 
 ```python
 DecimalSequence.from_int(-11)
-```
-
-```python
     array([], dtype=int64)
 ```
 
@@ -909,8 +717,6 @@ by multiplying each of the elements by `-1`.
 
 
 ```python
-import numpy as np
-
 class DecimalSequence():
     """A sequence of decimal digits representing an integer.
     
@@ -941,15 +747,8 @@ class DecimalSequence():
         
     def check_element(self, elem):
         return -self.base < elem < self.base
-        
-    @classmethod
-    def from_int(cls, intgr, base=10):
-        iterable = cls.int_to_iterable(intgr, base=base)
-        return cls(iterable)
-    
-    def to_int(self):
-        return int(sum([elem * (self.base ** k) for k, elem
-                        in enumerate(reversed(self))]))
+
+    ...
     
     @staticmethod
     def int_to_iterable(intgr, base=10):
@@ -969,44 +768,8 @@ class DecimalSequence():
         iterable = [sign * elem for elem in iterable]
         
         return list(reversed(iterable))
-        
-        
-    @staticmethod
-    def check_iterable(iterable):
-        error_msgs = ["(castable to) integers",
-                      "one-dimensional",
-                      "all negative or positive"]
-        
-        arr = np.asarray(iterable, dtype=np.int)
-        error_checkers = [lambda iterable: np.array_equal(arr, iterable),
-                          lambda iterable: len(arr.shape) == 1,
-                          lambda iterable: all([elem >= 0 for elem in iterable]) or
-                                           all([elem <= 0 for elem in iterable])]
-        
-        for error_checker, error_msg in zip(error_checkers, error_msgs):
-            assert error_checker(iterable), "DecimalSequences must be {}".format(error_msg)
 
-    def __iter__(self):
-        """magic called when we iterate over `self`, e.g. in a `for` loop"""
-        return self.arr.__iter__()
-    
-    def __len__(self):
-        """magic called by the `len(self)`"""
-        return self.arr.__len__()
-    
-    def __getitem__(self, index):
-        """magic called by the expression `self[index]` and slicing"""
-        return self.arr.__getitem__(index)
-            
-    def __repr__(self):
-        """magic called when self is sent to stdout"""
-        return self.arr.__repr__()
-    
-    def __str__(self):
-        """magic called by `print(self)`"""
-        return " + ".join(reversed(
-            ["{}*{}**{}".format(val, self.base, k)
-             for k, val in enumerate(reversed(self))]))
+    ...
 
     def __mul__(self, other):
         """magic called by the expression `self * other`"""
@@ -1020,13 +783,10 @@ class DecimalSequence():
 
 ```python
 DecimalSequence.from_int(-11)
-```
-
-```python
     array([-1, -1])
 ```
 
-This is a very similar principle to the one we used to solve the `reduce` operation.
+This is a very similar principle to the one we used to solve the `reduce` operation!
 
 We had a working `int_to_iterable` method on a certain set of inputs,
 and we wanted to extend it to cover more.
@@ -1074,7 +834,8 @@ def assert_mul_correct(a, b):
 ints = list(range(-10000, 10000))
 test_size = 100
 
-[assert_mul_correct(random.choice(ints), random.choice(ints)) for _ in range(test_size)];
+[assert_mul_correct(random.choice(ints), random.choice(ints))
+ for _ in range(test_size)];
 ```
 
 ### Conclusion

@@ -58,7 +58,8 @@ in the following tweet:
 
 Phrased as "20% higher for men", the gender bias seems staggeringly high!
 
-It seems like it's time for statistics to come and give us a definitive answer!
+It seems like it's time for statistics to come and give us a definitive answer.
+Surely math can clear everything up!
 
 ### Controversial Statistics
 
@@ -86,7 +87,7 @@ one was parametric, the other non-parametric.
 But they weren't big enough to change the $$p$$ value.
 The biggest difference was a choice made at a very high level:
 namely, are we testing whether there was _any gender bias in CoSyNe acceptance_,
-or are we testing whether there was _gender bias against women in CoSyNe acceptance_ more specifically.
+or are we testing whether there was more specifically _gender bias against women_.
 
 The former is called a _two-tailed test_ and is more standard.
 Especially in sciences like biology and psychology,

@@ -96,7 +96,7 @@ that there's an effect opposite to what we might expect.
 Because we consider extreme events "in both directions",
 the typical effect of switching from a two to a one-tailed test
 is to cut the $$p$$-value in half.
-And indeed, we $$0.35$$ is half of $$0.07$$.
+And indeed, we $$0.03$$ is approximately half of $$0.07$$.
 
 But is it reasonable to run a two-tailed test for this question?
 The claims and concerns of most of the individuals concerned about bias

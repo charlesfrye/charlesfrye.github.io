@@ -17,6 +17,14 @@ which underlie many recent advances in machine learning and AI.
 My goal is to understand how the geometric properties of these surfaces,
 like their curvature,
 help give rise to the unreasonable effectiveness of neural networks.
+Check out
+[this arXiV paper](https://arxiv.org/abs/1901.10603)
+for an in-depth comparison of numerical algorithms
+for computing these quantities
+and
+[this tutorial](https://arxiv.org/abs/1906.05273)
+for a "derivation" of the best-performing algorithm
+as a slight upgrade to a method for computing square roots.
 
 ## The Development of Spontaneous Activity
 

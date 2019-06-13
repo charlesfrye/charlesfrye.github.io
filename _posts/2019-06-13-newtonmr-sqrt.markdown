@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	"Short Paper on Square Roots and Critical Points"
-date:	2018-06-13
+date:	2019-06-13
 category: external
 ---
 

@@ -104,7 +104,7 @@ $$\begin{align}
 	&= -\frac{x^2}{2\sigma^2} + 2 \frac{\mu x}{2\sigma^2} - \frac{\mu^2}{2\sigma^2}
 		- \log \sqrt{2\pi} +\log \sigma \\
 	&= \frac{\mu}{\sigma^2}x + \frac{-1}{2\sigma^2}x^2
-		- \left(\frac{mu^2}{2\sigma^2} + \log \sigma\right) - \log \sqrt{2\pi}\\
+		- \left(\frac{\mu^2}{2\sigma^2} + \log \sigma\right) - \log \sqrt{2\pi}\\
 	&:= \theta_1 x + \theta_2 x^2 - A(\mu, \sigma) + \log h(x)
 \end{align}$$
 {: style="text-align: center"}
@@ -262,7 +262,7 @@ Again, we expand the troublesome polyonimal,
 this time showing up as a quadratic form:
 
 $$\begin{align}
-(x - \mu)\top \Sigma^{-1} (x - \mu) &=
+(x - \mu)^\top \Sigma^{-1} (x - \mu) &=
 		x^\top\Sigma^{-1}x
 		- \mu^\top\Sigma^{-1}x - x^\top\Sigma^{-1}\mu
 		+ \mu^\top\Sigma^{-1}\mu \\
@@ -320,7 +320,7 @@ $$\begin{align}
 \log p (x, \mu, \Sigma) &=
 		\langle \Sigma^{-1}\mu, x \rangle
 		+ \langle\frac{-1}{2} \Sigma^{-1}, xx^\top \rangle
-		-\left(\frac{1}{2} \langle \Sigma^{-1}, \mu\mu\^top \rangle
+		-\left(\frac{1}{2} \langle \Sigma^{-1}, \mu\mu^\top \rangle
 		+ \frac{1}{2} \log \left|\Sigma^{-1}\right|\right)
 		- k \log \sqrt{2\pi}\\
 \log p (x, \theta, \Theta) &=
@@ -335,7 +335,7 @@ On top of the shared log-linear family form
 (inner products, cumulant generating function)
 notice the similarities between the multivariate and the univariate case:
 $$\mu^2$$ becomes $$\mu\mu^\top$$,
-$$\frac{\mu}{\sigma^2}$$ becomes $$\Sigma^{-1}\mu$$
+$$\frac{\mu}{\sigma^2}$$ becomes $$\Sigma^{-1}\mu$$, and
 $$\frac{-1}{2\sigma^2}$$ becomes $$\frac{-1}{2}\Sigma^{-1}$$
 (lowercase $$\sigma$$ is reserved for the standard deviation,
 hence the absence of a $$^2$$ in the multivariate version).

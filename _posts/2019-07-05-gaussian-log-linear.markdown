@@ -250,7 +250,7 @@ which is perhaps less familiar:
 
 $$\begin{align}
 \log p (x, \mu, \Sigma) &=
-	-\frac{1}{2} (x - \mu)\top \Sigma^{-1} (x - \mu)
+	-\frac{1}{2} (x - \mu)^\top \Sigma^{-1} (x - \mu)
 	- \frac{1}{2} \log \left|\Sigma^{-1}\right| - k \log \sqrt{2\pi}
 \end{align}$$
 {: style="text-align: center"}
@@ -299,7 +299,7 @@ $$\begin{align}
 		+ \mathrm{tr}\left(\mu^\top\Sigma^{-1}\mu\right)\\
 	&=\mathrm{tr}\left(xx^\top\Sigma^{-1}\right)
 		-2\mathrm{tr}\left(x^\top\Sigma^{-1}\mu\right)
-		+ \mathrm{tr}\left(\mu\mu\top,\Sigma^{-1}\right)
+		+ \mathrm{tr}\left(\mu\mu^\top,\Sigma^{-1}\right)\\
 	&=\langle\Sigma^{-1}, xx^\top \rangle
 		-2 \langle \Sigma^{-1}\mu, x \rangle
 		+ \langle \Sigma^{-1}, \mu\mu^\top \rangle
@@ -321,7 +321,7 @@ $$\begin{align}
 		\langle \Sigma^{-1}\mu, x \rangle
 		+ \langle\frac{-1}{2} \Sigma^{-1}, xx^\top \rangle
 		-\left(\frac{1}{2} \langle \Sigma^{-1}, \mu\mu\^top \rangle
-		+ \frac{1}{2} \log \left|\Sigma^{-1}\\right|\right)
+		+ \frac{1}{2} \log \left|\Sigma^{-1}\right|\right)
 		- k \log \sqrt{2\pi}\\
 \log p (x, \theta, \Theta) &=
 		\langle \theta, x \rangle
@@ -404,7 +404,7 @@ which was one of the examples used in the
 For completeness, we rederive it here:
 
 $$\begin{align}
-\langle \left(\theta + \varepsilon\right)\left(\theta + \varepsilon\right)^\top \Theta^{-1}\rangle &=\\
+\langle \left(\theta + \varepsilon\right)\left(\theta + \varepsilon\right)^\top \Theta^{-1}\rangle &=\
 	\langle \theta \theta^\top, \Theta^{-1} \rangle
 	+ 2\langle \Theta^{-1}\theta, \varepsilon \rangle
 	+ \langle \varepsilon\varepsilon^\top, \Theta^{-1}\rangle
@@ -451,8 +451,8 @@ derivative of the inner product
 from the derivative of the matrix inverse:
 
 $$\begin{align}
-\nabla_\Theta \langle \theta \theta^\top, \Theta^{-1}\rangle \nabla_\Theta\Theta{-1}
-		&= \theta\theta^\top \nabla_\Theta\Theta{-1}
+\nabla_\Theta \langle \theta \theta^\top, \Theta^{-1}\rangle \nabla_\Theta\Theta^{-1}
+		&= \theta\theta^\top \nabla_\Theta\Theta^{-1}
 \end{align}$$
 {: style="text-align: center"}
 
@@ -464,7 +464,7 @@ $$\frac{1}{x^{-2}}$$.
 Putting it all together, we end up with
 
 $$\begin{align}
-\nabla_\Theta A(\theta, \Theta) &= -\frac{1}{4}\theta\theta^\top\Theta{-2}
+\nabla_\Theta A(\theta, \Theta) &= -\frac{1}{4}\theta\theta^\top\Theta^{-2}
 		-\frac{1}{2}\Theta^{-1}\\
 	&= \mu\mu^\top + \Sigma
 \end{align}$$<!-- _-->

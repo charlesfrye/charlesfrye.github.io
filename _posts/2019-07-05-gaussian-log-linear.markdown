@@ -7,9 +7,10 @@ category: stats
 
 $$\begin{align}
 \nabla_\theta A(\theta, \Theta)
-	&= \frac{-1}{2}\Theta^{-1}\theta\\
+	&= \frac{-1}{2}\Theta^{-1}\theta = \mu\\
 \nabla_\Theta A(\theta, \Theta)
-	&= \frac{-1}{4}\theta\theta^\top\Theta^{-2} - \frac{1}{2}\Theta^{-1}\\
+	&= \frac{-1}{4}\theta\theta^\top\Theta^{-2}
+		- \frac{1}{2}\Theta^{-1} = \mu\mu^\top - \Sigma\\
 
 \end{align}$$
 {: style="text-align: center"}
@@ -101,9 +102,9 @@ $$\begin{align}
 \log p(x; \mu, \sigma^2)
 	&= -\frac{(x - \mu)^2}{2\sigma^2} - \log \sqrt{2\pi}\sigma \\
 	&= -\frac{x^2}{2\sigma^2} + 2 \frac{\mu x}{2\sigma^2} - \frac{\mu^2}{2\sigma^2}
-		- \log \sqrt{2\pi}i +\log \sigma \\
+		- \log \sqrt{2\pi} +\log \sigma \\
 	&= \frac{\mu}{\sigma^2}x + \frac{-1}{2\sigma^2}x^2
-		- \left(\frac{mu^2}{2\sigma^2} + \log \sigma\right) - \log \sqrt{2\pi}
+		- \left(\frac{mu^2}{2\sigma^2} + \log \sigma\right) - \log \sqrt{2\pi}\\
 	&:= \theta_1 x + \theta_2 x^2 - A(\mu, \sigma) + \log h(x)
 \end{align}$$
 {: style="text-align: center"}
@@ -201,14 +202,14 @@ $$\begin{align}
 \end{align}$$
 {: style="text-align: center"}
 
-How curious! The partial derivative of our function $A$$ along its first index
+How curious! The partial derivative of our function $$A$$ along its first index
 gave us the expected value of the first index of $$\phi$$!
 Does this pattern continue if we try the second index?
 
 $$\begin{align}
 \frac{\partial}{\partial \theta_2} A(\theta) &=
 	\frac{1}{4}\frac{\theta_1^2}{\theta_2^2} + \frac{-1}{2}\theta_2^{-1} \\
-	&= \mu^2 +\sigma^2
+	&= \mu^2 +\sigma^2 \\
 	&= \mathbb{E}(\phi_2(x))
 \end{align}$$
 {: style="text-align: center"}
@@ -250,7 +251,7 @@ which is perhaps less familiar:
 $$\begin{align}
 \log p (x, \mu, \Sigma) &=
 	-\frac{1}{2} (x - \mu)\top \Sigma^{-1} (x - \mu)
-	- \frac{1}{2} \log \|\Sigma^{-1}\| - k \log \sqrt{2\pi}
+	- \frac{1}{2} \log \left|\Sigma^{-1}\right| - k \log \sqrt{2\pi}
 \end{align}$$
 {: style="text-align: center"}
 
@@ -292,16 +293,16 @@ rearranging the elements of our traces by "cycling" them
 until we get inner products between our parameters and our $$x$$s.
 
 $$\begin{align}
-(x - \mu)\top \Sigma^{-1} (x - \mu) &=
+(x - \mu)^\top \Sigma^{-1} (x - \mu) &=
 		\mathrm{tr}\left(x^\top\Sigma^{-1}x\right)
 		-2\mathrm{tr}\left(x^\top\Sigma^{-1}\mu\right)
-		+ \mathrm{tr}\left(\mu^\top\Sigma^{-1}\mu\right)
+		+ \mathrm{tr}\left(\mu^\top\Sigma^{-1}\mu\right)\\
 	&=\mathrm{tr}\left(xx^\top\Sigma^{-1}\right)
 		-2\mathrm{tr}\left(x^\top\Sigma^{-1}\mu\right)
 		+ \mathrm{tr}\left(\mu\mu\top,\Sigma^{-1}\right)
 	&=\langle\Sigma^{-1}, xx^\top \rangle
 		-2 \langle \Sigma^{-1}\mu, x \rangle
-		+ \langle \Sigma^{-1}, \mu\mu^top \rangle
+		+ \langle \Sigma^{-1}, \mu\mu^\top \rangle
 
 \end{align}$$
 {: style="text-align: center"}
@@ -319,8 +320,8 @@ $$\begin{align}
 \log p (x, \mu, \Sigma) &=
 		\langle \Sigma^{-1}\mu, x \rangle
 		+ \langle\frac{-1}{2} \Sigma^{-1}, xx^\top \rangle
-		-\left(\frac{1}{2} \langle \Sigma^{-1}, \mu\mu^top \rangle
-		+ \frac{1}{2} \log \|\Sigma^{-1}\|\right)
+		-\left(\frac{1}{2} \langle \Sigma^{-1}, \mu\mu\^top \rangle
+		+ \frac{1}{2} \log \left|\Sigma^{-1}\\right|\right)
 		- k \log \sqrt{2\pi}\\
 \log p (x, \theta, \Theta) &=
 		\langle \theta, x \rangle
@@ -349,6 +350,7 @@ just as we had to in the univariate case.
 
 We use the following substitutions
 (compare them to their univariate versions!):
+
 $$\begin{align}
 \mu &= \frac{-1}{2}\Theta^{-1}\theta\\
 \Sigma^{-1} &= -2\Theta\\
@@ -356,7 +358,7 @@ $$\begin{align}
 \end{align}$$
 {: style="text-align: center"}
 
-Note that the lest one requires some finessing.
+Note that the last one requires some finessing.
 To show the identity, take the transpose of the right hand side twice,
 then bring one transpose in, using the fact that
 $$\Sigma$$ and $$\Sigma^{-1}$$
@@ -364,6 +366,7 @@ $$\Sigma$$ and $$\Sigma^{-1}$$
 are symmetric.
 
 These identities let us obtain, with some algebra:
+
 $$\begin{align}
 A(\theta, \Theta) &=
 		\frac{1}{2} \langle -2 \Theta,
@@ -399,6 +402,7 @@ This is the derivative of a quadratic form with respect to its argument,
 which was one of the examples used in the
 [blog post introducing the Fréchet derivative]({{site.url}}/math/2018/03/06/frechet-derivative-introduction.html).
 For completeness, we rederive it here:
+
 $$\begin{align}
 \langle \left(\theta + \varepsilon\right)\left(\theta + \varepsilon\right)^\top \Theta^{-1}\rangle &=\\
 	\langle \theta \theta^\top, \Theta^{-1} \rangle
@@ -410,10 +414,12 @@ $$\begin{align}
 The middle term contains the gradient as the argument
 to the inner product with $$\varepsilon$$,
 establishing that the gradient of $$A$$ is
+
 $$\begin{align}
 \nabla_\theta A(\theta, \Theta) &= -\frac{1}{2} \Theta^{-1}\theta = \mu
 \end{align}$$ <!-- _-->
 {: style="text-align: center"}
+
 as desired.
 
 We're in the home stretch!
@@ -423,7 +429,7 @@ with respect to $$\Theta$$.
 $$\begin{align}
 \nabla_\Theta A(\theta, \Theta) &= -\frac{1}{4}
 		\nabla_\Theta \langle \theta \theta^\top, \Theta^{-1}\rangle
-		+\frac{1}{2} \nabla_\Theta \log\|-2\Theta\|
+		+\frac{1}{2} \nabla_\Theta \log\left|-2\Theta\right|
 \end{align}$$
 {: style="text-align: center"}
 
@@ -443,6 +449,7 @@ using the chain rule to get split apart the
 derivative of the inner product
 (which, due to linearity, is just equal to the other argument)
 from the derivative of the matrix inverse:
+
 $$\begin{align}
 \nabla_\Theta \langle \theta \theta^\top, \Theta^{-1}\rangle \nabla_\Theta\Theta{-1}
 		&= \theta\theta^\top \nabla_\Theta\Theta{-1}
@@ -455,6 +462,7 @@ $$\frac{1}{x^{-2}}$$.
 [And so it is](https://math.stackexchange.com/questions/1471825/derivative-of-the-inverse-of-a-matrix)!
 
 Putting it all together, we end up with
+
 $$\begin{align}
 \nabla_\Theta A(\theta, \Theta) &= -\frac{1}{4}\theta\theta^\top\Theta{-2}
 		-\frac{1}{2}\Theta^{-1}\\

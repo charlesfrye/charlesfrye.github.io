@@ -126,7 +126,7 @@ and we could get a perfect estimate of the area of "A&B".
 
 Unfortunately, we don't have time to count infinitely many infinitely small squares,
 nor is that easy to imagine what they'd look like.
-The idea should remind you of integrals from calculus, because they're
+The idea might remind you of integrals from calculus, because they're
 [basically the same thing](https://en.wikipedia.org/wiki/Measure_(mathematics)).
 Just like in calculus, if we can come up with a mathematical formula
 that represents a statement's area, like "A is a circle with radius 1/2",
@@ -219,8 +219,7 @@ $$
 
 ### Bayes' Rule and Learning
 
-At this point, the importance of Bayes' rule,
-and especially its connection to perception, is yet unclear.
+At this point, the importance of Bayes' rule is not obvious.
 Let's pick a few particular kinds of "statement" and put them into
 Bayes' rule to clear this up.
 We'll call "B" a "hypothesis" and "A" some "data".
@@ -240,7 +239,7 @@ when we conditioned on "B" in Figure 8.
 We've "updated" our beliefs given some new information.
 In a very real sense, Bayes' Rule tells you how to learn given
 the uncertainty and randomness that characterize our apprehension of the world.
-In fact, there is another path to Bayes' Rule that makes this more explicit
+There is another path to Bayes' Rule that makes this more explicit
 (see footnote † for more details).
 
 The probability of our hypothesis is called the "prior probability",
@@ -260,8 +259,9 @@ for problems of scientific modeling were widely recognized and put into practice
 
 ### Bayes' Rule and Perception
 
-Finally, we are well equipped to answer the original question:
-how does Bayes' rule relate to perception?
+Neuroscientists, cognitiuve scientists, and psychologists
+find Bayes' Rule interesting because of the account it gives
+of learning and perception.
 As the preceding section described,
 it provides a normative account of learning --
 it describes the optimal way to use incoming data.
@@ -275,7 +275,7 @@ Perception is fundamentally a problem of induction:
 the data our senses pick up is fundamentally not what we care about.
 We see a 2-D projection of the oscillations of an electromagnetic field,
 but want to know the 3-D shape, texture, and color of a rich scene of objects,
-and we feel minute changes in air pressure inside our skulls,
+or we feel minute changes in air pressure inside our skulls,
 but want to know if they were made by a wolf or a dog.
 
 Here's a concrete example, using our simple picture from above.
@@ -284,7 +284,8 @@ In the last 100 days, we've heard roaring in the distance 8 times,
 and been attacked by ferocious
 [White Tigers](https://en.wikipedia.org/wiki/White_tiger)
 on 4 occasions.
-On three of those occasions, we heard roaring in the distance.
+On three of those occasions, we heard roaring in the distance
+before being attacked.
 This morning, we woke up to an ominous rumble.
 What is the chance that a tiger attacks today?
 

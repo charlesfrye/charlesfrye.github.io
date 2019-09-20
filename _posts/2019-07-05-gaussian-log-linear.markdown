@@ -7,10 +7,10 @@ category: stats
 
 $$\begin{align}
 \nabla_\theta A(\theta, \Theta)
-	&= \frac{-1}{2}\Theta^{-1}\theta = \mu\\
+	&= -\frac{1}{2}\Theta^{-1}\theta = \mu\\
 \nabla_\Theta A(\theta, \Theta)
-	&= \frac{-1}{4}\theta\theta^\top\Theta^{-2}
-		- \frac{1}{2}\Theta^{-1} = \mu\mu^\top - \Sigma\\
+	&= -\frac{1}{4}\theta\theta^\top\Theta^{-2}
+		- \frac{1}{2}\Theta^{-1} = \mu\mu^\top + \Sigma\\
 
 \end{align}$$
 {: style="text-align: center"}
@@ -169,7 +169,7 @@ $$\begin{align}
 and then substitute:
 
 $$\begin{align}
-A(\theta) &= \frac{-\theta_1^2}{4\theta_2^2} - \frac{1}{2}\log{-\frac{1}{2}\theta_2}
+A(\theta) &= -\frac{1}{4}\frac{\theta_1^2}{\theta_2} - \frac{1}{2}\log\left(-2\theta_2\right)
 \end{align}$$
 {: style="text-align: center"}
 
@@ -208,7 +208,7 @@ Does this pattern continue if we try the second index?
 
 $$\begin{align}
 \frac{\partial}{\partial \theta_2} A(\theta) &=
-	\frac{1}{4}\frac{\theta_1^2}{\theta_2^2} + \frac{-1}{2}\theta_2^{-1} \\
+	\frac{1}{4}\frac{\theta_1^2}{\theta_2^2} - \frac{1}{2}\theta_2^{-1} \\
 	&= \mu^2 +\sigma^2 \\
 	&= \mathbb{E}(\phi_2(x))
 \end{align}$$
@@ -227,9 +227,9 @@ for differentiation, which is typically tractable.
 The second cumulant, from the second derivative,
 is the beloved _Fisher Information Matrix_.
 
-Before we move on, note that we had to bring in some more serious calculus here,
-namely the fact that
-$$\frac{\partial}{\partial x} \log kx = \frac{1}{x}$$.
+Before we move on,
+note that we had to bring in some facts from calculus, namely that
+$$\frac{\partial}{\partial x} \log -x = -\frac{1}{x}$$ for $$x<0$$..
 Outside of that, we'll be sticking to derivatives of
 linear and polynomial functions,
 all of which can be fairly straightforwardly found using the
@@ -251,14 +251,14 @@ which is perhaps less familiar:
 $$\begin{align}
 \log p (x, \mu, \Sigma) &=
 	-\frac{1}{2} (x - \mu)^\top \Sigma^{-1} (x - \mu)
-	- \frac{1}{2} \log \left|\Sigma^{-1}\right| - k \log \sqrt{2\pi}
+	+ \frac{1}{2} \log \left|\Sigma^{-1}\right| - k \log \sqrt{2\pi}
 \end{align}$$
 {: style="text-align: center"}
 
 Once again, we'll need to coerce this into an expression where
 the only interactions between our state vector $$x$$
 and our parameter tuple $$(\mu, \Sigma)$$ is via inner products.
-Again, we expand the troublesome polyonimal,
+Again, we expand the troublesome polynoimal,
 this time showing up as a quadratic form:
 
 $$\begin{align}
@@ -319,9 +319,9 @@ to the log-linear form for the multivariate Gaussian:
 $$\begin{align}
 \log p (x, \mu, \Sigma) &=
 		\langle \Sigma^{-1}\mu, x \rangle
-		+ \langle\frac{-1}{2} \Sigma^{-1}, xx^\top \rangle
+		+ \langle-\frac{1}{2} \Sigma^{-1}, xx^\top \rangle
 		-\left(\frac{1}{2} \langle \Sigma^{-1}, \mu\mu^\top \rangle
-		+ \frac{1}{2} \log \left|\Sigma^{-1}\right|\right)
+		- \frac{1}{2} \log \left|\Sigma^{-1}\right|\right)
 		- k \log \sqrt{2\pi}\\
 \log p (x, \theta, \Theta) &=
 		\langle \theta, x \rangle
@@ -352,13 +352,13 @@ We use the following substitutions
 (compare them to their univariate versions!):
 
 $$\begin{align}
-\mu &= \frac{-1}{2}\Theta^{-1}\theta\\
+\mu &= -\frac{1}{2}\Theta^{-1}\theta\\
 \Sigma^{-1} &= -2\Theta\\
 \mu\mu^\top &= \frac{1}{4}\Theta^{-1}\theta\theta^\top\Theta^{-1}
 \end{align}$$
 {: style="text-align: center"}
 
-Note that the last one requires some finessing.
+Note that the last one requires some algebraic ledgerdemain.
 To show the identity, take the transpose of the right hand side twice,
 then bring one transpose in, using the fact that
 $$\Sigma$$ and $$\Sigma^{-1}$$
@@ -368,19 +368,21 @@ are symmetric.
 These identities let us obtain, with some algebra:
 
 $$\begin{align}
+A(\mu, \Sigma) &= \frac{1}{2} \langle \Sigma^{-1}, \mu\mu^\top \rangle
+		- \frac{1}{2} \log \left|\Sigma^{-1}\right|\\
 A(\theta, \Theta) &=
 		\frac{1}{2} \langle -2 \Theta,
 			\frac{1}{4}\Theta^{-1}\theta\theta^\top\Theta^{-1}  \rangle
-		+ \frac{1}{2} \log \left| -2 \Theta \right|\\
-	&= \frac{-1}{4}\mathrm{tr}\left(\Theta\Theta^{-1}\theta\theta^\top\Theta^{-1}\right)
-		+ \frac{1}{2} \log \left| -2 \Theta \right|\\
-	&= \frac{-1}{4} \langle \theta\theta^\top, \Theta^{-1} \rangle
-		+ \frac{1}{2} \log \left| -2 \Theta \right|\\
+		- \frac{1}{2} \log \left| -2 \Theta \right|\\
+	&= -\frac{1}{4}\mathrm{tr}\left(\Theta\Theta^{-1}\theta\theta^\top\Theta^{-1}\right)
+		- \frac{1}{2} \log \left| -2 \Theta \right|\\
+	&= -\frac{1}{4} \langle \theta\theta^\top, \Theta^{-1} \rangle
+		- \frac{1}{2} \log \left| -2 \Theta \right|\\
 \end{align}$$
 {: style="text-align: center"}
 
 Take a deep breath.
-Our trace tricks served us well again,
+The trace has served us well again,
 helping us to obtain a much simpler expression for $$A$$
 that now closely resembles the expression for the univariate case.
 
@@ -413,7 +415,8 @@ $$\begin{align}
 
 The middle term contains the gradient as the argument
 to the inner product with $$\varepsilon$$,
-establishing that the gradient of $$A$$ is
+establishing that the gradient of $$A$$
+with respect to its first argument is
 
 $$\begin{align}
 \nabla_\theta A(\theta, \Theta) &= -\frac{1}{2} \Theta^{-1}\theta = \mu
@@ -423,13 +426,13 @@ $$\begin{align}
 as desired.
 
 We're in the home stretch!
-We just need to compute the (matrix-valued) gradient of $$A(\theta, \Theta$$
+We just need to compute the (matrix-valued) gradient of $$A(\theta, \Theta)$$
 with respect to $$\Theta$$.
 
 $$\begin{align}
 \nabla_\Theta A(\theta, \Theta) &= -\frac{1}{4}
 		\nabla_\Theta \langle \theta \theta^\top, \Theta^{-1}\rangle
-		+\frac{1}{2} \nabla_\Theta \log\left|-2\Theta\right|
+		-\frac{1}{2} \nabla_\Theta \log\left|-2\Theta\right|
 \end{align}$$
 {: style="text-align: center"}
 
@@ -440,7 +443,7 @@ funnily enough, just
 equal to the inverse of the transposed matrix,
 as can be shown
 [using the Fréchet derivative again]({{site.url}}/math/2019/01/25/frechet-determinant.html).
-This makes our second term $$\frac{-1}{2}\Theta^{-1}$$,
+This makes our second term $$-\frac{1}{2}\Theta^{-1}$$,
 which is auspicious, since it corresponds to $$\Sigma$$,
 once of the two terms in the expectation we hope to match.
 
@@ -458,13 +461,13 @@ $$\begin{align}
 
 One might hope, by analogy with the derivative of the inverse of a scalar,
 that the answer is the matrix equivalent of
-$$\frac{1}{x^{-2}}$$.
+$$\frac{-1}{x^{-2}}$$.
 [And so it is](https://math.stackexchange.com/questions/1471825/derivative-of-the-inverse-of-a-matrix)!
 
 Putting it all together, we end up with
 
 $$\begin{align}
-\nabla_\Theta A(\theta, \Theta) &= -\frac{1}{4}\theta\theta^\top\Theta^{-2}
+\nabla_\Theta A(\theta, \Theta) &= \frac{1}{4}\theta\theta^\top\Theta^{-2}
 		-\frac{1}{2}\Theta^{-1}\\
 	&= \mu\mu^\top + \Sigma
 \end{align}$$<!-- _-->

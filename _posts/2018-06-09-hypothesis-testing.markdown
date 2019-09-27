@@ -43,13 +43,13 @@ If you'd like a more thorough-going introduction to these ideas, along with an i
 
 ### Hypothesis Testing is a Kind of Decision-Making Under Uncertainty
 
-In the lab on inferential statistics, we discussed one class of inference problems: trying to infer the value of a parameter, like the average value or spread of some random variable in a population. Examples of random variables and populations include:
+Inferential statistics is concerned with a particular kind of inference problem: trying to infer the value of a parameter, like the average value or spread of some random variable in a population. Examples of random variables and populations include:
 
 - neural firing rate and mouse somatosensory neurons
 - whether an individual smokes or not and Canadians under the age of 25
 - the mean of the data you measured in your experiment and the collection of all datasets you could've measured
 
-We stated that the purpose of such inferences was to guide decision making. For example, we might measure the average response of a sick population to a candidate drug and then use that value to determine whether to prescribe the drug or not. We left unsaid, however, just exactly how statistical inferences are to be used.
+The purpose of such inferences is to guide decision making. For example, we might measure the average response of a sick population to a candidate drug and then use that value to determine whether to prescribe the drug or not. We left unsaid, however, just exactly how statistical inferences are to be used.
 
 In this tutorial, we'll work through how to use statistical inferences to guide the simplest kinds of decisions: yes-or-no decisions, also known as *binary* decisions, since there are two choices. We'll focus on the yes-or-no decision of most interest to scientists: is my hypothesis true or not?
 
@@ -288,9 +288,9 @@ The vertical bar, $$\vert$$, is pronounced "conditioned on" or "given". One woul
 
 Note one important difference between a conditional probability table and a joint probability table: while the latter is a distribution, the former is NOT. For example, the entries of a conditional probability table don't add up to 1. Instead, each row or column of a conditional probability table adds up to 1. A conditional probability table is a collection of distributions, with one distribution for each value of the variable being conditioned on.
 
-Because of this distinction, there are several entities that end up getting called "the conditional probability". For example, the first table above is "the conditional probability of the alernative hypothesis given the test outcome". The first row in that table is "the conditional probability of the alternative hypothesis given that the test is positive". The first cell in that row is "the conditional probability that the alternative hypothesis is true given that the test is positive".
+Because of this distinction, there are several entities that end up getting called "the conditional probability". For example, the first table above is "the conditional probability of the alernative hypothesis given the test outcome", $$p(H_A\lvert \text{test})$$. The first row in that table is "the conditional probability of the alternative hypothesis given that the test is positive", $$p(H_A\lvert \text{test}=+)$$. The first cell in that row is "the conditional probability that the alternative hypothesis is true given that the test is positive", $$p(H_A=T\lvert\text{test}=+)$$.
 
-In English, this distinction is clear enough, but unfortunately the usual mathematical notation for all three of the above is $$p(x\vert y)$$, with the meaning depending on which of $$x$$, $$y$$, or both are outcomes (e.g. "test is positive") and which are random variables (e.g. "the outcome of the test").
+Unfortunately, depending on the context, the mathematical shorthand for all three of the above can be $$p(x\vert y)$$, with the meaning depending on which of $$x$$, $$y$$, or both are outcomes (e.g. "test is positive") and which are random variables (e.g. "the outcome of the test"). Sometimes this ambiguity is resolved by denoting random variables with capital letters and their outcomes with lowercase letters, but this can be overly restrictive.
 
 ### Conditional Probabilities and Hypothesis Testing
 

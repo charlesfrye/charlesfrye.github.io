@@ -183,7 +183,7 @@ $$\begin{align}
 
 We want to be comparing these negative exponentiated surprise
 values to probabilities,
-in particular those given by the probability distribution $p$.
+in particular those given by the probability distribution $$p$$.
 So we pull an old trick from the mathematicians' toolbox:
 we multiply and divide by the same value,
 which is the same as multiplying by $$1$$.
@@ -293,7 +293,7 @@ of a player with surprise function $$S$$.
 ## Breaking Down the Result
 
 The KL divergence is never negative
-and the term at the end is never positive
+and neither is the last term
 (the sum inside the log is never greater than $$1$$).
 Therefore, the best average performance that a player can have
 is equal to $$H(p)$$.

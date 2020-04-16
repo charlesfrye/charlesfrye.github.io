@@ -27,9 +27,11 @@ including automatic cloud deployment.
 
 ## Applied Statistics for Neuroscience
 
+<!--
 {:.gallery}
 [![stats_for_neuro]](https://github.com/charlesfrye/AppliedStatisticforNeuroscience)
 {: style="text-align: center"}
+-->
 
 I developed a course in statistics
 aimed at graduate students in neuroscience

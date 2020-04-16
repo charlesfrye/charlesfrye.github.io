@@ -4,6 +4,27 @@ title: My Projects
 permalink: /projects/
 ---
 
+## Data Science for Research Psychology
+
+{:.gallery}
+[![101d_banner]]({{site.url}}/psych101d)
+{: style="text-align: center"}
+
+Introductory stats is usually taught in a frequentist style,
+with a huge emphasis on rote memorization of formulas and recipes
+for null hypothesis significance testing.
+I developed this course in an attempt to teach some of that core material
+in a more modern way:
+with computational Bayesian methods.
+This approach is less akin learning a collection of recipes
+in order to cook specific dishes
+and more akin to learning a language
+in order to read and write fluently.
+Materials are
+[available online]({{site.url}}/psych101d)
+as a collection of interactive Jupyter notebooks,
+including automatic cloud deployment.
+
 ## Applied Statistics for Neuroscience
 
 {:.gallery}
@@ -18,7 +39,8 @@ to their toolbox.
 It is taught yearly at UC Berkeley
 and is
 [available online](https://github.com/charlesfrye/AppliedStatisticsForNeuroscience)
-as a collection of Jupyter notebooks.
+as a collection of interactive Jupyter notebooks,
+including automatic cloud deployment.
 
 ## Predicting Soil Properties from Infrared Spectra
 
@@ -101,3 +123,4 @@ I'm the clarinet.
 [broLove]: {{site.imgurl}}/broLove.jpg
 [soil_banner_crop]: {{site.imgurl}}/soil_banner_crop.png
 [stats_for_neuro]: {{site.imgurl}}/stats_for_neuro.png
+[101d_banner]: {{site.imgurl}}/101d_banner.png

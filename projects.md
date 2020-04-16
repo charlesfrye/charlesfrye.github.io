@@ -6,6 +6,10 @@ permalink: /projects/
 
 ## Applied Statistics for Neuroscience
 
+{:.gallery}
+[![stats_for_neuro]](https://github.com/charlesfrye/AppliedStatisticforNeuroscience)
+{: style="text-align: center"}
+
 I developed a course in statistics
 aimed at graduate students in neuroscience
 who need to add quantitative skills,
@@ -31,6 +35,7 @@ Follow
 [this link](https://github.com/kkamdin/soil_property_prediction_cdips2017)
 to the GitHub page to learn more.
 
+<!---
 ## emojify.io
 
 {:.gallery}
@@ -54,8 +59,9 @@ part of "scalable vector graphics".
 Since emojis are SVG objects, it was easy to extend this image model
 away from the simple geometric shapes usually used in research.
 
-Shout out to my friend [Derek Johnston](github.com/dcjohnston/),
+Shout out to my friend [Derek Johnston](https://github.com/dcjohnston/),
 who wrote the web-facing components of the app.
+-->
 
 ## Foundational Neuroscience Blog
 

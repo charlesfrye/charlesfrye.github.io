@@ -11,8 +11,9 @@ My name is Charles Frye and I'm a graduate student at UC Berkeley in the
 working in the
 [Redwood Center for Theoretical Neuroscience](http://redwood.berkeley.edu/).
 
-My research interests include sampling approaches to Bayesian inference,
-sensory neural circuits, and statistical learning theory.
+My research interests include
+neural network optimization
+and computational Bayesian methods.
 My research is supported by the National Science Foundation's
 Graduate Research Fellowship.
 

@@ -11,7 +11,7 @@ permalink: /research/
 
 At the
 [Redwood Center for Theoretical Neuroscience](http://redwood.berkeley.edu/),
-I'm studying the loss surfaces of artificial neural networks,
+I studied the loss surfaces of artificial neural networks,
 which underlie many recent advances in machine learning and AI.
 
 My goal is to understand how the geometric properties of these surfaces,
@@ -25,6 +25,14 @@ and
 [this tutorial](https://arxiv.org/abs/1906.05273)
 for a "derivation" of the best-performing algorithm
 as a slight upgrade to a method for computing square roots.
+The end result of this research
+was the discovery of an interesting new class of points
+on neural network loss surfaces,
+gradient-flat points,
+which cause trouble for second-order methods.
+Check out
+[this arXiV paper](https://arxiv.org/abs/2003.10387)
+for the details.
 
 ## The Development of Spontaneous Activity
 

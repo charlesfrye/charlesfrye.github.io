@@ -183,7 +183,7 @@ $$
 and thus, pattern-matching to the definition of the derivative, we have that
 
 $$\begin{align}
-\nabla_{W_k} L(W_1, \dots, W_L) = W_{k+1:}^\top \nabla l(W) W_{:k}^\top
+\nabla_{W_k} l(W_1, \dots, W_L) = W_{k+1:}^\top \nabla L(W) W_{:k}^\top
 \end{align}$$
 {: style="text-align: center"}
 
@@ -192,7 +192,8 @@ and then propagate it through every other matrix, transposed.
 
 ### Closing
 
-This proof may feel shockingly short, direct, and lacking in notation.
+This proof may feel shockingly short and direct.
+Where are all the indices and sums?
 This is the advantage, which I hope this series has made clear,
 of using Fréchet derivatives on polynomial and linear functions
 that have scalar outputs but take in vectors or matrices.

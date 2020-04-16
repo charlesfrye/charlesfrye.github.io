@@ -26,7 +26,15 @@ and its application in a few fundamental examples.
 In
 [the next blog post in this series]({{site.url}}/math/2018/03/07/frechet-least-squares.html).
 we will work out the derivative of least-squares linear regression
-for multiple inputs and outputs (with respect to the parameter matrix).
+for multiple inputs and outputs (with respect to the parameter matrix),
+then apply what we've learned to calculating
+[the gradients of a fully linear deep neural network]({{site.url}}/math/2019/01/18/frechet-linear-network.html).
+
+For a quick intro video on this topic,
+check out
+[this recording of a webinar](https://youtube.com/watch?v=QvJ544dBvRg)
+I gave, hosted by
+[Weights & Biases](https://wandb.com).
 
 ###  The Fréchet Derivative is an Alternative but Equivalent Definiton
 

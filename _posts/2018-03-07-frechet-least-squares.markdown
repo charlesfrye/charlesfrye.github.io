@@ -41,7 +41,7 @@ we consider multiple-output linear least squares
 and compute the derivative with respect to the parameter matrix
 for a single data vector.
 This serves as a warmup for
-[the next blog post in this series]({{site.url}}/math/2019/01/08/frechet-linear-network.html),
+[the next blog post in this series]({{site.url}}/math/2019/01/18/frechet-linear-network.html),
 which applies the Fréchet derivative to linear neural networks
 with one hidden layer.
 

@@ -31,7 +31,7 @@ on neural network loss surfaces,
 gradient-flat points,
 which cause trouble for second-order methods.
 Check out
-[this arXiV paper](https://arxiv.org/abs/2003.10387)
+[this arXiV paper](https://arxiv.org/abs/2003.10397)
 for the details.
 
 ## The Development of Spontaneous Activity

@@ -5,7 +5,7 @@ date:	2020-12-18
 category: external
 ---
 
-![keras_video]](https://wandb.me/keras-video)
+[![keras_video]](https://wandb.me/keras-video)
 {: style="text-align: center"}
 
 [Weights & Biases](https://wandb.ai)

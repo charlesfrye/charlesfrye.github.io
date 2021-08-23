@@ -4,6 +4,21 @@ title: My Projects
 permalink: /projects/
 ---
 
+## Math for Machine Learning
+
+{:.gallery}
+[![math4ml]](http://wandb.me/m4ml-videos)
+{: style="text-align: center"}
+
+Contemporary machine learning sits at the intersection
+of three major branches of mathematics:
+linear algebra, calculus, and probability.
+I wrote
+[a short course](http://wandb.me/m4ml-code)
+that covers core intuitions needed for ML
+from each of these three toolkits,
+with an emphasis on the programmers' perspective.
+
 ## Data Science for Research Psychology
 
 {:.gallery}
@@ -126,3 +141,4 @@ I'm the clarinet.
 [soil_banner_crop]: {{site.imgurl}}/soil_banner_crop.png
 [stats_for_neuro]: {{site.imgurl}}/stats_for_neuro.png
 [101d_banner]: {{site.imgurl}}/101d_banner.png
+[math4ml]: {{site.imgurl}}/m4ml_banner.png

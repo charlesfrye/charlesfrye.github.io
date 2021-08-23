@@ -18,6 +18,7 @@ I wrote
 that covers core intuitions needed for ML
 from each of these three toolkits,
 with an emphasis on the programmers' perspective.
+It includes videos and interactively-graded exercises.
 
 ## Data Science for Research Psychology
 

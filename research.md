@@ -25,6 +25,7 @@ and
 [this tutorial](https://arxiv.org/abs/1906.05273)
 for a "derivation" of the best-performing algorithm
 as a slight upgrade to a method for computing square roots.
+
 The end result of this research
 was the discovery of an interesting new class of points
 on neural network loss surfaces,

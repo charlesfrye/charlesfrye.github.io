@@ -28,7 +28,7 @@ population non-linearities give more complex response functions
 and generative models are harder to hack.
 
 Check out
-[the paper here](https://jov.arvojournals.org/article.aspc?articleid=2772000)
+[the paper here](https://jov.arvojournals.org/article.aspx?articleid=2772000)
 for details.
 
 [robustness]: {{site.imgurl}}/robustness_banner.png

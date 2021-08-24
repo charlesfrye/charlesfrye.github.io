@@ -624,6 +624,8 @@ where it appears in a variety of "decomposition theorems":
 e.g. the
 [Fundamental Theorem of Linear Algebra](https://en.wikipedia.org/wiki/Fundamental_theorem_of_linear_algebra)
 and the canonical decompositions of functions and of group homomorphisms.
+It's also one way to understand the
+[Singular Value Decomposition](https://www.youtu.be/H1OP0XOREh4).
 
 The key insight of these decomposition theorems is that even very complicated objects,
 like the process that converts an invalid `DecimalSequence` to a valid one,
@@ -634,7 +636,7 @@ For more on how abstract algebra can provide insight into programming problems,
 check out my blog post on
 [functors and film strips]({{site.url}}/math/2018/08/21/functors-film-strips.html)
 or, if you really want to take the plunge,
-[Catgeory Theory for Programmers](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/).
+[Category Theory for Programmers](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/).
 
 In the code block below,
 we add a `reduce` method to our `DecimalSequence` class

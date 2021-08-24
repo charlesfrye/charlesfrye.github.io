@@ -26,13 +26,13 @@ They are just as intimately related to such deep and powerful mathematics as
 and
 [the Fourier transform](https://www.khanacademy.org/math/differential-equations/laplace-transform/convolution-integral/v/the-convolution-and-the-laplace-transform)
 as they are to
-[understanding what happens when you shuffle cards](www.colah.github.io/posts/2014-12-Groups-Convolution).
+[understanding what happens when you shuffle cards](https://www.colah.github.io/posts/2014-12-Groups-Convolution).
 
 The above tweets,
 by satirical convolution fanatic
 [@boredyannlecun](https://twitter.com/boredyannlecun)
 and actual convolution fanatic
-[actual Yann Le Cun](https://twitter.com/ylecn),
+[actual Yann Le Cun](https://twitter.com/ylecun),
 reveal an unexpected connection between convolutions
 and the humble mutliplication operation.
 I decided to work it out thoroughly and write it up.
@@ -126,7 +126,7 @@ To refer to a digit in that number, we use a subscript, as in $$\mathbf{v}_k$$.
 Though this way of thinking feels so natural to us as to be unquestionable,
 the idea of representing numbers this way had to be invented.
 Indeed, Romans had to use a
-[much more complicated algorithm](www.phy6.org/outreach/edu/roman.htm)
+[much more complicated algorithm](https://youtu.be/cXjr0Bf6vSs?t=298)
 to multiply their numerals.
 
 This notation in hand, we can write our multiplication algorithm
@@ -215,7 +215,7 @@ which is one way of expressing
 "$$\mathbf{z}$$ is the convolution of $$\mathbf{x}$$ and $$\mathbf{y}$$",
 thought of as vectors.
 This particular notation is non-standard, but
-[more intuitive for me](www.colah.github.io/posts/2014-07-Understanding-Convolutions).
+[more intuitive for me](https://www.colah.github.io/posts/2014-07-Understanding-Convolutions).
 We can obtain something a bit more standard if we substitute $$j = k-i$$:
 
 $$\begin{align}

@@ -10,7 +10,7 @@ My name is Charles Frye and I work as a Deep Learning Educator
 at [Weights & Biases](https://wandb.ai/site),
 a San Francisco-based startup building
 [developer tools for machine learning](http://wandb.me/demovideo).
-I write [documentation](https://docs.wandb.com),
+I write [documentation](https://docs.wandb.com)
 and [technical demos and blogposts](http://wandb.me/trace-report),
 make [walkthrough videos](http://wandb.me/video-tutorials),
 and contribute to product development.

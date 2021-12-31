@@ -5,13 +5,13 @@ date:	2021-12-31
 category: programming
 ---
 
-## Different programming languages push us to write code differently.
+### Different programming languages push us to write code differently.
 
-### Python pushed me to write clean code.
+Python pushed me to write clean code.
 
-### Rust pushed me to write performant code.
+Rust pushed me to write performant code.
 
-### Haskell pushed me to solve problems differently.
+Haskell pushed me to solve problems differently.
 
 <!--exc-->
 
@@ -42,7 +42,12 @@ in three different languages:
 I used [replit](http://replit.com/)
 to get access to persistent, web-accessible environments
 for all three languages in a unified interface.
-Links to my solutions on replit are sprinkled throughout this post.
+Links to executable versions of my solutions, hosted on replit,
+are sprinkled throughout this post.
+You can find all of the solutions
+[here](https://replit.com/@charlesfrye/),
+named `XX - langName` for `XX` in `01..08`
+and `langName` in `Python`, `Rust`, `Haskell`.
 
 Python is a loosey-goosey language:
 it's
@@ -90,25 +95,25 @@ I'll closes out with some smaller take-aways about tooling.
 
 ## Different programming languages push us to write code differently.
 
-### Python pushed me to write clean code.
+Python pushed me to write clean code.
 
-### Rust pushed me to write performant code.
+Rust pushed me to write performant code.
 
-### Haskell pushed me to solve problems differently.
+Haskell pushed me to solve problems differently.
 
 ## Each language has its strengths and weaknesses.
 
-### Python is easy (but slow).
+Python is easy (but slow).
 
-### Haskell is hard (but beautiful).
+Haskell is hard (but beautiful).
 
-### Rust is fast and easy to learn (but abstraction is hard).
+Rust is fast and easy to learn (but abstraction is hard).
 
 ## Doing lots of puzzles quickly ingrained some bad habits.
 
-### I ended up copy-pasting lots of code, especially boilerplate.
+I ended up copy-pasting lots of code, especially boilerplate.
 
-### I ended up writing lots of solutions that "just worked".
+I ended up writing lots of solutions that "just worked".
 
 # Different programming languages push us to write code differently.
 
@@ -136,9 +141,6 @@ Python uses whitespace to organize code
 and does not require type declarations,
 so there's a minimum of "cruft"
 around the core logic of your code.
-
-This makes programs easier to read
-(at a superficial level)
 
 Consider this example,
 from [my Python solution to Day 6](https://replit.com/@charlesfrye/06-Python).
@@ -198,7 +200,7 @@ encouraged me to try and make things simpler and easier
 from the computer's perspective.
 If a function would only be called once,
 why not inline it and save the extra weight of borrowing
-or of specifying additonal types?
+or of specifying additional types?
 
 Outside of specialized, highly performance-sensitive contexts,
 I think this is a bad instinct.
@@ -258,7 +260,9 @@ and to allow easy entry and checking of answers in a language-independent way.
 From a Haskell perspective, that means all of the problems
 can be solved by composing two pieces:
 1. a parser that creates a data structure from the input and
-2. a [catamorphism](https://blog.sumtypeofway.com/posts/recursion-schemes-part-2.html) that consumes the data structure -- for the puzzles I completed, typically a `fold` on a list.
+2. a [catamorphism](https://blog.sumtypeofway.com/posts/recursion-schemes-part-2.html)
+that consumes the data structure and spits out the answer --
+for the puzzles I completed, typically a `fold` on a list.
 
 Framing my solutions in this way often led to very different solutions
 in Haskell than in Rust or Python -- some of which were better.
@@ -273,7 +277,7 @@ and [Python](https://replit.com/@charlesfrye/07-Python)
 solutions, I immediately reached for arrays:
 calculate the cost for each position for each submarine
 (then sum up and find the min/argmin).
-This solution was $$O(n^2)$$ (note the nested "for each").
+This solution was $$O(n^2)$$ -- note the nested "for each".
 
 It's perfectly feasible to program this solution in Haskell
 (probably as an
@@ -328,7 +332,7 @@ on at least some problems in some circumstance.
 
 ## Python is easy (but slow).
 
-First I should admit I am biased:
+First, I should admit I am biased:
 I am most comfortable in Python,
 which has for me been both an educational environment for
 [learning programming concepts](https://www.nand2tetris.org/)
@@ -354,7 +358,7 @@ of libraries that include specialized data structures and algorithms, like
 [this function from scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.label.html)
 that was essentially a
 [one-line solution to Day 9](https://replit.com/@charlesfrye/09-Python).
-4. Similarly, that popularity and maturity mean that there' also a
+4. Similarly, that popularity and maturity mean that there's also a
 plethora of high quality tutorials, blog posts, and Stack Overflow discussions
 where you can learn how to solve particular problems
 or use certain tools and libraries.
@@ -380,6 +384,9 @@ Consistently, the compiled Haskell and Rust programs
 would be effectively instantaneous --
 bound by printing to the terminal for a human to read the result,
 rather than by internal computation.
+Not so for Python,
+where there was often a slight but noticeabel delay
+while the program executed.
 
 Fundamentally, that's because Python is
 interpreted rather than compiled,
@@ -418,7 +425,7 @@ I think there are two core reasons.
 
 The lesser of the two reasons is that the dev tooling for Haskell
 is not great, compared to the tools for Python and Rust.
-See the Minor Take-Aways section at the end of the article for more.
+See the Minor Take-Aways section at the end of this post for more on this.
 
 The bigger reason is that Haskell is a declarative language,
 rather than an imperative language,
@@ -490,11 +497,7 @@ which was the basis for the 2016 movie
 
 Critically, these approaches are _dual_:
 every mechanical system admits a description from both viewpoints.
-From one, the other can be [mechanically derived](https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Variational_Principles_in_Classical_Mechanics_(Cline)/08%3A_Hamiltonian_Mechanics/8.02%3A_Legendre_Transformation_between_Lagrangian_and_Hamiltonian_mechanics)
-(I first encountered a version of this transformation
-in
-[information geometric](https://www2.sonycsl.co.jp/person/nielsen/Note-LegendreTransformation.pdf)
-approaches to statistical inference).
+From one, the other can be [mechanically derived](https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Variational_Principles_in_Classical_Mechanics_(Cline)/08%3A_Hamiltonian_Mechanics/8.02%3A_Legendre_Transformation_between_Lagrangian_and_Hamiltonian_mechanics).
 
 The derivation or transformation from a declarative, stateless form
 to an imperative, stateful form is precisely what the compiler or interpreter

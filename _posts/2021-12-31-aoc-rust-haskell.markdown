@@ -15,6 +15,8 @@ Haskell pushed me to solve problems differently.
 
 <!--exc-->
 
+## Three Borrowed Refs, Two Left Folds, & A Python In A Binary Tree
+
 Every year,
 [Advent of Code](http://adventofcode.com/)
 puts out 25 coding puzzles in December,
@@ -93,7 +95,7 @@ After covering each of these in detail,
 with examples,
 I'll closes out with some smaller take-aways about tooling.
 
-## Different programming languages push us to write code differently.
+### Different programming languages push us to write code differently.
 
 Python pushed me to write clean code.
 
@@ -101,7 +103,7 @@ Rust pushed me to write performant code.
 
 Haskell pushed me to solve problems differently.
 
-## Each language has its strengths and weaknesses.
+### Each language has its strengths and weaknesses.
 
 Python is easy (but slow).
 
@@ -109,13 +111,13 @@ Haskell is hard (but beautiful).
 
 Rust is fast and easy to learn (but abstraction is hard).
 
-## Doing lots of puzzles quickly ingrained some bad habits.
+### Doing lots of puzzles quickly ingrained some bad habits.
 
 I ended up copy-pasting lots of code, especially boilerplate.
 
 I ended up writing lots of solutions that "just worked".
 
-# Different programming languages push us to write code differently.
+## Different programming languages push us to write code differently.
 
 The basic version of this truism
 predates computers.
@@ -135,7 +137,7 @@ in short succession made this evident,
 but it also suggested ways to bring the strengths of each language
 into work done in the others.
 
-## Python pushed me to write clean code.
+### Python pushed me to write clean code.
 
 Python uses whitespace to organize code
 and does not require type declarations,
@@ -182,7 +184,7 @@ and Haskell
 
 ![aoc2021_06_haskell]
 
-## Rust pushed me to write performant code.
+### Rust pushed me to write performant code.
 
 Rust, on the other hand, was constantly reminding me of
 the performance cost of my code: with
@@ -221,7 +223,7 @@ with Rust concepts like borrowing,
 This experience couldn't be more different from the experience
 of writing Haskell.
 
-## Haskell pushed me to solve problems differently.
+### Haskell pushed me to solve problems differently.
 
 Unlike Rust, functional abstraction is effortless in Haskell.
 
@@ -317,7 +319,7 @@ is a great way to uncover totally different ways to solve problems --
 something much deeper than the cosmetic and optimization differences
 between working with Rust and Python.
 
-# Each language has its strengths and weaknesses.
+## Each language has its strengths and weaknesses.
 
 This truism bears repeating if only because
 programmers often become chauvinists
@@ -330,7 +332,7 @@ at least some problems well in some circumstances;
 tools that succeed are doomed to fail
 on at least some problems in some circumstance.
 
-## Python is easy (but slow).
+### Python is easy (but slow).
 
 First, I should admit I am biased:
 I am most comfortable in Python,
@@ -407,7 +409,7 @@ that's an extremely tolerable cost;
 the same likely holds true for other applications,
 like running a job on a minutely/hourly/daily schedule.
 
-## Haskell is hard (but beautiful).
+### Haskell is hard (but beautiful).
 
 I've been learning Haskell on and off for
 [a few years now](https://github.com/charlesfrye/LearnYouAHaskell).
@@ -579,7 +581,7 @@ That was my general experience with writing solutions in Haskell.
 Each one was a gem -- transparently clear, austerely beautiful (to their mother),
 and hard-won by toil with pick and polish.
 
-## Rust is fast and easy to learn (but abstraction is hard).
+### Rust is fast and easy to learn (but abstraction is hard).
 
 As noted above,
 I only started learning Rust just before starting
@@ -649,7 +651,7 @@ I found myself copying and pasting code I didn't understand
 much more often, along with blindly following the compiler's suggestions.
 
 
-# Doing lots of puzzles quickly ingrained some bad habits.
+## Doing lots of puzzles quickly ingrained some bad habits.
 
 The quick pace and goal-orientation of the puzzles was good:
 it kept me moving, gave me clear feedback on success,
@@ -657,7 +659,7 @@ and prevented me from spending too much time on abstraction.
 
 But it also encouraged me to cut corners in ways that were harmful for learning.
 
-## I ended up copy-pasting lots of code, especially boilerplate.
+### I ended up copy-pasting lots of code, especially boilerplate.
 
 In Haskell, I didn't learn as much about monads and IO as I would've liked
 because I just used the same format for each program.
@@ -676,7 +678,7 @@ in the first day or two, then didn't improve it.
 It would've been better to e.g. use `make` to reduce compilaton overhead
 and look into more of replit's features.
 
-## I ended up writing lots of solutions that "just worked".
+### I ended up writing lots of solutions that "just worked".
 
 I initially set myself the goal of doing every puzzle in each of three languages.
 If I was really cooking, I could get a solution in Python in an hour or two,
@@ -713,13 +715,13 @@ In Python, I didn't learn anything new -- no new libraries or idioms.
 I also didn't practice the
 [hypermodern style](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/).
 
-# Minor Take-Aways
+## Minor Take-Aways
 
 Above were all the major take-aways.
 
 I'll close out with some smaller things I learned.
 
-## replit is great for prototyping.
+### replit is great for prototyping.
 
 [replit](https://replit.com)
 provides persistent environments for development,
@@ -748,7 +750,7 @@ replit became unstable and I had to switch to using
 [Google Colab](http://colab.research.google.com/),
 which was a decidedly worse experience outside of Python.
 
-## Tooling and libraries for Haskell are very limited, especially for linear algebra.
+### Tooling and libraries for Haskell are very limited, especially for linear algebra.
 
 As you might expect for a more niche language,
 the tooling for Haskell is not great.

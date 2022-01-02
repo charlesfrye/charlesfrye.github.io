@@ -387,7 +387,7 @@ would be effectively instantaneous --
 bound by printing to the terminal for a human to read the result,
 rather than by internal computation.
 Not so for Python,
-where there was often a slight but noticeabel delay
+where there was often a slight but noticeable delay
 while the program executed.
 
 Fundamentally, that's because Python is

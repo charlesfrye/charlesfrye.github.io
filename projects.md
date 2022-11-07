@@ -4,6 +4,33 @@ title: My Projects
 permalink: /projects/
 ---
 
+## Full Stack Deep Learning
+
+{:.gallery}
+[![fsdl]](https://fullstackdeeplearning.com)
+{: style="text-align: center"}
+
+[Full Stack Deep Learning](https://fullstackdeeplearning.com)
+is an online course and associated community
+closing the gap between ML education and ML in practice.
+
+We're focused on making machine learning work in the real world
+by adapting modern software engineering practices,
+like observability and continuous integration.
+
+I updated the course for 2022,
+revamping the tech stack for the demo project, a
+[basic OCR model](https://fsdl-text-recognizer.ngrok.io),
+from PyTorch Lightning-powered training on LambdaLabs cloud
+to deployment of a Gradio frontend and serverless backend on AWS.
+See the [GitHub repo](https://github.com/full-stack-deep-learning/fsdl-text-recognizer-2022-labs)
+for more.
+
+I also delivered two of the lectures, on
+[testing, troubleshooting, and CI/CD](https://fsdl.me/2022-lecture-03)
+and on
+[ethics in tech, ML, and "AI"](https://fsdl.me/2022-lecture-09).
+
 ## Math for Machine Learning
 
 {:.gallery}
@@ -143,3 +170,4 @@ I'm the clarinet.
 [stats_for_neuro]: {{site.imgurl}}/stats_for_neuro.png
 [101d_banner]: {{site.imgurl}}/101d_banner.png
 [math4ml]: {{site.imgurl}}/m4ml_banner.png
+[fsdl]: {{site.imgurl}}/fsdl-2022-app-diagram.png

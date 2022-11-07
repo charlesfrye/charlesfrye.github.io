@@ -6,14 +6,21 @@ permalink: /about/
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="{{site.imgurl}}/me.jpg" width="33%" />
 
-My name is Charles Frye and I work as a Deep Learning Educator
+My name is Charles Frye and I teach people on the internet.
+
+I currently work on the
+[Full Stack Deep Learning](https://fullstackdeeplearning.com)
+course and community,
+in addition to consulting work.
+
+I previously worked
 at [Weights & Biases](https://wandb.ai/site),
 a San Francisco-based startup building
 [developer tools for machine learning](http://wandb.me/demovideo).
-I write [documentation](https://docs.wandb.com)
+I wrote [documentation](https://docs.wandb.com)
 and [technical demos and blogposts](http://wandb.me/trace-report),
-make [walkthrough videos](http://wandb.me/video-tutorials),
-and contribute to product development.
+made [walkthrough videos](http://wandb.me/video-tutorials),
+and contributed to product development.
 
 I grew up in Southern Illinois, in a town called
 [Kankakee](http://www.thisamericanlife.org/radio-archives/episode/554/not-it),

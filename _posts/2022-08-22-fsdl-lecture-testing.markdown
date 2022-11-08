@@ -13,7 +13,7 @@ category: external
 
 As part of the
 [new and improved 2022 edition of Full Stack Deep Learning](https://fullstackdeeplearning.com/course/2022/),
-I delivered
+I delivered the lecture on troubleshooting and testing.
 
 You can find the lecture notes on the course website
 [here](https://fullstackdeeplearning.com/course/2022/lecture-3-troubleshooting-and-testing/).
@@ -42,8 +42,9 @@ It doesn't help that
 [meta-analyses show](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1182327/)
 my fears are in fact justified 😬
 
-The promise of rigor & technical correctness
-in software engineering and mathematics was seductive
+In that context,
+the promise of rigor & technical correctness
+in software engineering and mathematics was seductive.
 
 My [first ever paper in ML](https://arxiv.org/abs/1901.10603)
 was actually just on describing and running a "unit test"

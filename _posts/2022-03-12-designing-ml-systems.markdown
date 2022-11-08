@@ -5,7 +5,7 @@ date:	2022-03-12
 category: external
 ---
 
-[![dmls-cover]](https://www.youtube.com/playlist?list=PLfeYlJzwvDN3R_xBwA8pp0cLOzxndlC4X)
+[![dmls-cover]](https://www.youtube.com/watch?v=K-SuQbmttbg&list=PLfeYlJzwvDN3R_xBwA8pp0cLOzxndlC4X&index=1)
 {: style="text-align: center"}
 
 > In this book, you'll learn a holistic approach

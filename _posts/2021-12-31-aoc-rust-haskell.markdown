@@ -729,7 +729,7 @@ with an emphasis on education and hobby programming.
 
 It was straightforward to get set up with each language.
 
-It tequired a moderate amount of boilerplate and copying each time
+It required a moderate amount of boilerplate and copying each time
 (especially for Haskell, where tooling wasn’t as good),
 but nothing too excessive.
 

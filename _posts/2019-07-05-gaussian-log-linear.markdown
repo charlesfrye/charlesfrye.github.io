@@ -22,7 +22,7 @@ $$\begin{align}
 We return to a favorite topic:
 Gaussian distributions,
 which we already know arise from a
-[simple differential equation]({{site.url}}/math/2017/11/22/gaussian-diff-eq.html),
+[simple differential equation]({{site.url}}/stats/2017/11/22/gaussian-diff-eq.html),
 have close connections to
 [convolutions]({{site.url}}/external/2017/06/09/binder-convolutions.html),
 and serve as the error model for

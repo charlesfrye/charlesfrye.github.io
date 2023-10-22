@@ -19,6 +19,19 @@ and learn how it drives the reckoner to weave a greeting.
 
 <!--exc-->
 
+> Do not — as some ungracious pastors do —
+>
+> Show me the steep and thorny way to heaven,
+>
+> Whilst, like a puffed and reckless libertine,
+>
+> Himself the primrose path of dalliance treads,
+>
+> And recks not his own rede.
+>
+> -- Ophelia to Laertes, _Hamlet_, Act I Scene 3
+
+
 ## Wordcraft ##
 
 ```rs
@@ -81,7 +94,7 @@ Our riddleorder is now done, and steer goes back to the runwarden.
 
 For such a groundish riddleorder,
 all of these works -- inwoven-words, fount wordcraft and reckoner's tongue, runwardens --
--- might strike as overkill.
+might strike as overkill.
 
 But as you learn to weave your own riddleorders
 with wendings most fine,

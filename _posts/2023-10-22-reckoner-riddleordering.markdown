@@ -28,8 +28,8 @@ and learn how it drives the reckoner to weave a greeting.
 > Himself the primrose path of dalliance treads,
 >
 > And recks not his own rede.
->
-> -- Ophelia to Laertes, _Hamlet_, Act I Scene 3
+
+&nbsp;&nbsp;- Ophelia to Laertes, _Hamlet_, Act I Scene 3
 
 
 ## Wordcraft ##

@@ -1,0 +1,86 @@
+---
+layout: post
+title:	"'LLMs Are The New CPUs' - Research Roundup"
+date:	2023-11-01
+category: programming
+---
+
+
+<!--exc-->
+
+## Registers
+
+Registers store small amounts of intermediate data
+during computations.
+
+### Vision Transformers Need Registers
+
+Paper link:
+[Vision Transformers Need Registers](https://arxiv.org/abs/2309.16588).
+
+This paper demonstrates that
+1) Vision Transformers use uninformative pixels
+as dynamic registers for storing intermediate information
+2) You can intentionally add register tokens to remove this behavior
+
+### Think before you speak: Training Language Models With Pause Tokens
+
+Paper link:
+[Think before you speak: Training Language Models With Pause Tokens](https://arxiv.org/abs/2310.02226).
+
+This paper demonstrates improved performance
+by training LMs to output "pause" tokens before answering hard questions --
+see Karpathy tweet.
+
+## Speculative Execution
+
+In speculative execution,
+bottlenecks are mitigated by executing
+the work that _most likely_ follows them.
+
+Branch prediction is the most well-known form of speculative execution,
+thanks to the Spectre and Meltdown vulnerabilities.
+
+
+### Accelerating Large Language Model Decoding with Speculative Sampling
+
+Paper link: [Accelerating Large Language Model Decoding with Speculative Sampling](https://arxiv.org/abs/2302.01318).
+
+### Fast Inference from Transformers via Speculative Decoding
+
+Paper link: [Fast Inference from Transformers via Speculative Decoding](https://arxiv.org/abs/2211.17192).
+
+These papers demonstrate similar methods for ~2x speedups in LM generation
+by using cheaper models to predict following tokens.
+
+The speculative sampling method relies on the fact that scoring
+a prompt + K tokens is roughly the same cost as generating 1 token to follow a prompt.
+
+## Virtual Memory
+
+### MemGPT: Towards LLMs as Operating Systems
+
+Paper link: [MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560).
+
+This paper uses prompting and careful design of callable functions
+to give LLMs the ability to manage their context --
+treating the context as the physical memory
+and all of the rest of the addressable information as virtual memory.
+
+## Paged Memory
+
+### Efficient Memory Management for Large Language Model Serving with PagedAttention
+
+Paper link: [Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/abs/2309.06180).
+
+This paper increases the throughput of LLM inference
+by increasing the efficiency of memory allocation.
+
+It uses a form of paging to reduce the fragmentation
+and increase the reuse of memory in the LLM's KV cache.
+
+## Missing Pieces
+
+### Userland and Kernelland
+
+### Standards

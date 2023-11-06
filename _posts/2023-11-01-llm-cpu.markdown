@@ -8,6 +8,9 @@ category: programming
 
 <!--exc-->
 
+This post is a work in progress!
+I've put it up to force myself to actually write it all down.
+
 ## Registers
 
 Registers store small amounts of intermediate data

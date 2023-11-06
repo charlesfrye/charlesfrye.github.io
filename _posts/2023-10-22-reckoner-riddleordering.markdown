@@ -79,8 +79,10 @@ First, the Rust builder, `rustc`, weaves
 a riddlelist in the reckoner's tongue
 out of our fount wordcraft.
 
+Reck that the `c` in `rustc` is from the Frankish for builder, _compiler_.
+
 As it weaves,
-so also does the forge
+so also does the builder
 scrutinize our riddlelist.
 The forge marks kindrightness, wordhold-welfare
 (Rust is a tongue that cares much for wordhold-welfare,
@@ -93,8 +95,6 @@ But the Rust builder is a mighty friend
 when riddlelists become more fiendish,
 and so a Rust riddlelister learns to
 reck its rede well and to heed its warnings.
-
-Reck that the `c` in `rustc` is from the Frankish for builder, _compiler_.
 
 The builder also reworks our inwoven-word, `println!`,
 into a workflow like our `main` --

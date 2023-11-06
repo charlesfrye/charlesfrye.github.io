@@ -1,11 +1,11 @@
 ---
 layout: post
-title:	"Reckoner Riddleordering in Rust"
+title:	"Reckoner Riddlelisting in Rust"
 date:	2023-10-22
 category: programming
 ---
 
-Here's a Rust Riddleorder that bids the world hello:
+Here's a Rust Riddlelist that bids the world hello:
 
 ```rs
 fn main() {
@@ -13,9 +13,9 @@ fn main() {
 }
 ```
 
-Let us walk through the words of this riddleorder
+Let us walk through the words of this riddlelist
 step by step
-and learn how it drives the reckoner to weave a greeting.
+and come to ken how it drives the reckoner to weave a greeting.
 
 <!--exc-->
 
@@ -31,6 +31,9 @@ and learn how it drives the reckoner to weave a greeting.
 
 &nbsp;&nbsp;- Ophelia to Laertes, _Hamlet_, Act I Scene 3
 
+(Inspired by Poul Anderson's
+[_Uncleftish Beholding_](https://www.ling.upenn.edu/~beatrice/110/docs/uncleftish_beholding.html))
+
 
 ## Wordcraft ##
 
@@ -38,51 +41,75 @@ and learn how it drives the reckoner to weave a greeting.
     fn main():
 ```
 
-This is the inway of the Rust riddleorder. Runwork starts here.
+This is the inway of the Rust riddlelist.
+Runwork starts here.
 
-The word-craft `fn` tells of a workflow, and `main` is the name of this special workflow.
+The rune `fn` marks a workflow,
+and `main` is the name of this workflow.
 
 `fn` is from the Frankish for workflow, _function_.
 
 ```rs
     { ... }
 ```
-The curlholders hold the wordcraft that makes up the body of the `main` workflow.
+The curlwrappers hold the wordcraft that
+makes up the body of the `main` workflow.
 
 ```rs
     println!("Hello, World!");
 ```
 
-This line prints the words `"Hello World!"` to the showglass.
+This row of our list shows the words `"Hello World!"` on the showglass.
 
-It calls upon the `println!` inwoven-word, which is built into the Rust Groundbookstore.
-The name is self-reckoning: it `print`s a `l`i`n`e.
+It calls upon the `println!` inwoven-word,
+which is built into the Rust Groundbookhold.
+The name is self-kenning,
+to those who speak a bit of Frankish: it `print`s a `l`i`n`e.
+We might name it `showrow` in our tongue.
 
-We call upon `println!` -- or any inwoven-word or workflow -- with roundholders.
-A call changes the steer of our riddleorder,
-handing control to the named workflow.
+We call upon `println!` -- or any inwoven-word or workflow -- with roundwrappers.
+A call shifts the steer of our riddlelist,
+handing the tiller to the called workflow.
 
 ## How It Unfolds ##
 
 ### Builder ###
 
-First, the Rust builder, `rustc`, fashions the fount wordcraft of our riddleorder
-into the reckoner's tongue,
-doing sundry checks for kindrightness, wordstore-safety, and so forth.
-These do not worry us now, for our riddleorder is so groundish.
+First, the Rust builder, `rustc`, weaves
+a riddlelist in the reckoner's tongue
+out of our fount wordcraft.
+
+As it weaves,
+so also does the forge
+scrutinize our riddlelist.
+The forge marks kindrightness, wordhold-welfare
+(Rust is a tongue that cares much for wordhold-welfare,
+domain of the borrow-marker),
+and so forth.
+
+These do not worry us now,
+for our riddlelist is so groundish.
+But the Rust builder is a mighty friend
+when riddlelists become more fiendish,
+and so a Rust riddlelister learns to
+reck its rede well and to heed its warnings.
 
 Reck that the `c` in `rustc` is from the Frankish for builder, _compiler_.
 
-The builder also reworks our inwoven-word, `println!`, into a normal workflow --
+The builder also reworks our inwoven-word, `println!`,
+into a workflow like our `main` --
 but we do not ever see this middle wordcraft.
 
-`rustc` makes a runnable, which we can then run.
+`rustc` makes a runnable twoname,
+which we can then run on our reckoner.
 
 ### Runwork ###
 
-When we run the runnable, the reckoner's runwarden, controller of the hardware, shifts steer to the inway -- our `main` workflow.
+When we run the twoname the reckoner's runwarden,
+helmsman of the hardware,
+shifts steer to the inway -- our `main` workflow.
 
-`"Hello World!"` appears on the showglass.
+And `"Hello World!"` is shewn on the showglass!
 
 ```bash
 Hello World!
@@ -90,14 +117,21 @@ Hello World!
 
 ## Ending ##
 
-Our riddleorder is now done, and steer goes back to the runwarden.
+Our riddlelist is now done,
+and steer goes back to the runwarden.
 
-For such a groundish riddleorder,
+For such a groundish riddlelist,
 all of these works -- inwoven-words, fount wordcraft and reckoner's tongue, runwardens --
 might strike as overkill.
 
-But as you learn to weave your own riddleorders
-with wendings most fine,
-the might of these works will be made clear.
+But as you learn to weave your own riddlelists
+with wendings most wonderful,
+the might of these works will be made open to sight.
 
 Good luck!
+
+## Thankings ##
+
+The writer thanks Andy Vargas
+for hunting down many Frankish words
+in the first draft of this writing.

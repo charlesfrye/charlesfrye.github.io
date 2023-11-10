@@ -1,28 +1,34 @@
 ---
 layout: post
 title:	"Taking 'LLMs Are The New Kernels' Seriously - Research Roundup"
-date:	2023-11-01
+date:	2023-11-10
 category: programming
 ---
 
-![karpathy-llm-kernel-tweet]
+[![karpathy-llm-kernel-tweet]](https://twitter.com/karpathy/status/1707437820045062561)
 {: style="text-align: center"}
 
-Andrej Karpathy is not the only one to connect
-contemporary large language models (LLMs)
-with early processors, kernels, and operating systems.
+It is clear that large language models --
+and large generative models of complex data types more broadly --
+are a fundamental, foundational building block for computing systems,
+like relational data stores or operating system kernels.
 
-In fact, there's something of a wave of research at this intersection,
+ML researchers like me have many useful intutions about this novel building block,
+but the builders of those past blocks have many more,
+and many that are orthogonal or surprising to someone who has spent more time
+with neural networks than with the network stack.
+
+This post is a collection of short explainers for papers
+that directly draw from systems metaphors
+in designing improvements for LLMs,
 ranging from novel approaches to pretraining
 to inference-time speed optimizations
 to prompting strategies that make LLMs act more like kernels.
 
-This post is a collection of short explainers for papers
-that directly draw from systems metaphors
-in designing improvements for LLMs.
 It is intended to get researchers and hackers of LLMs
 interested in systems
 and vice versa.
+
 <!--exc-->
 
 ## Speculative Execution
@@ -33,12 +39,11 @@ In speculative execution,
 bottlenecks are mitigated by executing
 the work that _most likely_ follows them.
 
-One example of speculative execution is branch prediction.
-
-In branch prediction, rather than waiting for the result of a conditional
+For example, rather than waiting for the result of a conditional
 to be available in order to determine which branch to execute,
-the processor simply proceeds with the "most likely" branch,
+the processor could simply proceed with the "most likely" branch,
 based on compile-time hints or runtime statistics.
+This technique is called "branch prediction".
 
 This can lead to large speedups when a particular branch
 of a conditional is taken only rarely
@@ -58,18 +63,18 @@ Undaunted by that cautionary tale of a
 [multi-billion-dollar vulnerability](https://www.statista.com/statistics/800258/worldwide-meltdown-spectre-potential-mitigation-cost-by-device-type/),
 let's consider how we might replicate
 this pattern of
-executin cheap but possibly wrong operations
+executing cheap but possibly wrong operations
 to speed up LLM inference.
 
 ### [Accelerating Large Language Model Decoding with Speculative Sampling](https://arxiv.org/abs/2302.01318) and [Fast Inference from Transformers via Speculative Decoding](https://arxiv.org/abs/2211.17192)
 
 Two roughly-simultaneous papers from frenemies
 Google Research and DeepMind
-demonstrated similar methods for large speedups in LM generation
+demonstrated roughly-identical methods for large speedups in LM generation
 by using cheaper models to predict certain tokens
 without changing the system's output probabilities --
-speculatively generating a number of draft tokens
-before the LM is used to compute the final outputs.
+speculatively generating a number of likely output tokens
+before the actual LM is used to compute the final outputs.
 
 The intuition behind speculative sampling is that
 some of the tokens in the output are very easy to guess --
@@ -89,8 +94,11 @@ We then compute the logprobs for the prompt + K tokens
 in the large model, in parallel,
 and then use a well-known trick going back to the atomic age,
 rejection sampling, to throw out only those tokens that are improbable
-according to the large model --
-in direct proportion to how improbable they are.
+according to the large model.
+Importantly, we do this
+in direct proportion to how improbable the large model thinks they are,
+so the coombined system has the same behavior as the original large model,
+but generally runs faster.
 
 For temperature 0, aka deterministic sampling,
 this equates to throwing out all tokens that follow
@@ -109,12 +117,12 @@ and scoring logprobs on all K tokens.
 But because running the model on the prompt + K tokens is roughly the same cost
 as executing on the prompt + 1 token, for small K,
 we almost always come out ahead --
-just as speculative execution comes out ahead because
+much as branch predicting speculative execution comes out ahead because
 reading from memory and then executing the right branch
 is roughly the same cost as executing a wrong branch while reading from memory and then executing the right branch.
 
 When used in a hierarchical configuration --
-regexes speculating for BERTS that speculate for GPTs --
+regexes speculating for BERTs that speculate for GPTs --
 speculative sampling can achieve
 2x speedups or greater.
 
@@ -139,16 +147,23 @@ these values are stored in the processor itself
 and don't have semantic meaning
 in a high-level language like C.
 
+Because they are abstracted away from the programmer,
+they can be manipulated -- e.g. by a compiler pass -- without concern
+for the side effects of those manipulations.
+
 How might this pattern show up in LLMs?
 
 ### [Vision Transformers Need Registers](https://arxiv.org/abs/2309.16588)
 
 Alright, this is cheating a bit, because it's Vision Transformers,
 rather than Transformer language models,
-but it's still a cool paper so I'm going to explain it
-(there's also a weaker but similar result for LLMs,
+but it's still a cool paper so I'm going to explain it.
+
+<small>
+There's also a weaker but similar result for LLMs,
 based on
-["pause tokens"](https://arxiv.org/abs/2310.02226)).
+["pause tokens"](https://arxiv.org/abs/2310.02226).
+</small>
 
 This paper claims that
 1. Vision Transformers use uninformative pixels
@@ -162,23 +177,22 @@ The first point is backed up by this gorgeous figure:
 
 The bright colors indicate areas of the image to which the models attended
 when producing their predictions.
-Notably, large ViTs are attend heavily to
+Notably, large ViTs attend heavily to
 uninformative, background pixels.
 
 Does this mean the models are learning to use artifacts of the dataset
-or side channel information to make their predictions?
+or adversarially-attackable side channel information to make their predictions?
 
 Not necessarily!
-Transformers are a highly residual architecture,
-and one of the most popular ways to understand how they work,
-courtesy of
-[work from Anthropic's interpretability team](https://transformer-circuits.pub)
-is in terms of a "residual stream".
 
-In this view, it is emphasized that each layer interacts additively
-with its inputs, allowing Transformer layers to treat their inputs
+Because each layer interacts additively
+with its inputs --
+the output of a layer with input `x` can be written as `f(x) + x` --
+Transformer layers can treat their inputs
 like a content-addressable memory,
 reading information written by earlier layers and writing in some of their own.
+For more on this view of Transformer internals, see the excellent
+[work from Anthropic's interpretability team](https://transformer-circuits.pub).
 
 It's a neat way to do computation,
 but it has a big issue:
@@ -187,7 +201,7 @@ you don't have a good place to put it.
 
 It is hypothesized in the paper that large ViTs learn to use
 the least-informative token areas as a kind of scratchpad --
-like stealing a block of heap memory,
+like stealing a block of memory,
 using it to store intermediate values,
 and hoping you don't break anything.
 
@@ -212,9 +226,10 @@ which were precious even before the Browser Nation attacked.
 Memory allocators must handle a gnar trade-off:
 address-wise allocations make efficient use of memory in the best case,
 but lead to fragmentation and expensive allocator operations in reality,
-while large block allocations are easy to manage but can lead to
-wasted memory if the allocations are not fully utilized --
-aka "internal fragmentation".
+while large per-process/thread allocations are easy to manage but lead to
+wasted memory in the generic case that the allocations are not fully utilized.
+This particular form of under-utilization is
+called "internal fragmentation".
 
 The solution is to split the difference and allocate memory in
 multiples of moderately-sized blocks called "pages".
@@ -222,9 +237,12 @@ multiples of moderately-sized blocks called "pages".
 These pages can be assigned to processes,
 loaded into caches,
 and otherwise managed as bulk units,
-while still being small enough to be efficiently utilized.
+while still being small enough
+(4 KB by default in most Linuxes)
+to be efficiently utilized.
 
-How might we apply this pattern of memory management to LLMs?
+LLMs are memory intensive,
+so might we be able to improve their performance by designing a better allocator?
 
 ### [Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/abs/2309.06180)
 
@@ -235,16 +253,19 @@ for re-use when computing the outputs for future tokens in the sequence.
 This cache converts a quadratic-time operation into a linear-time one,
 at a linear cost in space.
 
-(If hot-swappable LoRA adapters ever take off,
+<small>
+If hot-swappable LoRA adapters ever take off,
 a similar amount of memory ledgerdemain will be required
-for the weights as well.)
+for the weights as well.
+</small>
 
 The KV cache is typically allocated as a single large block of memory,
 which is subject to the same issues as large block allocations in general.
 
-This problem is especially acute for batched requests to LLMs,
-which due to varying prompt lengths and varying response lengths,
-can lead to very uneven utilization of the KV cache.
+This problem is especially acute for batched requests to LLM services.
+Because requests from different clients have varying prompt lengths and varying response lengths
+that are not known until run time,
+the utilization of the KV cache becomes highly uneven.
 
 The situation is depicted nicely in this figure from the paper
 that introduced PagedAttention and the vLLM inference server
@@ -256,7 +277,7 @@ should be several hundred times larger than they are depicted here!
 {: style="text-align: center"}
 
 The solution proposed by the paper is to allocate the KV cache
-via pages -- each one with enough space to hold a handful of states --
+via pages -- each one with enough space to hold a handful of KV states --
 and use a page table, much like the one in a processor,
 to map the logical memory of the cache
 to its physical address.
@@ -275,11 +296,13 @@ and allocates far less memory to serve the same workloads.
 ### Virtual Memory in Processors
 
 In the beforetimes,
+when metal was metal,
 programmers stored information at addresses with names like
-[`0x0BFF`](https://www.urbandictionary.com/define.php?term=bffaeae),
+`0x0BFF`
 and they really meant it.
 
-They could expect that if they took their trusty oscilloscope to the 3,071st
+They could expect that if they took their trusty oscilloscope to the
+3,071st/`0x0BFF`th
 memory cell of their spacious 64KB of RAM,
 they would find humming electrons vibing to the pattern they had stored.
 
@@ -288,6 +311,13 @@ if two 00s tween programmers attempt to use the one and only `0x0BFF` address
 to store program data at the same time,
 someone's data will be overwritten or read improperly --
 akin to the problems of addressing more than one person as your BFF.
+
+<small>
+Larger address spaces allow for the definition of additional BFFs, e.g.
+[`0x0BFFAEAE`](https://www.urbandictionary.com/define.php?term=bffaeae)
+in 32 bit address spaces,
+but this only ameliorates, not solves, the problem.
+</small>
 
 The solution is to use a virtual memory system:
 programmers and their programs are presented with a gorgeous row
@@ -313,7 +343,7 @@ when producing tokens,
 they can only refer to at most a fixed number of previous context tokens.
 
 Hard limits on token count have rapidly increased from the few thousands
-to the few hundred thousands.
+to the few hundreds of thousands.
 But
 [models struggle to effectively make use of those long contexts](https://arxiv.org/abs/2307.03172).
 
@@ -324,7 +354,7 @@ to also allow them to effectively access much larger storage?
 
 The MemGPT pattern uses prompting and careful design of tools
 to give LLMs the ability to manage their context --
-treating the context as the physical memory
+analogically treating the context as the physical memory
 and all of the rest of the addressable information as virtual memory.
 
 The pattern is depicted in this figure from the paper:
@@ -338,14 +368,14 @@ and interfaced with by traditional software.
 That means it can be a database, a filesystem, or any other form of storage.
 
 But unlike typical RAG,
-retrieval from the system is done by the LLM,
+in MemGPT retrieval from the external context is done by the LLM,
 via function-calling tool use,
 rather than being hard-coded.
 This style is associated more with agent patterns
 and is
 [used in the OpenAI Assistants API](https://platform.openai.com/docs/assistants/tools/knowledge-retrieval).
 
-The LLM is prompted to retrieve the information it needs and add it to its prompt --
+The LLM is prompted to retrieve the information it needs and then add it to its prompt --
 much like virtual memory stored on disk can be paged into RAM.
 
 Even further down the path to agency and away from simple RAG,
@@ -362,12 +392,12 @@ A key novelty of this paper,
 relative to these other similar systems,
 is the event-driven style:
 the LLM sits idle,
-waiting for events --
+waiting for events
 like user messages,
 timer ticks,
 or state changes in the world.
 
-This is an extremely common pattern in the systems world --
+This is an extremely common pattern in the systems discipline --
 on every keystroke, button press, or filesystem change,
 a typical operating system interrupts running processes
 to respond to the event,
@@ -381,26 +411,27 @@ The event of that suggestion's appearance while drafting this post
 interrupted my drafting task, triggering me to reflect on it
 and then resume my drafting task with a new idea for what to say next.
 
+It is clear that if LLMs are to become the cognitive kernels
+of agents in any way worthy of the name,
+they will need a similar architecture.
+
 ## What Next?
 
-It is clear that large language models --
-and large generative models of complex data types more generally --
-are a fundamental, foundational building block,
-like relational data stores or operating system kernels.
+Whether your background is in systems or ML,
+you'll find a lot of value in thinking
+"across the divide" and  your knowledge to the other field.
 
-ML researchers like me have many useful intutions about this novel building block,
-but the builders of those past blocks have many more,
-and many that are orthogonal or surprising to someone who has spent more time
-with Bayesian networks than with the network stack.
-
-And as is perhaps obvious to systems folks from the vintage of many of the ideas above --
+As is perhaps obvious to systems folks from the vintage of many of the ideas above --
 virtual memory was invented in the late 1950s
 and mainstreamed in the 80s --
 there is a lot of low-hanging fruit in applying systems patterns to LLMs.
 
-So whether your background is in systems or ML,
-I hope this post has inspired you to think
-"across the divide" and apply your knowledge to the other field.
+And for ML heads,
+I hope this tour of some of the most exciting results
+in the past few months has convinced you that
+the systems field is a rich source of ideas
+for improving LLMs,
+both in terms of performance and in terms of capabilities.
 
 [karpathy-llm-kernel-tweet]: {{site.imgurl}}/karpathy-llm-kernel-tweet.png
 [vision-transformers-need-registers]: {{site.imgurl}}/vision-transformers-need-registers.png

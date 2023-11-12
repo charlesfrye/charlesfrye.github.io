@@ -1,6 +1,6 @@
 ---
 layout: post
-title:	"Taking 'LLMs Are The New Kernels' Seriously - Research Roundup"
+title:	"At the Intersection of LLMs and Kernels - Research Roundup"
 date:	2023-11-10
 category: programming
 ---
@@ -432,6 +432,30 @@ in the past few months has convinced you that
 the systems field is a rich source of ideas
 for improving LLMs,
 both in terms of performance and in terms of capabilities.
+
+## Acknowledgements
+
+I'd like to thank
+Muhtasham O./[@Muhtasham9](https://twitter.com/Muhtasham9)
+for writing
+[a nice blog post](https://muhtasham.github.io/blog/posts/os-concepts-llm/)
+that inspired this one,
+Ben Firshman/[@bfirsh](https://twitter.com/bfirsh)
+for holding a demo space where I could try out the ideas,
+and
+Joseph Nelson/[@josephofiowa](https://twitter.com/josephofiowa)
+for listening during that first talk and encouraging me to write this post.
+Joe, now you owe me some VLM benchmarks!
+
+I'd also like to thank
+Ben Firshman/[@bfirsh](https://twitter.com/bfirsh),
+Greg Kamradt/[@GregKamradt](https://twitter.com/GregKamradt),
+Jason Liu/[@jxnlco](https://twitter.com/jxnlco),
+Muhktasham O./[@Muhtasham9](https://twitter.com/Muhtasham9),
+Ben Shababo,
+and
+Alok Singh/[@TheRevAlokSingh](https://twitter.com/TheRevAlokSingh)
+for reading earlier drafts of this post.
 
 [karpathy-llm-kernel-tweet]: {{site.imgurl}}/karpathy-llm-kernel-tweet.png
 [vision-transformers-need-registers]: {{site.imgurl}}/vision-transformers-need-registers.png

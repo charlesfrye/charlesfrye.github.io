@@ -438,6 +438,10 @@ and write those reflections into their memory.
 
 ## What Next: LLMs _as_ kernels?
 
+[![llm-os-diagram]](https://twitter.com/karpathy/status/1723140519554105733)
+<small>A speculative diagram for an "LLM OS" by @karpathy.</small>
+{: style="text-align: center"}
+
 A key novelty of the MemGPT approach,
 relative to other similar systems,
 is the event-driven style:
@@ -506,3 +510,4 @@ for reading earlier drafts of this post.
 [paged-attention-frag]: {{site.imgurl}}/paged-attention-frag.png
 [paged-attention-table]: {{site.imgurl}}/paged-attention-table.png
 [memgpt-system-diagram]: {{site.imgurl}}/memgpt-system-diagram.png
+[llm-os-diagram]: {{site.imgurl}}/llm-os-diagram.png

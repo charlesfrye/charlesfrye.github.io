@@ -155,7 +155,9 @@ Note that 2-3x is the typical cost difference between
 prompt tokens and output tokens in LLM APIs,
 and so well-executed speculative decoding
 can reduce that cost difference to almost nothing
-(thanks to the team at
+(thanks to
+[Moin Nadeem](https://twitter.com/moinnadeem)
+of
 [Replicate](https://replicate.ai/)
 for thoughtful discussions on this).
 

@@ -8,14 +8,17 @@ category: programming
 [![karpathy-llm-kernel-tweet]](https://twitter.com/karpathy/status/1707437820045062561)
 {: style="text-align: center"}
 
-It is clear that large language models --
+Like relational data stores or operating system kernels.
+large language models --
 and large generative models of complex data types more broadly --
-are a fundamental, foundational building block for computing systems,
-like relational data stores or operating system kernels.
+are a fundamental, foundational building block for computing systems.
 
-ML researchers like me have many useful intutions about this novel building block,
-but the builders of those past blocks have many more,
-and many that are orthogonal or surprising to someone who has spent more time
+ML researchers like me have many useful intutions about
+what can be built with this novel building block and how to improve it.
+
+But the people who have spent years building
+with those other blocks have many more.
+Many of these inuitions are surprising to someone who has spent more time
 with neural networks than with the network stack.
 
 This post is a collection of short explainers for papers
@@ -30,6 +33,12 @@ interested in systems
 and vice versa.
 
 <!--exc-->
+
+We'll proceed by first introducting an idea from
+the systems level --
+roughly, the interface of processor/kernel/OS --
+and then showing how it has been applied to LLMs
+in recent research.
 
 ## Speculative Execution
 
@@ -66,7 +75,7 @@ this pattern of
 executing cheap but possibly wrong operations
 to speed up LLM inference.
 
-### [Accelerating Large Language Model Decoding with Speculative Sampling](https://arxiv.org/abs/2302.01318) and [Fast Inference from Transformers via Speculative Decoding](https://arxiv.org/abs/2211.17192)
+### Speculative Execution in LLMs: [Accelerating Large Language Model Decoding with Speculative Sampling](https://arxiv.org/abs/2302.01318) and [Fast Inference from Transformers via Speculative Decoding](https://arxiv.org/abs/2211.17192)
 
 Two roughly-simultaneous papers from frenemies
 Google Research and DeepMind
@@ -139,16 +148,20 @@ for thoughtful discussions on this).
 
 ### Registers in Processors
 
+Programs generally achieve their effects on the world
+by writing information to memory visible to other processes or hardware --
+RAM, disk, the network, etc.
 Registers store small amounts of intermediate data
-during computations.
+during the computation of this information.
 
 Unlike stack-allocated or heap-allocated memory,
 these values are stored in the processor itself
-and don't have semantic meaning
-in a high-level language like C.
+and are essentially inaccessible to the programmer
+(without assembly-level backdoors)
+in high-level languages like C.
 
 Because they are abstracted away from the programmer,
-they can be manipulated -- e.g. by a compiler pass -- without concern
+they can be manipulated -- e.g. by a compiler when optimizing the program -- without concern
 for the side effects of those manipulations.
 
 How might this pattern show up in LLMs?

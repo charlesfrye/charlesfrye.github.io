@@ -8,7 +8,7 @@ category: programming
 [![karpathy-llm-kernel-tweet]](https://twitter.com/karpathy/status/1707437820045062561)
 {: style="text-align: center"}
 
-Like relational data stores or operating system kernels.
+Like relational data stores or operating system kernels,
 large language models --
 and large generative models of complex data types more broadly --
 are a fundamental, foundational building block for computing systems.
@@ -234,7 +234,8 @@ e.g. to interpretability or steerability.
 
 Memory must be allocated, and those allocations must be tracked and managed,
 e.g. defragmented, to maximize utilization of memory resources,
-which were precious even before the Browser Nation attacked.
+which were precious even before
+[the Chrome Nation attacked](https://knowyourmeme.com/memes/google-chrome-ram-hog).
 
 Memory allocators must handle a gnar trade-off:
 address-wise allocations make efficient use of memory in the best case,
@@ -263,7 +264,11 @@ The focus of memory management in LLM inference is on the
 key-value ("KV") cache,
 used to store the intermediate values of attention computations,
 for re-use when computing the outputs for future tokens in the sequence.
-This cache converts a quadratic-time operation into a linear-time one,
+This cache,
+introduced by the 2022 paper
+[Efficiently Scaling Tansformer Inference](https://arxiv.org/abs/2211.05102)
+from Google,
+converts a quadratic-time operation into a linear-time one,
 at a linear cost in space.
 
 <small>
@@ -401,8 +406,10 @@ which uses LLMs to drive video game NPCs.
 There, agents had the ability to "reflect" on their experiences
 and write those reflections into their memory.
 
-A key novelty of this paper,
-relative to these other similar systems,
+## What Next?
+
+A key novelty of the MemGPT approach,
+relative to other similar systems,
 is the event-driven style:
 the LLM sits idle,
 waiting for events
@@ -415,36 +422,28 @@ on every keystroke, button press, or filesystem change,
 a typical operating system interrupts running processes
 to respond to the event,
 e.g. to pass the keystroke to the process managing the active window.
+[Browsers are similarly event-driven](https://www.youtube.com/watch?v=8aGhZQkoFbQ).
 
 Interruptibility and event-driven-ness are key features of biological agents as well.
 To quote Copilot's suggested completion of this paragraph:
 "If you poke a cat, it will stop what it's doing and respond to the poke."
 
-The event of that suggestion's appearance while drafting this post
-interrupted my drafting task, triggering me to reflect on it
-and then resume my drafting task with a new idea for what to say next.
+When that suggestion appeared (an event)
+it stopped me from writing (interrupted my writing process).
+I was triggered to reflect on it (I handled the interrupt by updating my state).
+I then went back to writing (resumed my writing process)
+with a new idea for what to say next.
 
 It is clear that if LLMs are to become the cognitive kernels
 of agents in any way worthy of the name,
 they will need a similar architecture.
 
-## What Next?
-
-Whether your background is in systems or ML,
-you'll find a lot of value in thinking
-"across the divide" and  your knowledge to the other field.
-
-As is perhaps obvious to systems folks from the vintage of many of the ideas above --
-virtual memory was invented in the late 1950s
-and mainstreamed in the 80s --
-there is a lot of low-hanging fruit in applying systems patterns to LLMs.
-
-And for ML heads,
-I hope this tour of some of the most exciting results
-in the past few months has convinced you that
-the systems field is a rich source of ideas
-for improving LLMs,
-both in terms of performance and in terms of capabilities.
+So while drawing architectures
+[from the computational cognitive science literature](https://arxiv.org/abs/2309.02427)
+is a good idea,
+we as MLRs should take care to draw from
+the work on engineering operating systems, browsers, database engines,
+and other systems as well.
 
 ## Acknowledgements
 

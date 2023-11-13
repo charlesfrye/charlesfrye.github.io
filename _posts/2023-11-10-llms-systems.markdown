@@ -240,7 +240,8 @@ The paper proposes adding some blank "register" tokens
 to the input in order to give the model a safe spot to store
 the results of calculations that don't otherwise have a place to go.
 
-The empirical results in terms of benchmarks are not incredible,
+The addition of registers does not meaningfully improve performance on benchmarks
+(cf. Table 2 in [the paper](https://arxiv.org/abs/2309.16588)),
 but the resulting attention maps are much cleaner,
 as is obvious from the figure above,
 and so one might expect some downstream benefits,
@@ -266,7 +267,17 @@ called "internal fragmentation".
 The solution is to split the difference and allocate memory in
 multiples of moderately-sized blocks called "pages".
 
-These pages can be assigned to processes,
+The diagram below, from the
+[BlogOS series by phil-opp](https://os.phil-opp.com/),
+depicts the difference between fixed-size block allocation
+(left) and paged allocation (right).
+Notice that the allocation for the process in blue fails in the block allocation case
+but succeeds with pages.
+
+![paged-memory-blogos]
+{: style="text-align: center"}
+
+Pages can be assigned to processes,
 loaded into caches,
 and otherwise managed as bulk units,
 while still being small enough
@@ -482,6 +493,7 @@ I'd also like to thank
 Ben Firshman/[@bfirsh](https://twitter.com/bfirsh),
 Greg Kamradt/[@GregKamradt](https://twitter.com/GregKamradt),
 Jason Liu/[@jxnlco](https://twitter.com/jxnlco),
+Joseph Nelson/[@josephofiowa](https://twitter.com/josephofiowa),
 Muhktasham O./[@Muhtasham9](https://twitter.com/Muhtasham9),
 Ben Shababo,
 and
@@ -490,6 +502,7 @@ for reading earlier drafts of this post.
 
 [karpathy-llm-kernel-tweet]: {{site.imgurl}}/karpathy-llm-kernel-tweet.png
 [vision-transformers-need-registers]: {{site.imgurl}}/vision-transformers-need-registers.png
+[paged-memory-blogos]: {{site.imgurl}}/paged-memory-blogos.png
 [paged-attention-frag]: {{site.imgurl}}/paged-attention-frag.png
 [paged-attention-table]: {{site.imgurl}}/paged-attention-table.png
 [memgpt-system-diagram]: {{site.imgurl}}/memgpt-system-diagram.png

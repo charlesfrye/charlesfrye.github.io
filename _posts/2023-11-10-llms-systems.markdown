@@ -500,7 +500,7 @@ Ben Firshman/[@bfirsh](https://twitter.com/bfirsh),
 Greg Kamradt/[@GregKamradt](https://twitter.com/GregKamradt),
 Jason Liu/[@jxnlco](https://twitter.com/jxnlco),
 Joseph Nelson/[@josephofiowa](https://twitter.com/josephofiowa),
-Muhktasham O./[@Muhtasham9](https://twitter.com/Muhtasham9),
+Muhtasham O./[@Muhtasham9](https://twitter.com/Muhtasham9),
 Ben Shababo,
 and
 Alok Singh/[@TheRevAlokSingh](https://twitter.com/TheRevAlokSingh)

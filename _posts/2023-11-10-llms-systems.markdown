@@ -42,13 +42,13 @@ and vice versa.
 
 <!--exc-->
 
-### The topics discussed here are also covered in [this recorded talk from the _Scale By The Bay 2023_ conference](https://www.youtube.com/watch?v=VxFtHqlMv8c)
-
 We'll proceed by first introducing an idea from
 the systems level --
 roughly, the interface of hardware, kernel, and application --
 and then showing how it has been applied to LLMs
 in recent research.
+
+#### Update 2023-12-30: the topics discussed here are also covered in [this recorded talk from the _Scale By The Bay 2023_ conference](https://www.youtube.com/watch?v=VxFtHqlMv8c).
 
 ## Speculative Execution
 

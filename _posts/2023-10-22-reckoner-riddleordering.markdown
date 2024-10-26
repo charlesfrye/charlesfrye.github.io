@@ -32,7 +32,7 @@ and come to ken how it drives the reckoner to weave a greeting.
 &nbsp;&nbsp;- Ophelia to Laertes, _Hamlet_, Act I Scene 3
 
 (Inspired by Poul Anderson's
-[_Uncleftish Beholding_](https://www.ling.upenn.edu/~beatrice/110/docs/uncleftish_beholding.html))
+[_Uncleftish Beholding_](https://charlesfrye.github.io/pdfs/uncleftish-beholding.pdf).)
 
 
 ## Wordcraft ##
